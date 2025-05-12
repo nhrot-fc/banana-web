@@ -17,32 +17,32 @@ import SM from '../components/SM.astro';
 	<!-- Slide 1: Title/Hero -->
 	<Slide 
 		id="slide-1" 
-		bgClass="bg-gradient-to-b from-black to-gray-900"
+		bgClass="bg-gradient-to-b from-[#051c0a] to-[#040705]"
 	>
 		<div class="text-center">
 			<h1 class="text-5xl md:text-7xl font-bold mb-6 text-green-400">
 				Automatización del análisis bio-acústico en primates
 			</h1>
-			<p class="text-xl md:text-2xl mb-8 text-gray-300">
+			<p class="text-xl md:text-2xl mb-8 text-green-100">
 				Utilizando técnicas de Aprendizaje Profundo para la Detección en la Amazonía Peruana
 			</p>
 			
 			<div class="mt-12 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
 				<div class="flex flex-col">
 					<span class="text-3xl font-bold text-green-500">+1000</span>
-					<span class="text-gray-400 text-sm">Horas de audio</span>
+					<span class="text-green-200/70 text-sm">Horas de audio</span>
 				</div>
 				<div class="flex flex-col">
 					<span class="text-3xl font-bold text-green-500">10+</span>
-					<span class="text-gray-400 text-sm">Especies identificadas</span>
+					<span class="text-green-200/70 text-sm">Especies identificadas</span>
 				</div>
 				<div class="flex flex-col">
 					<span class="text-3xl font-bold text-green-500">95%</span>
-					<span class="text-gray-400 text-sm">Precisión del modelo</span>
+					<span class="text-green-200/70 text-sm">Precisión del modelo</span>
 				</div>
 				<div class="flex flex-col">
 					<span class="text-3xl font-bold text-green-500">3</span>
-					<span class="text-gray-400 text-sm">Sitios de estudio</span>
+					<span class="text-green-200/70 text-sm">Sitios de estudio</span>
 				</div>
 			</div>
 		</div>
@@ -53,35 +53,47 @@ import SM from '../components/SM.astro';
 		id="slide-2" 
 		title="1. Generalidades" 
 		subtitle="1.1 Problemática"
+		bgClass="bg-gradient-to-b from-[#051c0a] to-[#040705]"
 	>
-		<ul class="list-disc pl-5 space-y-4 text-gray-300">
+		<ul class="list-disc pl-5 space-y-4 text-green-100/90">
 			<li>La vasta extensión y difícil acceso a diversas zonas de la Amazonía</li>
 			<li>Los métodos manuales de análisis de audio son lentos y susceptibles a errores humanos</li>
 			<li>La gran cantidad de datos recolectados mediante sensores acústicos pasivos requieren semanas o meses de procesamiento manual</li>
 			<li>La pérdida de biodiversidad y deforestación demanda métodos más eficientes de monitoreo</li>
 		</ul>
 		
-		<div class="mt-8 p-4 bg-black/30 rounded-lg border border-gray-700">
-			<p class="text-gray-300 italic">
+		<div class="mt-8 p-4 bg-gray-900/40 rounded-lg border border-gray-800/50">
+			<p class="text-green-100/80 italic">
 				"La automatización del análisis acústico permite procesar volúmenes masivos de datos que serían inviables de analizar manualmente."
 			</p>
 		</div>
 	</Slide>
+	
+	<!-- Species-specific slides moved here after Problemática -->
+	<AA />
+	<AC />
+	<AS />
+	<CC />
+	<LW />
+	<PT />
+	<SB />
+	<SM />
 	
 	<!-- Slide 3: Generalidades - Objetivos -->
 	<Slide 
 		id="slide-3" 
 		title="1. Generalidades" 
 		subtitle="1.2 Objetivos"
+		bgClass="bg-gradient-to-b from-[#051c0a] to-[#040705]"
 	>
 		<div class="mb-6">
-			<h4 class="text-xl font-medium mb-2">Objetivo General</h4>
-			<p class="text-gray-300">Desarrollar un sistema automatizado para el análisis acústico de vocalizaciones de primates utilizando técnicas de Aprendizaje Profundo.</p>
+			<h4 class="text-xl font-medium mb-2 text-green-400">Objetivo General</h4>
+			<p class="text-green-100/90">Desarrollar un sistema automatizado para el análisis acústico de vocalizaciones de primates utilizando técnicas de Aprendizaje Profundo.</p>
 		</div>
 		
 		<div>
-			<h4 class="text-xl font-medium mb-2">Objetivos Específicos</h4>
-			<ul class="list-decimal pl-5 space-y-3 text-gray-300">
+			<h4 class="text-xl font-medium mb-2 text-green-400">Objetivos Específicos</h4>
+			<ul class="list-decimal pl-5 space-y-3 text-green-100/90">
 				<li>Construir un dataset etiquetado de vocalizaciones de primates amazónicos peruanos</li>
 				<li>Diseñar e implementar una arquitectura de red neuronal para la clasificación de especies</li>
 				<li>Evaluar la precisión y rendimiento del sistema comparado con métodos tradicionales</li>
@@ -95,11 +107,12 @@ import SM from '../components/SM.astro';
 		id="slide-4" 
 		title="1. Generalidades" 
 		subtitle="1.3 Métodos y Procedimientos"
+		bgClass="bg-gradient-to-b from-[#051c0a] to-[#040705]"
 	>
 		<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 			<div>
-				<h4 class="text-xl font-medium mb-3">Adquisición de Datos</h4>
-				<ul class="list-disc pl-5 space-y-1 text-gray-300">
+				<h4 class="text-xl font-medium mb-3 text-green-400">Adquisición de Datos</h4>
+				<ul class="list-disc pl-5 space-y-1 text-green-100/90">
 					<li>Despliegue de sensores acústicos pasivos</li>
 					<li>Selección de sitios representativos</li>
 					<li>Protocolos de grabación continua</li>
@@ -107,8 +120,8 @@ import SM from '../components/SM.astro';
 			</div>
 			
 			<div>
-				<h4 class="text-xl font-medium mb-3">Preprocesamiento</h4>
-				<ul class="list-disc pl-5 space-y-1 text-gray-300">
+				<h4 class="text-xl font-medium mb-3 text-green-400">Preprocesamiento</h4>
+				<ul class="list-disc pl-5 space-y-1 text-green-100/90">
 					<li>Filtrado de ruido ambiental</li>
 					<li>Segmentación de eventos acústicos</li>
 					<li>Extracción de características</li>
@@ -116,8 +129,8 @@ import SM from '../components/SM.astro';
 			</div>
 			
 			<div>
-				<h4 class="text-xl font-medium mb-3">Desarrollo del Modelo</h4>
-				<ul class="list-disc pl-5 space-y-1 text-gray-300">
+				<h4 class="text-xl font-medium mb-3 text-green-400">Desarrollo del Modelo</h4>
+				<ul class="list-disc pl-5 space-y-1 text-green-100/90">
 					<li>Arquitecturas CNN/RNN para clasificación</li>
 					<li>Transfer learning</li>
 					<li>Validación cruzada</li>
@@ -125,8 +138,8 @@ import SM from '../components/SM.astro';
 			</div>
 			
 			<div>
-				<h4 class="text-xl font-medium mb-3">Evaluación</h4>
-				<ul class="list-disc pl-5 space-y-1 text-gray-300">
+				<h4 class="text-xl font-medium mb-3 text-green-400">Evaluación</h4>
+				<ul class="list-disc pl-5 space-y-1 text-green-100/90">
 					<li>Métricas de rendimiento</li>
 					<li>Validación en campo</li>
 					<li>Análisis de errores</li>
@@ -140,11 +153,12 @@ import SM from '../components/SM.astro';
 		id="slide-5" 
 		title="2. Marco Referencial" 
 		subtitle="2.1 Bioacústica y Primates"
+		bgClass="bg-gradient-to-b from-[#051c0a] to-[#040705]"
 	>
 		<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 			<div>
-				<h4 class="text-xl font-medium mb-3">Vocalizaciones de Primates</h4>
-				<ul class="list-disc pl-5 space-y-2 text-gray-300">
+				<h4 class="text-xl font-medium mb-3 text-green-400">Vocalizaciones de Primates</h4>
+				<ul class="list-disc pl-5 space-y-2 text-green-100/90">
 					<li>Función comunicativa social y territorial</li>
 					<li>Variabilidad acústica entre especies</li>
 					<li>Señales distintivas para identificación taxonómica</li>
@@ -152,8 +166,8 @@ import SM from '../components/SM.astro';
 			</div>
 			
 			<div>
-				<h4 class="text-xl font-medium mb-3">Monitoreo Acústico Pasivo</h4>
-				<ul class="list-disc pl-5 space-y-2 text-gray-300">
+				<h4 class="text-xl font-medium mb-3 text-green-400">Monitoreo Acústico Pasivo</h4>
+				<ul class="list-disc pl-5 space-y-2 text-green-100/90">
 					<li>Grabación continua no invasiva</li>
 					<li>Cobertura temporal y espacial extendida</li>
 					<li>Menor perturbación a las poblaciones</li>
@@ -167,11 +181,12 @@ import SM from '../components/SM.astro';
 		id="slide-6" 
 		title="2. Marco Referencial" 
 		subtitle="2.2 Aprendizaje Profundo en Bioacústica"
+		bgClass="bg-gradient-to-b from-[#051c0a] to-[#040705]"
 	>
 		<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 			<div>
-				<h4 class="text-xl font-medium mb-3">Redes Neuronales Convolucionales</h4>
-				<ul class="list-disc pl-5 space-y-2 text-gray-300">
+				<h4 class="text-xl font-medium mb-3 text-green-400">Redes Neuronales Convolucionales</h4>
+				<ul class="list-disc pl-5 space-y-2 text-green-100/90">
 					<li>Procesamiento de espectrogramas como imágenes</li>
 					<li>Extracción automática de características</li>
 					<li>Alta precisión en patrones complejos</li>
@@ -179,8 +194,8 @@ import SM from '../components/SM.astro';
 			</div>
 			
 			<div>
-				<h4 class="text-xl font-medium mb-3">Redes Recurrentes</h4>
-				<ul class="list-disc pl-5 space-y-2 text-gray-300">
+				<h4 class="text-xl font-medium mb-3 text-green-400">Redes Recurrentes</h4>
+				<ul class="list-disc pl-5 space-y-2 text-green-100/90">
 					<li>Modelado de secuencias temporales</li>
 					<li>Captura de patrones a lo largo del tiempo</li>
 					<li>Procesamiento de contexto acústico</li>
@@ -194,24 +209,25 @@ import SM from '../components/SM.astro';
 		id="slide-7" 
 		title="2. Marco Referencial" 
 		subtitle="2.3 Primates de Interés"
+		bgClass="bg-gradient-to-b from-[#051c0a] to-[#040705]"
 	>
 		<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-			<div class="bg-black/30 p-4 rounded-lg">
+			<div class="bg-gray-900/50 p-4 rounded-lg border border-gray-800/40">
 				<h4 class="text-xl font-medium mb-2 text-green-400">Alouatta seniculus</h4>
-				<p class="text-gray-300 mb-1">Mono aullador rojo</p>
-				<p class="text-gray-400 text-sm">Vocalizaciones de larga distancia, frecuencia baja</p>
+				<p class="text-green-100/80 mb-1">Mono aullador rojo</p>
+				<p class="text-green-200/60 text-sm">Vocalizaciones de larga distancia, frecuencia baja</p>
 			</div>
 			
-			<div class="bg-black/30 p-4 rounded-lg">
+			<div class="bg-gray-900/50 p-4 rounded-lg border border-gray-800/40">
 				<h4 class="text-xl font-medium mb-2 text-green-400">Cebus albifrons</h4>
-				<p class="text-gray-300 mb-1">Mono capuchino de frente blanca</p>
-				<p class="text-gray-400 text-sm">Llamadas cortas de alta frecuencia</p>
+				<p class="text-green-100/80 mb-1">Mono capuchino de frente blanca</p>
+				<p class="text-green-200/60 text-sm">Llamadas cortas de alta frecuencia</p>
 			</div>
 			
-			<div class="bg-black/30 p-4 rounded-lg">
+			<div class="bg-gray-900/50 p-4 rounded-lg border border-gray-800/40">
 				<h4 class="text-xl font-medium mb-2 text-green-400">Saimiri sciureus</h4>
-				<p class="text-gray-300 mb-1">Mono ardilla</p>
-				<p class="text-gray-400 text-sm">Vocalizaciones complejas de frecuencia media</p>
+				<p class="text-green-100/80 mb-1">Mono ardilla</p>
+				<p class="text-green-200/60 text-sm">Vocalizaciones complejas de frecuencia media</p>
 			</div>
 		</div>
 	</Slide>
@@ -221,11 +237,12 @@ import SM from '../components/SM.astro';
 		id="slide-8" 
 		title="3. Estado del Arte" 
 		subtitle="3.1 Técnicas Actuales"
+		bgClass="bg-gradient-to-b from-[#051c0a] to-[#040705]"
 	>
 		<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 			<div>
-				<h4 class="text-xl font-medium mb-3">Análisis Tradicional</h4>
-				<ul class="list-disc pl-5 space-y-2 text-gray-300">
+				<h4 class="text-xl font-medium mb-3 text-green-400">Análisis Tradicional</h4>
+				<ul class="list-disc pl-5 space-y-2 text-green-100/90">
 					<li>Inspección visual de espectrogramas</li>
 					<li>Medición manual de parámetros acústicos</li>
 					<li>Clasificación basada en umbrales</li>
@@ -233,8 +250,8 @@ import SM from '../components/SM.astro';
 			</div>
 			
 			<div>
-				<h4 class="text-xl font-medium mb-3">Enfoques de Aprendizaje Automático</h4>
-				<ul class="list-disc pl-5 space-y-2 text-gray-300">
+				<h4 class="text-xl font-medium mb-3 text-green-400">Enfoques de Aprendizaje Automático</h4>
+				<ul class="list-disc pl-5 space-y-2 text-green-100/90">
 					<li>Clasificadores basados en características (SVM, Random Forest)</li>
 					<li>Redes neuronales profundas (CNN, RNN)</li>
 					<li>Modelos de autoencoders para detección de anomalías</li>
@@ -248,8 +265,9 @@ import SM from '../components/SM.astro';
 		id="slide-9" 
 		title="3. Estado del Arte" 
 		subtitle="3.2 Desafíos Actuales"
+		bgClass="bg-gradient-to-b from-[#051c0a] to-[#040705]"
 	>
-		<ul class="list-disc pl-5 space-y-3 text-gray-300">
+		<ul class="list-disc pl-5 space-y-3 text-green-100/90">
 			<li>Ruido ambiental en grabaciones de campo</li>
 			<li>Variabilidad intra-especie en vocalizaciones</li>
 			<li>Solapamiento acústico entre especies similares</li>
@@ -264,11 +282,12 @@ import SM from '../components/SM.astro';
 		id="slide-10" 
 		title="3. Estado del Arte" 
 		subtitle="3.3 Nuestra Propuesta"
+		bgClass="bg-gradient-to-b from-[#051c0a] to-[#040705]"
 	>
 		<div class="space-y-6">
 			<div>
-				<h4 class="text-xl font-medium mb-2">Innovaciones Clave</h4>
-				<ul class="list-disc pl-5 space-y-2 text-gray-300">
+				<h4 class="text-xl font-medium mb-2 text-green-400">Innovaciones Clave</h4>
+				<ul class="list-disc pl-5 space-y-2 text-green-100/90">
 					<li>Arquitectura mixta CNN-LSTM para captura temporal y frecuencial</li>
 					<li>Técnicas de data augmentation específicas para bioacústica</li>
 					<li>Sistema de detección en dos etapas (detección + clasificación)</li>
@@ -276,8 +295,8 @@ import SM from '../components/SM.astro';
 			</div>
 			
 			<div>
-				<h4 class="text-xl font-medium mb-2">Ventajas Esperadas</h4>
-				<ul class="list-disc pl-5 space-y-2 text-gray-300">
+				<h4 class="text-xl font-medium mb-2 text-green-400">Ventajas Esperadas</h4>
+				<ul class="list-disc pl-5 space-y-2 text-green-100/90">
 					<li>Mejor rendimiento en condiciones de ruido ambiental alto</li>
 					<li>Reducción de falsos positivos en especies similares</li>
 					<li>Escalabilidad para incorporar nuevas especies</li>
@@ -290,9 +309,9 @@ import SM from '../components/SM.astro';
 	<Slide 
 		id="slide-11" 
 		title="4. Referencias" 
-		bgClass="bg-gray-900"
+		bgClass="bg-gradient-to-b from-[#051c0a] to-[#040705]"
 	>
-		<ul class="list-decimal space-y-3 text-gray-300 text-base">
+		<ul class="list-decimal space-y-3 text-green-100/80 text-base">
 			<li>Palacios, V., et al. (2021). "Bioacoustic classification of Neotropical primates using convolutional neural networks". Ecological Informatics, 64, 101339.</li>
 			<li>Bermant, P. C., et al. (2019). "Deep learning for bio-acoustic monitoring of forest wildlife". Conservation Biology, 33(6), 1321-1329.</li>
 			<li>Kalan, A. K., et al. (2020). "Passive acoustic monitoring reveals group ranging and territory use in wild primates". Proceedings of the Royal Society B, 287(1924), 20201244.</li>
@@ -305,32 +324,22 @@ import SM from '../components/SM.astro';
 	<Slide 
 		id="slide-12" 
 		title="5. Anexos" 
-		bgClass="bg-gray-900"
+		bgClass="bg-gradient-to-b from-[#051c0a] to-[#040705]"
 	>
 		<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-			<div class="bg-black/30 p-4 rounded-lg">
+			<div class="bg-gray-900/50 p-4 rounded-lg border border-gray-800/40">
 				<h4 class="text-xl font-medium mb-3 text-green-400">Espectrogramas de Referencia</h4>
-				<div class="h-40 bg-black/50 flex items-center justify-center">
-					<p class="text-sm text-gray-500">Visualización de espectrogramas por especies</p>
+				<div class="h-40 bg-gray-950/70 flex items-center justify-center border border-gray-800/30">
+					<p class="text-sm text-green-400/60">Visualización de espectrogramas por especies</p>
 				</div>
 			</div>
 			
-			<div class="bg-black/30 p-4 rounded-lg">
+			<div class="bg-gray-900/50 p-4 rounded-lg border border-gray-800/40">
 				<h4 class="text-xl font-medium mb-3 text-green-400">Arquitectura del Modelo</h4>
-				<div class="h-40 bg-black/50 flex items-center justify-center">
-					<p class="text-sm text-gray-500">Diagrama de la red neuronal propuesta</p>
+				<div class="h-40 bg-gray-950/70 flex items-center justify-center border border-gray-800/30">
+					<p class="text-sm text-green-400/60">Diagrama de la red neuronal propuesta</p>
 				</div>
 			</div>
 		</div>
 	</Slide>
-	
-	<!-- Species-specific slides -->
-	<AA />
-	<AC />
-	<AS />
-	<CC />
-	<LW />
-	<PT />
-	<SB />
-	<SM />
 </Layout>

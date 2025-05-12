@@ -5,11 +5,13 @@
 /* Custom properties */
 :root {
   --color-green: #10b981;
-  --color-dark: #111827;
-  --color-black: #000000;
-  --color-primary: #5cb85c;
-  --color-primary-dark: #4a9d4a;
-  --color-secondary: #222222;
+  --color-green-dark: #065f46;
+  --color-green-light: #34d399;
+  --color-dark: #051c0a;
+  --color-black: #040705;
+  --color-primary: #2d9d40;
+  --color-primary-dark: #1e7a2b;
+  --color-secondary: #072c0d;
   --color-text: #ffffff;
   --color-text-muted: #a0a0a0;
 }
@@ -33,16 +35,16 @@ body {
 
 /* Buttons */
 .btn-primary {
-  @apply inline-block px-6 py-3 bg-green-600 hover:bg-green-700 text-white rounded-full font-medium transition-colors;
+  @apply inline-block px-6 py-3 bg-green-700 hover:bg-green-800 text-white rounded-full font-medium transition-colors;
 }
 
 .btn-secondary {
-  @apply inline-block px-6 py-3 bg-gray-800 hover:bg-gray-700 text-white rounded-full font-medium border border-green-500 transition-colors;
+  @apply inline-block px-6 py-3 bg-green-900/70 hover:bg-green-900 text-white rounded-full font-medium border border-green-500 transition-colors;
 }
 
 /* Card style */
 .card {
-  @apply bg-gray-800/60 rounded-xl p-6 backdrop-blur-sm border border-gray-700;
+  @apply bg-gray-900/40 rounded-xl p-6 backdrop-blur-sm border border-gray-800/50;
 }
 
 /* Section title */
@@ -87,14 +89,14 @@ body {
   }
 
   .btn-primary {
-    @apply bg-green-600 hover:bg-green-700 text-white py-2 px-5 rounded-md transition-colors;
+    @apply bg-green-700 hover:bg-green-800 text-white py-2 px-5 rounded-md transition-colors;
   }
 
   .btn-secondary {
-    @apply bg-gray-800 hover:bg-gray-700 text-white py-2 px-5 rounded-md transition-colors;
+    @apply bg-green-900/70 hover:bg-green-900 text-white py-2 px-5 rounded-md transition-colors;
   }
 
   .card {
-    @apply bg-gray-800/50 backdrop-blur-sm p-6 rounded-lg border border-gray-700;
+    @apply bg-gray-900/40 backdrop-blur-sm p-6 rounded-lg border border-gray-800/50;
   }
 }

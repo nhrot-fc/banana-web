@@ -30,26 +30,26 @@ const isImageImported = typeof species.image === 'object';
 const uniqueID = Math.random().toString(36).substring(2, 9);
 ---
 
-<div class="species-showcase bg-black/40 rounded-lg p-6 mb-8 relative overflow-hidden" data-species-code={species.code} id={`showcase-${species.code}-${uniqueID}`}>
+<div class="species-showcase bg-gray-900/40 rounded-lg p-6 mb-8 relative overflow-hidden border border-gray-800/50" data-species-code={species.code} id={`showcase-${species.code}-${uniqueID}`}>
   <div class="flex flex-col md:flex-row gap-8">
     <!-- Species image and basic info -->
     <div class="md:w-1/3">
       {isImageImported ? (
-        <Image src={species.image} alt={species.english} class="w-full rounded-lg shadow-lg object-cover max-h-80" />
+        <Image src={species.image} alt={species.english} class="w-full rounded-lg shadow-lg object-cover max-h-80 border border-gray-700/40" />
       ) : (
-        <img src={species.image} alt={species.english} class="w-full rounded-lg shadow-lg object-cover max-h-80" />
+        <img src={species.image} alt={species.english} class="w-full rounded-lg shadow-lg object-cover max-h-80 border border-gray-700/40" />
       )}
       <div class="species-info mt-4">
         <div class="flex items-center gap-2 mb-1">
           <div class="w-3 h-3 bg-green-500 rounded-full"></div>
           <h3 class="text-2xl font-bold text-green-400">{species.english}</h3>
         </div>
-        <p class="text-gray-400 italic mb-2">{species.scientific}</p>
-        <p class="text-sm text-gray-300 mb-1">
-          <span class="text-gray-500">Local name:</span> {species.spanish}
+        <p class="text-green-200/70 italic mb-2">{species.scientific}</p>
+        <p class="text-sm text-green-100/80 mb-1">
+          <span class="text-green-400/80">Local name:</span> {species.spanish}
         </p>
-        <p class="text-sm text-gray-300">
-          <span class="text-gray-500">Code:</span> {species.code}
+        <p class="text-sm text-green-100/80">
+          <span class="text-green-400/80">Code:</span> {species.code}
         </p>
         <div class="hidden species-data" data-code={species.code} data-uid={uniqueID}></div>
       </div>
@@ -58,12 +58,12 @@ const uniqueID = Math.random().toString(36).substring(2, 9);
     <!-- Acoustic information and visualizations -->
     <div class="md:w-2/3">
       <h4 class="text-xl font-medium text-green-300 mb-2">Acoustic Profile</h4>
-      <p class="text-gray-300 mb-4">{species.acousticCharacteristics}</p>
+      <p class="text-green-100/90 mb-4">{species.acousticCharacteristics}</p>
 
       {species.calls.map((call, index) => {
         const callUniqueId = `${species.code}-${index}-${uniqueID}`;
         return (
-          <div class="call-block bg-black/20 p-4 rounded-lg mb-4" data-call-id={callUniqueId}>
+          <div class="call-block bg-gray-900/60 p-4 rounded-lg mb-4 border border-navy-800/30" data-call-id={callUniqueId}>
             <div class="flex justify-between items-center mb-3">
               <h5 class="text-lg font-medium text-green-300">{call.name}</h5>
               <div class="flex">
@@ -72,7 +72,7 @@ const uniqueID = Math.random().toString(36).substring(2, 9);
                   data-species={species.code}
                   data-index={index}
                   data-uid={uniqueID}
-                  class="play-btn bg-green-600 hover:bg-green-700 text-white px-3 py-1 rounded-full text-sm flex items-center gap-1"
+                  class="play-btn bg-green-700 hover:bg-green-800 text-white px-3 py-1 rounded-full text-sm flex items-center gap-1"
                 >
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
@@ -93,7 +93,7 @@ const uniqueID = Math.random().toString(36).substring(2, 9);
               </div>
             </div>
             
-            <p class="text-gray-400 text-sm mb-3">{call.description}</p>
+            <p class="text-green-200/70 text-sm mb-3">{call.description}</p>
             
             <!-- Waveform visualization -->
             <div class="mb-4">
@@ -105,7 +105,7 @@ const uniqueID = Math.random().toString(36).substring(2, 9);
                 data-species={species.code}
                 data-index={index}
                 data-uid={uniqueID}
-                class="waveform-container w-full h-16 bg-gray-900/50 rounded"
+                class="waveform-container w-full h-16 bg-gray-950/80 rounded"
               ></div>
             </div>
             
@@ -119,14 +119,14 @@ const uniqueID = Math.random().toString(36).substring(2, 9);
                 data-species={species.code}
                 data-index={index}
                 data-uid={uniqueID}
-                class="spectrogram-container w-full h-24 bg-gray-900/50 rounded"
+                class="spectrogram-container w-full h-24 bg-gray-950/80 rounded"
               ></div>
             </div>
 
             <!-- Annotations section -->
             <div class="annotations mt-3">
-              <div class="text-xs text-gray-500 mb-1">Annotations</div>
-              <div class="text-sm text-gray-300 bg-black/30 p-2 rounded max-h-20 overflow-y-auto">
+              <div class="text-xs text-green-400/80 mb-1">Annotations</div>
+              <div class="text-sm text-green-100/80 bg-gray-950/80 p-2 rounded max-h-20 overflow-y-auto">
                 <p class="text-xs font-mono">Detection time: 07:42:13</p>
                 <p class="text-xs font-mono">Frequency range: 1.2kHz - 3.5kHz</p>
                 <p class="text-xs font-mono">Duration: 1.7 seconds</p>
@@ -138,11 +138,11 @@ const uniqueID = Math.random().toString(36).substring(2, 9);
       })}
 
       <!-- Detection stats like in Arbimon -->
-      <div class="detection-stats bg-black/20 p-3 rounded-lg flex items-center justify-between">
+      <div class="detection-stats bg-blue-950/30 p-3 rounded-lg flex items-center justify-between border border-blue-900/20">
         <span class="text-green-400 font-medium">Detected {Math.floor(Math.random() * 150) + 50} times in {Math.floor(Math.random() * 5) + 1} sites</span>
         <div class="flex gap-2">
-          <span class="bg-gray-800 px-2 py-1 rounded text-xs text-gray-400">Automatic</span>
-          <span class="bg-green-900 px-2 py-1 rounded text-xs text-green-400">Verified</span>
+          <span class="bg-gray-900/70 px-2 py-1 rounded text-xs text-green-200/70">Automatic</span>
+          <span class="bg-blue-900/40 px-2 py-1 rounded text-xs text-green-400">Verified</span>
         </div>
       </div>
     </div>
