@@ -20,18 +20,24 @@ import Herramientas from "../components/generalidades/Herramientas.astro";
 import DefinicionProblema from "../components/marco/DefinicionProblema.astro";
 import MarcoTeorico from "../components/marco/MarcoTeorico.astro";
 import MarcoConceptual from "../components/marco/MarcoConceptual.astro";
+import AlcanceRevision from "../components/estado_arte/AlcanceRevision.astro";
+import PreguntasCentrales1 from "../components/estado_arte/PreguntasCentrales1.astro";
+import PreguntasCentrales2 from "../components/estado_arte/PreguntasCentrales2.astro";
+import EstrategiaBusqueda from "../components/estado_arte/EstrategiaBusqueda.astro";
+import CriteriosInclusion from "../components/estado_arte/CriteriosInclusion.astro";
+import CriteriosExclusion from "../components/estado_arte/CriteriosExclusion.astro";
 ---
 
 <Layout
   title="Automatización del análisis acústico de vocalizaciones de Primates | Amazonía Peruana"
 >
   <!-- Slide 1: Title/Hero -->
-  <Slide id="slide-1" bgClass="bg-gradient-to-b from-[#051c0a] to-[#040705]">
+  <Slide id="slide-1">
     <div class="text-center">
       <h1 class="text-5xl md:text-7xl font-bold mb-6 text-green-400">
         Automatización del Análisis Acústico de Vocalizaciones de Primates
       </h1>
-      <p class="text-xl md:text-2xl mb-8 text-green-100">
+      <p class="text-xl md:text-2xl mb-8 text-text">
         Utilizando Técnicas de Aprendizaje Profundo en la Amazonía Peruana
       </p>
     </div>
@@ -41,7 +47,6 @@ import MarcoConceptual from "../components/marco/MarcoConceptual.astro";
   <Slide
     id="slide-intro"
     title="Introducción"
-    bgClass="bg-gradient-to-b from-[#051c0a] to-[#040705]"
   >
     <Introduccion />
   </Slide>
@@ -49,7 +54,6 @@ import MarcoConceptual from "../components/marco/MarcoConceptual.astro";
   <Slide
     id="slide-problematica"
     title="Problematica"
-    bgClass="bg-gradient-to-b from-[#051c0a] to-[#040705]"
   >
     <Problematica />
   </Slide>
@@ -57,7 +61,6 @@ import MarcoConceptual from "../components/marco/MarcoConceptual.astro";
   <Slide
     id="slide-arbol-problemas"
     title="Árbol de Problemas"
-    bgClass="bg-gradient-to-b from-[#051c0a] to-[#040705]"
   >
     <ArbolProblemas />
   </Slide>
@@ -65,7 +68,6 @@ import MarcoConceptual from "../components/marco/MarcoConceptual.astro";
   <Slide
     id="slide-objetivos"
     title="Objetivos"
-    bgClass="bg-gradient-to-b from-[#051c0a] to-[#040705]"
   >
     <Objetivos />
   </Slide>
@@ -74,7 +76,6 @@ import MarcoConceptual from "../components/marco/MarcoConceptual.astro";
     id="slide-metodos"
     title="Métodos"
     subtitle="Metodología CRISP-DM para Análisis Bio-acústico"
-    bgClass="bg-gradient-to-b from-[#051c0a] to-[#040705]"
   >
     <Metodos />
   </Slide>
@@ -83,7 +84,6 @@ import MarcoConceptual from "../components/marco/MarcoConceptual.astro";
     id="slide-herramientas"
     title="Herramientas"
     subtitle="Tecnologías utilizadas en el proyecto"
-    bgClass="bg-gradient-to-b from-[#051c0a] to-[#040705]"
   >
     <Herramientas />
   </Slide>
@@ -92,23 +92,20 @@ import MarcoConceptual from "../components/marco/MarcoConceptual.astro";
   <Slide
     id="slide-definicion-problema"
     title="Definición Formal del Problema"
-    bgClass="bg-gradient-to-b from-[#051c0a] to-[#040705]"
   >
     <DefinicionProblema />
   </Slide>
-  
+
   <Slide
     id="slide-marco-teorico"
     title="Marco Teórico"
-    bgClass="bg-gradient-to-b from-[#051c0a] to-[#040705]"
   >
     <MarcoTeorico />
   </Slide>
-  
+
   <Slide
     id="slide-marco-conceptual"
     title="Marco Conceptual"
-    bgClass="bg-gradient-to-b from-[#051c0a] to-[#040705]"
   >
     <MarcoConceptual />
   </Slide>
@@ -123,13 +120,57 @@ import MarcoConceptual from "../components/marco/MarcoConceptual.astro";
   <SB />
   <SM />
 
+  <!-- Slide 7: Estado del Arte -->
+
+  <!-- Estado del Arte Section -->
+  <Slide
+    id="slide-estado-arte-alcance"
+    title="Estado del Arte"
+  >
+    <AlcanceRevision />
+  </Slide>
+
+  <Slide
+    id="slide-estado-arte-preguntas1"
+    title="Estado del Arte"
+  >
+    <PreguntasCentrales1 />
+  </Slide>
+
+  <Slide
+    id="slide-estado-arte-preguntas2"
+    title="Estado del Arte"
+  >
+    <PreguntasCentrales2 />
+  </Slide>
+
+  <Slide
+    id="slide-estado-arte-busqueda"
+    title="Estado del Arte"
+  >
+    <EstrategiaBusqueda />
+  </Slide>
+
+  <Slide
+    id="slide-estado-arte-inclusion"
+    title="Estado del Arte"
+  >
+    <CriteriosInclusion />
+  </Slide>
+
+  <Slide
+    id="slide-estado-arte-exclusion"
+    title="Estado del Arte"
+  >
+    <CriteriosExclusion />
+  </Slide>
+
   <!-- Slide 10: Referencias -->
   <Slide
     id="slide-10"
     title="4. Referencias"
-    bgClass="bg-gradient-to-b from-[#051c0a] to-[#040705]"
   >
-    <ul class="list-decimal space-y-3 text-green-100/80 text-base">
+    <ul class="list-decimal space-y-3 text-text-muted text-base">
       <li>
         Palacios, V., et al. (2021). "Bioacoustic classification of Neotropical
         primates using convolutional neural networks". Ecological Informatics,

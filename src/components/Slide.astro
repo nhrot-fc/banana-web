@@ -10,7 +10,7 @@ const {
   id,
   title,
   subtitle,
-  bgClass = "bg-gradient-to-b from-[#051c0a] to-[#040705]",
+  bgClass = "bg-gradient-to-b from-dark to-black",
 } = Astro.props;
 ---
 
@@ -28,7 +28,7 @@ const {
     }
     {
       subtitle && (
-        <h3 class="text-xl md:text-2xl mb-8 text-green-100/80">{subtitle}</h3>
+        <h3 class="text-xl md:text-2xl mb-8 text-text opacity-80">{subtitle}</h3>
       )
     }
     <div class="slide-content">

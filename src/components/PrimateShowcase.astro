@@ -176,9 +176,8 @@ if (species.reference) {
 <!-- Global script for WaveSurfer -->
 <script type="module">
   // Import WaveSurfer once, globally
-  //import WaveSurfer from 'https://unpkg.com/wavesurfer.js@7/dist/wavesurfer.esm.js';
-
-  import WaveSurfer from '../../node_modules/wavesurfer.js/dist/wavesurfer.esm.js';
+  import WaveSurfer from 'https://unpkg.com/wavesurfer.js@7/dist/wavesurfer.esm.js';
+  //import WaveSurfer from '../../node_modules/wavesurfer.js/dist/wavesurfer.esm.js';
   
   // Store WaveSurfer instances to prevent duplicates
   window.wavesurferInstances = window.wavesurferInstances || new Map();

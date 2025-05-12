@@ -1,0 +1,99 @@
+---
+import { Image } from 'astro:assets';
+import scopusLogo from '../../assets/estado_arte/estrategia/scopus_logo.png';
+import webOfScienceLogo from '../../assets/estado_arte/estrategia/web_of_science_logo.png';
+---
+
+<div>
+  <h3 class="text-2xl font-semibold text-green-300 mb-4">Estrategia de Búsqueda Sistemática</h3>
+  
+  <div class="space-y-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="card">
+        <h4 class="text-xl font-semibold text-green-400 mb-3">Scopus</h4>
+        <div class="flex flex-col h-full">
+          <div class="bg-gray-950/80 p-4 rounded-lg mb-4 flex items-center justify-center">
+            <Image 
+              src={scopusLogo} 
+              alt="Logo de Scopus" 
+              class="max-h-40 object-contain"
+              width={200}
+              height={100}
+            />
+          </div>
+          <p class="text-gray-300">Base de datos bibliográfica de artículos de revistas científicas que fue lanzada en 2004. Cubre títulos de publicaciones seriadas de más de 5000 editores en 140 países, incluyendo revistas revisadas por pares. Actualmente, incluye una herramienta de búsqueda basada en inteligencia artificial que identifica artículos relacionados a un consulta o "prompt" generando un informe como respuesta.</p>
+        </div>
+      </div>
+      
+      <div class="card">
+        <h4 class="text-xl font-semibold text-green-400 mb-3">Web of Science</h4>
+        <div class="flex flex-col h-full">
+          <div class="bg-gray-950/80 p-4 rounded-lg mb-4 flex items-center justify-center">
+            <Image 
+              src={webOfScienceLogo} 
+              alt="Logo de Web of Science" 
+              class="max-h-40 object-contain"
+              width={200}
+              height={100}
+            />
+          </div>
+          <p class="text-gray-300">Una de las plataformas más confiables sobre bases de datos para investigación científica. Proporciona diferentes herramientas de visualización sobre la importancia y tendencias de revistas dentro de sus categorías temáticas.</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card">
+      <h4 class="text-xl font-semibold text-green-400 mb-4">Cadenas de Búsqueda y Resultados</h4>
+      
+      <div class="overflow-x-auto">
+        <table class="min-w-full bg-gray-950/80 rounded-lg">
+          <thead>
+            <tr>
+              <th class="px-4 py-3 text-left text-green-400 font-semibold border-b border-gray-700">Motor de búsqueda</th>
+              <th class="px-4 py-3 text-left text-green-400 font-semibold border-b border-gray-700">Cadena de búsqueda</th>
+              <th class="px-4 py-3 text-left text-green-400 font-semibold border-b border-gray-700">Cantidad de documentos</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="px-4 py-3 text-gray-300 border-b border-gray-800/50">Scopus</td>
+              <td class="px-4 py-3 text-gray-300 border-b border-gray-800/50 text-sm">
+                <p>TITLE-ABS-KEY ( "deep learning" OR "neural network*" OR "Artificial Intelligence" OR "Transformer*" OR "Machine Learning" ) AND TITLE-ABS-KEY ( "sound event detection" OR "acoustic event detection" OR "audio event localization" OR "bioacoustic detection" ) AND TITLE-ABS-KEY ( biodiversity OR wildlife OR "animal vocalizations" OR primates OR "anthropogenic noise" OR "forest monitoring" OR "ecological monitoring" )</p>
+              </td>
+              <td class="px-4 py-3 text-gray-300 border-b border-gray-800/50 text-center">33</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 text-gray-300">Web of Science</td>
+              <td class="px-4 py-3 text-gray-300 text-sm">
+                <p>TS=("deep learning" OR "neural network*" OR "Artificial Intelligence" OR "Transformer*" OR "Machine Learning")</p>
+                <p>AND</p>
+                <p>TS=("sound event detection" OR "acoustic event detection" OR "audio event localization" OR "bioacoustic detection")</p>
+                <p>AND</p>
+                <p>TS=(biodiversity OR wildlife OR "animal vocalizations" OR primates OR "anthropogenic noise" OR "forest monitoring" OR "ecological monitoring")</p>
+              </td>
+              <td class="px-4 py-3 text-gray-300 text-center">6</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      
+      <div class="mt-4">
+        <h5 class="text-lg font-semibold text-green-400 mb-2">Categorías de términos clave:</h5>
+        <ul class="list-disc pl-6 space-y-2 text-gray-300">
+          <li><em class="text-green-300">Técnicas:</em> "Deep Learning", "Neural Network*", "Transformer*", "Machine Learning", "Artificial Intelligence"</li>
+          <li><em class="text-green-300">Tarea:</em> "Sound Event Detection", "Acoustic Event Detection", "Audio Event Localization", "Bioacoustic Detection"</li>
+          <li><em class="text-green-300">Dominio:</em> "Biodiversity", "Wildlife", "Animal Vocalizations", "Primates", "Forest Monitoring", "Ecological Monitoring"</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .card {
+    background-color: rgba(17, 24, 39, 0.7);
+    border: 1px solid rgba(55, 65, 81, 0.5);
+    border-radius: 0.5rem;
+    padding: 1.25rem;
+  }
+</style> 
