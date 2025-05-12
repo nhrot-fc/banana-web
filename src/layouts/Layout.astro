@@ -5,19 +5,45 @@ interface Props {
 	title?: string;
 }
 
-const { title = "Astro Basics" } = Astro.props;
+const { title = "Análisis Bio-Acústico de Primates | Amazonía Peruana" } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="es">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 	</head>
-	<body class="w-full min-h-screen">
-		<slot />
+	<body class="w-full min-h-screen bg-dark text-white font-inter">
+		<div class="flex flex-col min-h-screen">
+			<header class="sticky top-0 z-50 bg-black/80 backdrop-blur-sm">
+				<nav class="container mx-auto px-4 py-3 flex items-center justify-between">
+					<a href="/" class="text-green-500 font-bold text-xl">BioPrimateAI</a>
+					<div class="flex space-x-6">
+						<a href="/#generalidades" class="hover:text-green-400 transition-colors">Generalidades</a>
+						<a href="/#marco" class="hover:text-green-400 transition-colors">Marco Referencial</a>
+						<a href="/#estado" class="hover:text-green-400 transition-colors">Estado del Arte</a>
+						<a href="/#referencias" class="hover:text-green-400 transition-colors">Referencias</a>
+						<a href="/#anexos" class="hover:text-green-400 transition-colors">Anexos</a>
+					</div>
+				</nav>
+			</header>
+			
+			<main class="flex-grow">
+				<slot />
+			</main>
+			
+			<footer class="bg-black/90 text-gray-300 py-6">
+				<div class="container mx-auto px-4 text-center">
+					<p>© 2025 - Tesis de Investigación - Automatización del análisis bio-acústico en primates</p>
+				</div>
+			</footer>
+		</div>
 	</body>
 </html>

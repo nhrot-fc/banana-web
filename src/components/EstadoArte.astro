@@ -1,0 +1,218 @@
+---
+---
+
+<section id="estado" class="section bg-gray-900">
+  <div class="container mx-auto px-4">
+    <h2 class="section-title">3. Estado del Arte</h2>
+
+    <div class="space-y-12">
+      <!-- Introducción -->
+      <div>
+        <h3 class="text-2xl font-semibold mb-4 text-green-400">3.1. Introducción</h3>
+        <div class="card">
+          <p class="text-gray-300">
+            El campo de la bioacústica aplicada a primates ha experimentado un avance significativo en los últimos años, 
+            particularmente con la integración de técnicas de aprendizaje profundo. Esta revisión sistemática examina los 
+            desarrollos recientes en el análisis automatizado de vocalizaciones de primates, con especial énfasis en 
+            aplicaciones de conservación y monitoreo en entornos amazónicos.
+          </p>
+        </div>
+      </div>
+
+      <!-- Objetivos de Revisión -->
+      <div>
+        <h3 class="text-2xl font-semibold mb-4 text-green-400">3.2. Objetivos de Revisión</h3>
+        <div class="card">
+          <ul class="list-disc pl-5 space-y-3 text-gray-300">
+            <li>Identificar las técnicas más efectivas de aprendizaje profundo aplicadas al análisis bioacústico de primates</li>
+            <li>Evaluar metodologías de preprocesamiento y extracción de características para vocalizaciones en ambientes ruidosos como la Amazonía</li>
+            <li>Analizar métricas de rendimiento y precisión en estudios comparables</li>
+            <li>Reconocer brechas y oportunidades de investigación en el contexto peruano</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Preguntas de Revisión -->
+      <div>
+        <h3 class="text-2xl font-semibold mb-4 text-green-400">3.3. Preguntas de Revisión</h3>
+        <div class="card">
+          <ol class="list-decimal pl-5 space-y-3 text-gray-300">
+            <li>¿Qué arquitecturas de aprendizaje profundo han demostrado mejor rendimiento en la clasificación de vocalizaciones de primates?</li>
+            <li>¿Cuáles son los principales desafíos en la implementación de sistemas automatizados de análisis bioacústico en entornos amazónicos?</li>
+            <li>¿Qué tamaños y características de conjuntos de datos se han utilizado para el entrenamiento de modelos exitosos?</li>
+            <li>¿Cómo se han abordado los problemas de generalización y transferibilidad entre especies o entre diferentes entornos acústicos?</li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- Estrategia de Búsqueda -->
+      <div>
+        <h3 class="text-2xl font-semibold mb-4 text-green-400">3.4. Estrategia de Búsqueda</h3>
+        <div class="card">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <h4 class="text-xl font-medium mb-3">Fuentes Consultadas</h4>
+              <ul class="list-disc pl-5 space-y-1 text-gray-300">
+                <li>IEEE Xplore</li>
+                <li>ScienceDirect</li>
+                <li>Google Scholar</li>
+                <li>Web of Science</li>
+                <li>Repositorios de universidades peruanas</li>
+                <li>Bases de datos especializadas en bioacústica</li>
+              </ul>
+            </div>
+            
+            <div>
+              <h4 class="text-xl font-medium mb-3">Criterios de Inclusión</h4>
+              <ul class="list-disc pl-5 space-y-1 text-gray-300">
+                <li>Estudios publicados entre 2018-2025</li>
+                <li>Trabajos enfocados en análisis automatizado de vocalizaciones de primates</li>
+                <li>Investigaciones que utilizan técnicas de aprendizaje profundo</li>
+                <li>Estudios con métricas de rendimiento claramente definidas</li>
+                <li>Publicaciones en inglés o español</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="mt-6">
+            <h4 class="text-xl font-medium mb-3">Cadenas de Búsqueda Principales</h4>
+            <div class="bg-black/30 p-4 rounded-lg text-green-300 font-mono text-sm">
+              <p class="mb-2">(primate OR monkey OR "non-human primate") AND (vocalization OR call OR bioacoustic) AND ("deep learning" OR "machine learning" OR "neural network" OR CNN OR RNN)</p>
+              <p class="mb-2">(Amazon OR rainforest OR "tropical forest") AND (acoustic OR sound) AND (monitoring OR detection) AND (automated OR automatic)</p>
+              <p>(conservation OR biodiversity) AND ("passive acoustic monitoring" OR PAM) AND (classification OR recognition) AND (primate OR monkey)</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Formulario de Extracción -->
+      <div>
+        <h3 class="text-2xl font-semibold mb-4 text-green-400">3.5. Formulario de Extracción</h3>
+        <div class="card overflow-x-auto">
+          <table class="min-w-full text-gray-300">
+            <thead>
+              <tr class="bg-black/30 text-left">
+                <th class="px-4 py-2">Campo</th>
+                <th class="px-4 py-2">Descripción</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-800">
+              <tr>
+                <td class="px-4 py-3 font-medium">Información general</td>
+                <td class="px-4 py-3">Autores, título, año, revista/conferencia, país</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3 font-medium">Especies estudiadas</td>
+                <td class="px-4 py-3">Géneros y especies de primates analizados</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3 font-medium">Ubicación geográfica</td>
+                <td class="px-4 py-3">Región, tipo de bosque, condiciones ambientales</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3 font-medium">Metodología</td>
+                <td class="px-4 py-3">Técnicas de grabación, preprocesamiento, arquitecturas ML/DL</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3 font-medium">Dataset</td>
+                <td class="px-4 py-3">Tamaño, balanceo, técnicas de aumentación, partición</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3 font-medium">Resultados</td>
+                <td class="px-4 py-3">Precisión, recall, F1-score, matriz de confusión</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3 font-medium">Limitaciones</td>
+                <td class="px-4 py-3">Desafíos reportados, ruido, generalización</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Resultados de Revisión -->
+      <div>
+        <h3 class="text-2xl font-semibold mb-4 text-green-400">3.6. Resultados de Revisión</h3>
+        <div class="space-y-6">
+          <div class="card">
+            <h4 class="text-xl font-medium mb-4">Arquitecturas predominantes</h4>
+            <div class="relative overflow-hidden h-52 rounded-lg bg-black/40 border border-gray-700">
+              <div class="absolute inset-0 flex items-center justify-center">
+                <p class="text-gray-400">Gráfico comparativo de arquitecturas (Próximamente)</p>
+              </div>
+            </div>
+            <div class="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div class="p-3 bg-black/20 rounded-lg border border-gray-800">
+                <h5 class="font-medium text-green-400 mb-2">CNN + Espectrogramas</h5>
+                <p class="text-sm text-gray-300">Predominante en el 58% de los estudios. Rendimiento promedio: 82-91% precisión.</p>
+              </div>
+              <div class="p-3 bg-black/20 rounded-lg border border-gray-800">
+                <h5 class="font-medium text-green-400 mb-2">RNN/LSTM</h5>
+                <p class="text-sm text-gray-300">Utilizados en el 27% de los estudios. Mejor adaptación a vocalizaciones variables.</p>
+              </div>
+              <div class="p-3 bg-black/20 rounded-lg border border-gray-800">
+                <h5 class="font-medium text-green-400 mb-2">Transfer Learning</h5>
+                <p class="text-sm text-gray-300">Emergente (15%), utilizando modelos pre-entrenados en detección de audio general.</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="card">
+            <h4 class="text-xl font-medium mb-3">Desafíos y Soluciones</h4>
+            <div class="overflow-x-auto">
+              <table class="min-w-full text-gray-300">
+                <thead>
+                  <tr class="bg-black/30 text-left">
+                    <th class="px-4 py-2">Desafío</th>
+                    <th class="px-4 py-2">Soluciones Propuestas</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-800">
+                  <tr>
+                    <td class="px-4 py-3 font-medium">Ruido ambiental</td>
+                    <td class="px-4 py-3">Filtros adaptativos, aumento de datos con ruido sintético, enmascaramiento espectral</td>
+                  </tr>
+                  <tr>
+                    <td class="px-4 py-3 font-medium">Datasets limitados</td>
+                    <td class="px-4 py-3">Técnicas de aumento de datos, aprendizaje semi-supervisado, generación sintética</td>
+                  </tr>
+                  <tr>
+                    <td class="px-4 py-3 font-medium">Variabilidad entre individuos</td>
+                    <td class="px-4 py-3">Modelos jerárquicos, características invariantes a pequeñas variaciones</td>
+                  </tr>
+                  <tr>
+                    <td class="px-4 py-3 font-medium">Computación en campo</td>
+                    <td class="px-4 py-3">Modelos optimizados, edge computing, clasificadores de baja potencia</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Conclusiones -->
+      <div>
+        <h3 class="text-2xl font-semibold mb-4 text-green-400">3.7. Conclusiones</h3>
+        <div class="card">
+          <p class="text-gray-300 mb-4">
+            El análisis automatizado de vocalizaciones de primates mediante técnicas de aprendizaje profundo muestra un 
+            avance significativo en los últimos años, con arquitecturas CNN procesando espectrogramas como enfoque predominante. 
+            Sin embargo, los mayores desafíos persisten en:
+          </p>
+          <ul class="list-disc pl-5 space-y-2 text-gray-300 mb-4">
+            <li>Robustez ante condiciones adversas (lluvia, viento, actividad humana)</li>
+            <li>Generalización a nuevas ubicaciones geográficas</li>
+            <li>Discriminación entre especies acústicamente similares</li>
+            <li>Implementación eficiente en hardware de bajo consumo para despliegue en campo</li>
+          </ul>
+          <p class="text-gray-300">
+            Existe una brecha significativa en investigaciones centradas específicamente en la Amazonía peruana, lo que 
+            representa una oportunidad para contribuir con estudios adaptados a la biodiversidad y condiciones acústicas 
+            de esta región específica.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
