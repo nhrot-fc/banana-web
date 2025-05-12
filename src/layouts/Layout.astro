@@ -24,12 +24,12 @@ const { title = "Análisis Bio-Acústico de Primates | Amazonía Peruana" } = As
 	<body class="w-full h-screen bg-dark text-text font-inter overflow-hidden">
 		<div class="flex flex-col h-screen">
 			<!-- Progress bar -->
-			<div id="slideProgress" class="slide-progress" style="width: 0%;"></div>
+			<div id="slideProgress" class="slide-progress" style="width: 0%; height: 2px;"></div>
 			
 			<header class="absolute top-0 z-50 bg-black/90 backdrop-blur-sm w-full">
-				<nav class="container mx-auto px-4 py-3 flex items-center justify-between">
-					<a href="/" class="text-primary font-bold text-xl">BaNaNa-Net</a>
-					<div class="flex space-x-6 text-sm">
+				<nav class="container mx-auto px-4 py-2 flex items-center justify-between">
+					<a href="/" class="text-primary font-bold text-lg">BaNaNa-Net</a>
+					<div class="flex space-x-4 text-xs">
 						<a href="#slide-1" class="hover:text-green-400 transition-colors">Inicio</a>
 						<a href="#slide-2" class="hover:text-green-400 transition-colors">Generalidades</a>
 						<a href="#slide-definicion-problema" class="hover:text-green-400 transition-colors">Marco Referencial</a>
@@ -45,24 +45,24 @@ const { title = "Análisis Bio-Acústico de Primates | Amazonía Peruana" } = As
 			</main>
 			
 			<!-- Navigation controls -->
-			<div class="fixed bottom-8 right-8 flex space-x-4 z-50">
-				<button id="prevSlide" class="bg-primary hover:bg-primary-dark p-3 rounded-full shadow-lg">
-					<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+			<div class="fixed bottom-6 right-6 flex space-x-3 z-50">
+				<button id="prevSlide" class="bg-primary hover:bg-primary-dark p-2 rounded-full shadow-lg">
+					<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
 					</svg>
 				</button>
-				<button id="nextSlide" class="bg-primary hover:bg-primary-dark p-3 rounded-full shadow-lg">
-					<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+				<button id="nextSlide" class="bg-primary hover:bg-primary-dark p-2 rounded-full shadow-lg">
+					<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
 					</svg>
 				</button>
 			</div>
 			
 			<!-- Slide indicator -->
-			<div class="fixed bottom-8 left-1/2 transform -translate-x-1/2 z-50 bg-black/80 backdrop-blur-sm rounded-full px-4 py-1">
-				<span id="currentSlideNumber" class="font-medium text-green-400">1</span>
-				<span class="text-text-muted">/</span>
-				<span id="totalSlides" class="text-text-muted">12</span>
+			<div class="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50 bg-black/80 backdrop-blur-sm rounded-full px-3 py-1">
+				<span id="currentSlideNumber" class="font-medium text-sm text-green-400">1</span>
+				<span class="text-text-muted text-sm">/</span>
+				<span id="totalSlides" class="text-text-muted text-sm">12</span>
 			</div>
 		</div>
 

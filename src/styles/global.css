@@ -35,16 +35,16 @@ body {
 
 /* Buttons */
 .btn-primary {
-  @apply inline-block px-6 py-3 bg-green-700 hover:bg-green-800 text-white rounded-full font-medium transition-colors;
+  @apply inline-block px-4 py-2 bg-green-700 hover:bg-green-800 text-white rounded-full font-medium transition-colors;
 }
 
 .btn-secondary {
-  @apply inline-block px-6 py-3 bg-green-900/70 hover:bg-green-900 text-white rounded-full font-medium border border-green-500 transition-colors;
+  @apply inline-block px-4 py-2 bg-green-900/70 hover:bg-green-900 text-white rounded-full font-medium border border-green-500 transition-colors;
 }
 
 /* Card style */
 .card {
-  @apply bg-gray-900/40 rounded-xl p-6 backdrop-blur-sm border border-gray-800/50;
+  @apply bg-gray-900/40 rounded-xl p-4 backdrop-blur-sm border border-gray-800/50;
 }
 
 /* Section title */
@@ -89,14 +89,14 @@ body {
   }
 
   .btn-primary {
-    @apply bg-green-700 hover:bg-green-800 text-white py-2 px-5 rounded-md transition-colors;
+    @apply bg-green-700 hover:bg-green-800 text-white py-1.5 px-4 rounded-md transition-colors;
   }
 
   .btn-secondary {
-    @apply bg-green-900/70 hover:bg-green-900 text-white py-2 px-5 rounded-md transition-colors;
+    @apply bg-green-900/70 hover:bg-green-900 text-white py-1.5 px-4 rounded-md transition-colors;
   }
 
   .card {
-    @apply bg-gray-900/40 backdrop-blur-sm p-6 rounded-lg border border-gray-800/50;
+    @apply bg-gray-900/40 backdrop-blur-sm p-4 rounded-lg border border-gray-800/50;
   }
 }
