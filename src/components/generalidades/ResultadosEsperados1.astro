@@ -1,0 +1,39 @@
+<div class="space-y-4">
+  <div class="card">
+    <p class="text-gray-300 text-sm mb-4 leading-relaxed">
+      <span class="font-semibold">OE1.</span> Organizar y procesar un conjunto de datos etiquetados estandarizados a partir de las grabaciones y anotaciones existentes, garantizando la coherencia en la localización tiempo-frecuencia, la identificación precisa de especies y la clasificación de vocalizaciones/sílabas.
+    </p>
+    
+    <ul class="space-y-4 text-gray-300 text-sm">
+      <li>
+        <p class="font-semibold text-blue-400">RE1.1.</p>
+        <p class="leading-relaxed">Protocolo estandarizado definido y documentado para la anotación jerárquica (especie, tipo de vocalización/sílaba) y delimitación tiempo-frecuencia de vocalizaciones de primates amazónicos.</p>
+        <p class="mt-2 text-xs text-gray-400"><span class="text-yellow-400">Medio de verificación:</span> Protocolo de anotación documentado.</p>
+        <p class="text-xs text-gray-400"><span class="text-yellow-400">IOV:</span> Documento del protocolo aprobado, detallando criterios unívocos para delimitación tiempo-frecuencia, etiquetado de especies (con referencia a taxonomía) y categorización jerárquica de vocalizaciones/sílabas.</p>
+      </li>
+      
+      <li>
+        <p class="font-semibold text-blue-400">RE1.2.</p>
+        <p class="leading-relaxed">Conjunto de datos acústicos procesado, curado y etiquetado según el protocolo (RE1.1), listo para el entrenamiento y evaluación de modelos de Aprendizaje Profundo.</p>
+        <p class="mt-2 text-xs text-gray-400"><span class="text-yellow-400">Medio de verificación:</span> Conjunto de datos finalizado.</p>
+        <p class="text-xs text-gray-400"><span class="text-yellow-400">IOV:</span> Dataset disponible (formato estándar .txt tipo Raven) con al menos 10 horas de audio anotadas de las 8 especies de primates, siguiendo el protocolo.</p>
+      </li>
+      
+      <li>
+        <p class="font-semibold text-blue-400">RE1.3.</p>
+        <p class="leading-relaxed">Documentación técnica del conjunto de datos, detallando su estructura, metadatos, guías de anotación, y la descripción de las técnicas de pre-procesamiento y aumento de datos aplicadas.</p>
+        <p class="mt-2 text-xs text-gray-400"><span class="text-yellow-400">Medio de verificación:</span> Documentación del pre-procesamiento y aumento de datos.</p>
+        <p class="text-xs text-gray-400"><span class="text-yellow-400">IOV:</span> Documento que describe los pasos de filtrado, normalización y técnicas de aumento (si se usaron) aplicados a los datos.</p>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<style>
+  .card {
+    background-color: rgba(17, 24, 39, 0.7);
+    border: 1px solid rgba(55, 65, 81, 0.5);
+    border-radius: 0.5rem;
+    padding: 1.25rem;
+  }
+</style>

@@ -15,6 +15,9 @@ import Introduccion from "../components/generalidades/Introduccion.astro";
 import Problematica from "../components/generalidades/Problematica.astro";
 import ArbolProblemas from "../components/generalidades/ArbolProblemas.astro";
 import Objetivos from "../components/generalidades/Objetivos.astro";
+import ResultadosEsperados1 from "../components/generalidades/ResultadosEsperados1.astro";
+import ResultadosEsperados2 from "../components/generalidades/ResultadosEsperados2.astro";
+import ResultadosEsperados3 from "../components/generalidades/ResultadosEsperados3.astro";
 import Metodos from "../components/generalidades/Metodos.astro";
 import Herramientas from "../components/generalidades/Herramientas.astro";
 import DefinicionProblema from "../components/marco/DefinicionProblema.astro";
@@ -44,32 +47,32 @@ import CriteriosExclusion from "../components/estado_arte/CriteriosExclusion.ast
   </Slide>
 
   <!-- Sección de Generalidades -->
-  <Slide
-    id="slide-intro"
-    title="Introducción"
-  >
+  <Slide id="slide-intro" title="Introducción">
     <Introduccion />
   </Slide>
 
-  <Slide
-    id="slide-problematica"
-    title="Problematica"
-  >
+  <Slide id="slide-problematica" title="Problematica">
     <Problematica />
   </Slide>
 
-  <Slide
-    id="slide-arbol-problemas"
-    title="Árbol de Problemas"
-  >
+  <Slide id="slide-arbol-problemas" title="Árbol de Problemas">
     <ArbolProblemas />
   </Slide>
 
-  <Slide
-    id="slide-objetivos"
-    title="Objetivos"
-  >
+  <Slide id="slide-objetivos" title="Objetivos">
     <Objetivos />
+  </Slide>
+
+  <Slide id="slide-resultados-esperados-1" title="Resultados Esperados (OE1)">
+    <ResultadosEsperados1 />
+  </Slide>
+
+  <Slide id="slide-resultados-esperados-2" title="Resultados Esperados (OE2)">
+    <ResultadosEsperados2 />
+  </Slide>
+
+  <Slide id="slide-resultados-esperados-3" title="Resultados Esperados (OE3)">
+    <ResultadosEsperados3 />
   </Slide>
 
   <Slide
@@ -89,24 +92,15 @@ import CriteriosExclusion from "../components/estado_arte/CriteriosExclusion.ast
   </Slide>
 
   <!-- Marco Referencial Section - Now Divided into 3 Slides -->
-  <Slide
-    id="slide-definicion-problema"
-    title="Definición Formal del Problema"
-  >
+  <Slide id="slide-definicion-problema" title="Definición Formal del Problema">
     <DefinicionProblema />
   </Slide>
 
-  <Slide
-    id="slide-marco-teorico"
-    title="Marco Teórico"
-  >
+  <Slide id="slide-marco-teorico" title="Marco Teórico">
     <MarcoTeorico />
   </Slide>
 
-  <Slide
-    id="slide-marco-conceptual"
-    title="Marco Conceptual"
-  >
+  <Slide id="slide-marco-conceptual" title="Marco Conceptual">
     <MarcoConceptual />
   </Slide>
 
@@ -123,53 +117,32 @@ import CriteriosExclusion from "../components/estado_arte/CriteriosExclusion.ast
   <!-- Slide 7: Estado del Arte -->
 
   <!-- Estado del Arte Section -->
-  <Slide
-    id="slide-estado-arte-alcance"
-    title="Estado del Arte"
-  >
+  <Slide id="slide-estado-arte-alcance" title="Estado del Arte">
     <AlcanceRevision />
   </Slide>
 
-  <Slide
-    id="slide-estado-arte-preguntas1"
-    title="Estado del Arte"
-  >
+  <Slide id="slide-estado-arte-preguntas1" title="Estado del Arte">
     <PreguntasCentrales1 />
   </Slide>
 
-  <Slide
-    id="slide-estado-arte-preguntas2"
-    title="Estado del Arte"
-  >
+  <Slide id="slide-estado-arte-preguntas2" title="Estado del Arte">
     <PreguntasCentrales2 />
   </Slide>
 
-  <Slide
-    id="slide-estado-arte-busqueda"
-    title="Estado del Arte"
-  >
+  <Slide id="slide-estado-arte-busqueda" title="Estado del Arte">
     <EstrategiaBusqueda />
   </Slide>
 
-  <Slide
-    id="slide-estado-arte-inclusion"
-    title="Estado del Arte"
-  >
+  <Slide id="slide-estado-arte-inclusion" title="Estado del Arte">
     <CriteriosInclusion />
   </Slide>
 
-  <Slide
-    id="slide-estado-arte-exclusion"
-    title="Estado del Arte"
-  >
+  <Slide id="slide-estado-arte-exclusion" title="Estado del Arte">
     <CriteriosExclusion />
   </Slide>
 
   <!-- Slide 10: Referencias -->
-  <Slide
-    id="slide-10"
-    title="4. Referencias"
-  >
+  <Slide id="slide-10" title="4. Referencias">
     <ul class="list-decimal space-y-3 text-text-muted text-base">
       <li>
         Palacios, V., et al. (2021). "Bioacoustic classification of Neotropical

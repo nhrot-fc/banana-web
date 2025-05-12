@@ -1,0 +1,38 @@
+<div class="space-y-4">
+  <div class="card">
+    <p class="text-gray-300 text-sm mb-4 leading-relaxed">
+      <span class="font-semibold">OE3.</span> Comparar la eficiencia potencial del sistema automatizado frente al análisis manual tradicional y otras herramientas relacionadas.
+    </p>
+    
+    <ul class="space-y-4 text-gray-300 text-sm">
+      <li>
+        <p class="font-semibold text-blue-400">RE3.1.</p>
+        <p class="leading-relaxed">Metodología definida para la comparación de eficiencia (incluyendo métricas como tiempo de procesamiento por hora de audio, precisión comparativa, y potencialmente costos estimados) entre el modelo final (RE2.4) y el análisis manual experto.</p>
+        <p class="mt-2 text-xs text-gray-400"><span class="text-yellow-400">Medio de verificación:</span> Scripts/código de evaluación.</p>
+      </li>
+      
+      <li>
+        <p class="font-semibold text-blue-400">RE3.2.</p>
+        <p class="leading-relaxed">Análisis comparativo cuantitativo y cualitativo del rendimiento (precisión, recall, F1-score), velocidad y escalabilidad del modelo final (RE2.4) aplicado a un conjunto de prueba, contrastado con los resultados y tiempos del análisis manual sobre el mismo conjunto.</p>
+        <p class="mt-2 text-xs text-gray-400"><span class="text-yellow-400">Medio de verificación:</span> Tablas y gráficos de resultados.</p>
+        <p class="text-xs text-gray-400"><span class="text-yellow-400">IOV:</span> Métricas cuantitativas de rendimiento (Precisión, Recall, F1-score) para detección y clasificación (por especie y tipo de vocalización) calculadas sobre un conjunto de datos de prueba definido. Análisis cualitativo con ejemplos visuales (espectrogramas con anotaciones manuales contra automáticas).</p>
+      </li>
+      
+      <li>
+        <p class="font-semibold text-blue-400">RE3.3.</p>
+        <p class="leading-relaxed">Informe final de investigación integrando los hallazgos de OE1, OE2 y OE3, discutiendo las ventajas, limitaciones, implicaciones prácticas del sistema desarrollado y futuras líneas de mejora o investigación.</p>
+        <p class="mt-2 text-xs text-gray-400"><span class="text-yellow-400">Medio de verificación:</span> Informe de evaluación final.</p>
+        <p class="text-xs text-gray-400"><span class="text-yellow-400">IOV:</span> Documento de informe entregado y aprobado. Código utilizado para calcular las métricas de evaluación disponible. Sección comparativa que estima la ganancia en eficiencia respecto al análisis manual y discute el rendimiento en relación a benchmarks o herramientas existentes.</p>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<style>
+  .card {
+    background-color: rgba(17, 24, 39, 0.7);
+    border: 1px solid rgba(55, 65, 81, 0.5);
+    border-radius: 0.5rem;
+    padding: 1.25rem;
+  }
+</style>

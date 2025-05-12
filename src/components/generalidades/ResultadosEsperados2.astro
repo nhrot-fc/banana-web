@@ -1,0 +1,50 @@
+<div class="space-y-4">
+  <div class="card">
+    <p class="text-gray-300 text-sm mb-4 leading-relaxed">
+      <span class="font-semibold">OE2.</span> Diseñar y entrenar un modelo de Aprendizaje Profundo, basado en los hallazgos de OE1, capaz de realizar la detección tiempo-frecuencia y la clasificación jerárquica fina de vocalizaciones de primates de forma simultánea o secuencial.
+    </p>
+    
+    <ul class="space-y-4 text-gray-300 text-sm">
+      <li>
+        <p class="font-semibold text-blue-400">RE2.1.</p>
+        <p class="leading-relaxed">Selección sustentada de arquitecturas de Aprendizaje Profundo (e.g., mínimo tres candidatas como CNN, CRNN, Transformers) a ser implementadas, con base en la revisión del estado del arte y los requisitos del problema.</p>
+        <p class="mt-2 text-xs text-gray-400"><span class="text-yellow-400">Medio de verificación:</span> Documentación de la arquitectura y entrenamiento.</p>
+      </li>
+      
+      <li>
+        <p class="font-semibold text-blue-400">RE2.2.</p>
+        <p class="leading-relaxed">Pipeline de software implementado y documentado para el preprocesamiento de datos, entrenamiento distribuido y evaluación de las arquitecturas seleccionadas (RE2.1) utilizando el conjunto de datos (RE1.2).</p>
+        <p class="mt-2 text-xs text-gray-400"><span class="text-yellow-400">Medio de verificación:</span> Código fuente del modelo implementado.</p>
+      </li>
+      
+      <li>
+        <p class="font-semibold text-blue-400">RE2.3.</p>
+        <p class="leading-relaxed">Informe técnico de resultados de entrenamiento y evaluación, comparando el rendimiento (e.g., métricas de detección y clasificación como mAP, F1-score por clase) de las arquitecturas implementadas.</p>
+        <p class="mt-2 text-xs text-gray-400"><span class="text-yellow-400">Medio de verificación:</span> Documentación de la arquitectura y entrenamiento.</p>
+      </li>
+      
+      <li>
+        <p class="font-semibold text-blue-400">RE2.4.</p>
+        <p class="leading-relaxed">Modelo final de Aprendizaje Profundo optimizado, entrenado y validado, seleccionado como el de mejor rendimiento según la evaluación (RE2.3), capaz de generar predicciones de detección y clasificación jerárquica.</p>
+        <p class="mt-2 text-xs text-gray-400"><span class="text-yellow-400">Medio de verificación:</span> Modelo entrenado y guardado.</p>
+        <p class="text-xs text-gray-400"><span class="text-yellow-400">IOV:</span> Documento o sección en informe/tesis que especifica la arquitectura y los hiper parámetros de entrenamiento utilizados.</p>
+      </li>
+
+      <li>
+        <p class="font-semibold text-blue-400">RE2.5.</p>
+        <p class="leading-relaxed">Código fuente del pipeline (RE2.2) y del modelo final (RE2.4) disponible en un repositorio.</p>
+        <p class="mt-2 text-xs text-gray-400"><span class="text-yellow-400">Medio de verificación:</span> Repositorio de código y demostración de generación de anotaciones.</p>
+        <p class="text-xs text-gray-400"><span class="text-yellow-400">IOV:</span> Repositorio de código (GitHub) con el script del modelo funcional y accesible. Ejecución exitosa del modelo sobre un subconjunto de datos de prueba generando archivos de salida con anotaciones que incluyen coordenadas tiempo-frecuencia, etiqueta de especie y etiqueta de tipo de vocalización.</p>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<style>
+  .card {
+    background-color: rgba(17, 24, 39, 0.7);
+    border: 1px solid rgba(55, 65, 81, 0.5);
+    border-radius: 0.5rem;
+    padding: 1.25rem;
+  }
+</style>
