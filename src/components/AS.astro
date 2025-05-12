@@ -1,0 +1,27 @@
+---
+import PrimateSlide from './PrimateSlide.astro';
+import { Image } from 'astro:assets';
+
+// Import AS assets
+import asImage from '../assets/AS/as.jpg';
+import asAudioFile from '../assets/AS/20240120_053301.wav';
+import asAnnotations from '../assets/AS/20240120_053301.txt?raw';
+import asReference from '../assets/AS/ref.txt?raw';
+
+const subtitle = "Bolivian red howler / Mono aullador rojo boliviano / Alouatta sara";
+
+// Create a modified species object with imported assets
+const speciesAssets = {
+  image: asImage,
+  audio: asAudioFile,
+  annotations: asAnnotations,
+  reference: asReference
+};
+---
+
+<PrimateSlide 
+  speciesCode="AS"
+  subtitle={subtitle}
+  assets={speciesAssets}
+  bgClass="bg-gradient-to-b from-gray-900 to-black"
+/> 

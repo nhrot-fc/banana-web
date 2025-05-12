@@ -1,0 +1,40 @@
+---
+interface Props {
+  id: string;
+  title?: string;
+  subtitle?: string;
+  bgClass?: string;
+}
+
+const { 
+  id, 
+  title, 
+  subtitle,
+  bgClass = "bg-gray-900" 
+} = Astro.props;
+---
+
+<section id={id} class={`slide h-screen w-full flex flex-col justify-center snap-start ${bgClass}`}>
+  <div class="container mx-auto px-8 py-16">
+    {title && 
+      <h2 class="text-4xl md:text-5xl font-bold mb-4 text-green-400">{title}</h2>
+    }
+    {subtitle && 
+      <h3 class="text-xl md:text-2xl mb-8 text-gray-300">{subtitle}</h3>
+    }
+    <div class="slide-content">
+      <slot />
+    </div>
+  </div>
+  
+  <!-- Slide number indicator -->
+  <div class="absolute bottom-4 left-4 text-sm text-gray-500">
+    {id.replace('slide-', '')}
+  </div>
+</section>
+
+<style>
+  .slide-content {
+    font-size: 1.25rem;
+  }
+</style> 

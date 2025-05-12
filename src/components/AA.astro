@@ -1,0 +1,27 @@
+---
+import PrimateSlide from './PrimateSlide.astro';
+import { Image } from 'astro:assets';
+
+// Import AA assets
+import aaImage from '../assets/AA/aa.jpg';
+import aaAudioFile from '../assets/AA/20240117_051057.wav';
+import aaAnnotations from '../assets/AA/20240117_051057.txt?raw';
+import aaReference from '../assets/AA/ref.txt?raw';
+
+const subtitle = "Night monkey / Mono nocturno / Aotus azarae";
+
+// Create a modified species object with imported assets
+const speciesAssets = {
+  image: aaImage,
+  audio: aaAudioFile,
+  annotations: aaAnnotations,
+  reference: aaReference
+};
+---
+
+<PrimateSlide 
+  speciesCode="AA"
+  subtitle={subtitle}
+  assets={speciesAssets}
+  bgClass="bg-gradient-to-b from-black to-gray-900"
+/> 

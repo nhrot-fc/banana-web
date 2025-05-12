@@ -1,0 +1,5 @@
+Selection	View	Channel	Begin Time (s)	End Time (s)	Low Freq (Hz)	High Freq (Hz)	Inband Power (dB FS)	Species	Call type	Rating	Reference
+1	Spectrogram 1	1	1.789365731	1.892598370	5401.800	7438.600	-29.01	LW	AA	A	
+2	Spectrogram 1	1	2.691422357	2.794654995	5401.800	7438.600	-60.31		noise		1
+3	Spectrogram 1	1	20.557990213	20.631727812	6110.200	8589.800	-33.82	LW	AA	A	
+4	Spectrogram 1	1	26.138457751	26.212195350	6110.200	8589.800	-58.35		noise		3

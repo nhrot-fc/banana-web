@@ -1,0 +1,58 @@
+---
+import Slide from './Slide.astro';
+import PrimateShowcase from './PrimateShowcase.astro';
+import { primateSpecies } from '../data/primateSpecies';
+
+interface Props {
+  speciesCode: string;
+  title?: string;
+  subtitle?: string;
+  bgClass?: string;
+  assets?: {
+    image: any;
+    audio?: any;
+    annotations?: string;
+    reference?: string;
+  };
+}
+
+const { 
+  speciesCode, 
+  title, 
+  subtitle,
+  bgClass = "bg-gradient-to-b from-gray-900 to-black",
+  assets
+} = Astro.props;
+
+// Find the species by code
+const species = primateSpecies.find(s => s.code === speciesCode);
+
+if (!species) {
+  throw new Error(`Species with code ${speciesCode} not found`);
+}
+
+// Generate slide ID based on species code
+const slideId = `slide-${speciesCode.toLowerCase()}`;
+
+// Default title if not provided
+const slideTitle = title || `${species.english} (${species.scientific})`;
+
+// Merge assets with species data if provided
+const mergedSpecies = assets ? { ...species, ...{ 
+  image: assets.image, 
+  calls: species.calls.map((call, index) => ({
+    ...call,
+    audio: index === 0 && assets.audio ? assets.audio : call.audio,
+    annotations: index === 0 && assets.annotations ? assets.annotations : call.annotations
+  }))
+}} : species;
+---
+
+<Slide 
+  id={slideId}
+  title={slideTitle}
+  subtitle={subtitle}
+  bgClass={bgClass}
+>
+  <PrimateShowcase species={mergedSpecies} />
+</Slide> 

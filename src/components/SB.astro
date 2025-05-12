@@ -1,0 +1,27 @@
+---
+import PrimateSlide from './PrimateSlide.astro';
+import { Image } from 'astro:assets';
+
+// Import SB assets
+import sbImage from '../assets/SB/sb.jpg';
+import sbAudioFile from '../assets/SB/20231218.wav';
+import sbAnnotations from '../assets/SB/20231218.txt?raw';
+import sbReference from '../assets/SB/ref.txt?raw';
+
+const subtitle = "Bolivian squirrel monkey / Mono ardilla boliviano / Saimiri boliviensis";
+
+// Create a modified species object with imported assets
+const speciesAssets = {
+  image: sbImage,
+  audio: sbAudioFile,
+  annotations: sbAnnotations,
+  reference: sbReference
+};
+---
+
+<PrimateSlide 
+  speciesCode="SB"
+  subtitle={subtitle}
+  assets={speciesAssets}
+  bgClass="bg-gradient-to-b from-gray-900 to-black"
+/> 

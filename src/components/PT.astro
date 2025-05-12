@@ -1,0 +1,27 @@
+---
+import PrimateSlide from './PrimateSlide.astro';
+import { Image } from 'astro:assets';
+
+// Import PT assets
+import ptImage from '../assets/PT/pt.jpg';
+import ptAudioFile from '../assets/PT/20231214_0630.wav';
+import ptAnnotations from '../assets/PT/20231214_0630.txt?raw';
+import ptReference from '../assets/PT/ref.txt?raw';
+
+const subtitle = "Toppin's titi monkey / Mono tití de Toppin / Plecturocebus toppini";
+
+// Create a modified species object with imported assets
+const speciesAssets = {
+  image: ptImage,
+  audio: ptAudioFile,
+  annotations: ptAnnotations,
+  reference: ptReference
+};
+---
+
+<PrimateSlide 
+  speciesCode="PT"
+  subtitle={subtitle}
+  assets={speciesAssets}
+  bgClass="bg-gradient-to-b from-black to-gray-900"
+/> 

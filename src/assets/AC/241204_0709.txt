@@ -1,0 +1,2 @@
+Selection	View	Channel	Begin Time (s)	End Time (s)	Low Freq (Hz)	High Freq (Hz)	Inband Power (dB FS)	Begin File	File Offset (s)	Species	Call type
+1	Spectrogram 1	1	0.183598008	1.397066091	0.000	3373.000	-70.04	241204_0709.wav	0.1836	AC	
