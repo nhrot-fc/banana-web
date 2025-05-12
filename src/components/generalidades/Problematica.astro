@@ -1,0 +1,55 @@
+---
+import etiquetadoManual from "../../assets/generalidades/Problematica/etiquetado_manual.png";
+---
+
+<div class="space-y-4">
+  <div class="card">
+    <h3 class="text-2xl font-semibold mb-4 text-green-400 text-center">
+      La Problemática del Monitoreo Acústico Pasivo
+    </h3>
+
+    <!-- Imagen central destacada y ampliada -->
+    <div class="mb-5 w-[80%] mx-auto">
+      <div class="bg-black/20 rounded-lg overflow-hidden border border-gray-700">
+        <img
+          src={etiquetadoManual.src}
+          alt="Análisis manual de espectrogramas"
+          class="w-full object-cover opacity-90 hover:opacity-100 transition-opacity"
+        />
+        <p class="text-sm text-gray-300 text-center py-2 bg-black/50">
+          El gran desafío: Etiquetado manual de vocalizaciones mediante inspección visual de espectrogramas
+        </p>
+      </div>
+    </div>
+
+    <!-- Contexto simplificado en dos columnas -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
+      <div>
+        <h4 class="text-lg font-medium mb-2">El Cuello de Botella</h4>
+        <ul class="list-disc pl-5 space-y-1 text-gray-300 text-sm">
+          <li>Recolección de datos supera enormemente la capacidad de análisis</li>
+          <li>Proceso manual lento, costoso y dependiente de expertos</li>
+          <li>Principal obstáculo para el monitoreo a gran escala</li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-lg font-medium mb-2">La Solución Potencial</h4>
+        <ul class="list-disc pl-5 space-y-1 text-gray-300 text-sm">
+          <li>Deep Learning revoluciona la detección acústica</li>
+          <li>Falta de modelos específicos para primates neotropicales</li>
+          <li>Ambientes acústicos amazónicos presentan desafíos únicos</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .card {
+    background-color: rgba(17, 24, 39, 0.7);
+    border: 1px solid rgba(55, 65, 81, 0.5);
+    border-radius: 0.5rem;
+    padding: 1.25rem;
+  }
+</style>

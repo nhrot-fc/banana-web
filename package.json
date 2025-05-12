@@ -11,6 +11,7 @@
   "dependencies": {
     "@astrojs/tailwind": "^5.0.0",
     "astro": "^5.7.12",
+    "devicon": "^2.16.0",
     "spectrogram": "^0.0.7",
     "tailwindcss": "^3.3.5",
     "wavesurfer.js": "^7.9.5"

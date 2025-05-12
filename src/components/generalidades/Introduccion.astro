@@ -1,0 +1,92 @@
+---
+import amazonRainforest from "../../assets/generalidades/Introduction/amazon-rainforest.jpg";
+import audiomoth from "../../assets/generalidades/Introduction/audiomoth.webp";
+---
+
+<div class="space-y-8">
+  <!-- Título e Introducción General con imagen ampliada -->
+  <div class="card">
+    <h3 class="text-2xl font-semibold mb-4 text-green-400 text-center">
+      1.1. Monitoreo Acústico de Primates
+    </h3>
+    
+    <div class="mb-6">
+      <div class="rounded-lg overflow-hidden border border-green-800 shadow-lg shadow-green-900/30 hover:shadow-green-800/40 transition-all duration-300">
+        <img
+          src={amazonRainforest.src}
+          alt="Amazonía Peruana"
+          class="w-full h-64 md:h-80 object-cover opacity-90 hover:opacity-100 hover:scale-105 transition-all duration-500"
+        />
+        <div class="p-2 bg-black/70 text-xs text-gray-400">
+          <p>Mongabay. (2024). Amazonía Peruana [Fotografía]. Recuperado de https://imgs.mongabay.com</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="md:px-4">
+      <p class="mb-4 text-gray-300">
+        La Amazonía Peruana, rica en biodiversidad y primates, enfrenta
+        amenazas crecientes. El monitoreo efectivo es vital para la
+        conservación.
+      </p>
+      
+      <div class="p-3 bg-black/30 rounded-lg border border-gray-700">
+        <p class="text-gray-300 italic text-sm">
+          "La conservación efectiva de la biodiversidad amazónica depende de
+          nuestra capacidad para monitorear y entender sus ecosistemas de
+          forma precisa y a gran escala."
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- El Potencial del Monitoreo Acústico Pasivo con imagen ampliada -->
+  <div class="card">
+    <h3 class="text-2xl font-semibold mb-4 text-green-400 text-center">
+      1.2. El Potencial del Monitoreo Acústico Pasivo (PAM)
+    </h3>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div>
+        <div class="rounded-lg overflow-hidden border border-green-800 shadow-lg shadow-green-900/30 hover:shadow-green-800/40 transition-all duration-300 h-full">
+          <img
+            src={audiomoth.src}
+            alt="Dispositivo AudioMoth"
+            class="w-full h-56 md:h-72 object-cover opacity-90 hover:opacity-100 hover:scale-105 transition-all duration-500"
+          />
+          <div class="p-2 bg-black/70 text-xs text-gray-400">
+            <p>Labmaker. (2023). Dispositivo AudioMoth [Fotografía]. Recuperado de https://www.labmaker.org</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="flex flex-col justify-center">
+        <p class="text-gray-300 mb-4 text-sm">
+          La Amazonía Peruana representa un epicentro de biodiversidad con especies de primates que requieren estrategias efectivas de monitoreo para su conservación.
+        </p>
+        
+        <h4 class="text-lg font-medium mb-2 text-green-300">Ventajas del PAM</h4>
+        <ul class="list-disc pl-5 space-y-2 text-gray-300 text-sm">
+          <li>Monitoreo no invasivo, ideal para especies elusivas y grandes áreas</li>
+          <li>Sensores de bajo costo (AudioMoths) recolectan grandes volúmenes de datos</li>
+          <li>Captura de datos continua con mínima presencia humana</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .card {
+    background-color: rgba(17, 24, 39, 0.8);
+    border: 1px solid rgba(55, 65, 81, 0.6);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+  }
+  
+  .card:hover {
+    box-shadow: 0 0 15px rgba(16, 185, 129, 0.15);
+  }
+</style>
+

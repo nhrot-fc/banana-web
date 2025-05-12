@@ -6,35 +6,64 @@ interface Props {
   bgClass?: string;
 }
 
-const { 
-  id, 
-  title, 
+const {
+  id,
+  title,
   subtitle,
-  bgClass = "bg-gradient-to-b from-[#051c0a] to-[#040705]" 
+  bgClass = "bg-gradient-to-b from-[#051c0a] to-[#040705]",
 } = Astro.props;
 ---
 
-<section id={id} class={`slide h-screen w-full flex flex-col justify-center snap-start ${bgClass}`}>
+<section
+  id={id}
+  class={`slide h-screen w-full flex flex-col justify-center snap-start ${bgClass}`}
+>
   <div class="container mx-auto px-8 py-16">
-    {title && 
-      <h2 class="text-4xl md:text-5xl font-bold mb-4 text-green-400">{title}</h2>
+    {
+      title && (
+        <h2 class="text-4xl md:text-5xl font-bold mb-4 text-green-400">
+          {title}
+        </h2>
+      )
     }
-    {subtitle && 
-      <h3 class="text-xl md:text-2xl mb-8 text-green-100/80">{subtitle}</h3>
+    {
+      subtitle && (
+        <h3 class="text-xl md:text-2xl mb-8 text-green-100/80">{subtitle}</h3>
+      )
     }
     <div class="slide-content">
       <slot />
     </div>
   </div>
-  
-  <!-- Slide number indicator -->
-  <div class="absolute bottom-4 left-4 text-sm text-green-700">
-    {id.replace('slide-', '')}
-  </div>
 </section>
 
 <style>
   .slide-content {
-    font-size: 1.25rem;
+    /*font-size: 1.35rem;*/
+    font-size: 1.2rem;
   }
-</style> 
+
+  /* Aumentar tamaño de fuente global para textos */
+  :global(.text-sm) {
+    /*font-size: 1.35rem !important;*/
+  }
+
+  :global(.text-xs) {
+    /*font-size: 1.1rem !important;*/
+  }
+
+  :global(p),
+  :global(li) {
+    /*font-size: 1.2rem;*/
+    font-size: 1rem;
+  }
+
+  :global(h4) {
+    /*font-size: 1.5rem !important;*/
+  }
+
+  :global(.card) {
+    /*padding: 1.5rem !important;*/
+  }
+</style>
+

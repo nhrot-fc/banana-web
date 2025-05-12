@@ -1,0 +1,210 @@
+---
+
+---
+
+<section id="marco-teorico" class="section">
+  <div class="container mx-auto px-4">
+    <div class="card">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div>
+          <h4 class="text-xl font-medium mb-3">Bioacústica</h4>
+          <p class="text-gray-300 mb-4">
+            La bioacústica es el estudio de la producción, dispersión y
+            recepción de señales acústicas en animales, incluidos los primates.
+            Las vocalizaciones de primates contienen información importante
+            sobre:
+          </p>
+          <ul class="list-disc pl-5 space-y-1 text-gray-300">
+            <li>Comportamientos sociales e interacciones grupales</li>
+            <li>Respuestas ante amenazas y predadores</li>
+            <li>Rituales de apareamiento y comunicación</li>
+            <li>Delimitación territorial</li>
+          </ul>
+          <div class="mt-4">
+            <p class="text-gray-300">
+              Las vocalizaciones de primates varían considerablemente entre
+              especies, con características acústicas distintivas que pueden ser
+              analizadas mediante representaciones tiempo-frecuencia como los
+              espectrogramas.
+            </p>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="text-xl font-medium mb-3">Aprendizaje Profundo</h4>
+          <p class="text-gray-300 mb-4">
+            El aprendizaje profundo (Deep Learning) es una rama del aprendizaje
+            automático basada en redes neuronales artificiales con múltiples
+            capas. En el análisis de audio, las arquitecturas más utilizadas
+            son:
+          </p>
+          <ul class="list-disc pl-5 space-y-1 text-gray-300">
+            <li>
+              Redes Neuronales Convolucionales (CNN) para análisis espectral
+            </li>
+            <li>Redes Recurrentes (RNN, LSTM) para patrones temporales</li>
+            <li>Modelos de atención para características destacadas</li>
+            <li>
+              Arquitecturas híbridas CNN-RNN para captación simultánea de
+              patrones espectrales y temporales
+            </li>
+          </ul>
+          <div class="mt-4">
+            <p class="text-gray-300">
+              Estos modelos pueden aprender automáticamente características
+              discriminativas de las señales acústicas, superando a los métodos
+              tradicionales basados en características predefinidas.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Visual representation of audio processing pipeline -->
+      <div class="mt-8 p-4 rounded-lg bg-black/40 border border-gray-700">
+        <h4 class="text-lg font-medium mb-3 text-center">
+          Pipeline de Procesamiento de Audio
+        </h4>
+        <div class="flex flex-wrap justify-around items-center">
+          <div class="text-center p-3">
+            <div
+              class="w-16 h-16 rounded-full bg-green-800/50 mx-auto flex items-center justify-center mb-2"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-8 w-8 text-green-400"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                  d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"
+                ></path>
+              </svg>
+            </div>
+            <span class="text-sm text-gray-300">Grabación</span>
+          </div>
+
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-4 w-4 text-green-500"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M9 5l7 7-7 7"></path>
+          </svg>
+
+          <div class="text-center p-3">
+            <div
+              class="w-16 h-16 rounded-full bg-green-800/50 mx-auto flex items-center justify-center mb-2"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-8 w-8 text-green-400"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                  d="M3 4h13M3 8h9m-9 4h6m4 0l4-4m0 0l4 4m-4-4v12"></path>
+              </svg>
+            </div>
+            <span class="text-sm text-gray-300">Filtrado</span>
+          </div>
+
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-4 w-4 text-green-500"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M9 5l7 7-7 7"></path>
+          </svg>
+
+          <div class="text-center p-3">
+            <div
+              class="w-16 h-16 rounded-full bg-green-800/50 mx-auto flex items-center justify-center mb-2"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-8 w-8 text-green-400"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                  d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+                ></path>
+              </svg>
+            </div>
+            <span class="text-sm text-gray-300">Extracción</span>
+          </div>
+
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-4 w-4 text-green-500"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M9 5l7 7-7 7"></path>
+          </svg>
+
+          <div class="text-center p-3">
+            <div
+              class="w-16 h-16 rounded-full bg-green-800/50 mx-auto flex items-center justify-center mb-2"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-8 w-8 text-green-400"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                  d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"
+                ></path>
+              </svg>
+            </div>
+            <span class="text-sm text-gray-300">Clasificación</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .card {
+    background-color: rgba(17, 24, 39, 0.7);
+    border: 1px solid rgba(55, 65, 81, 0.5);
+    border-radius: 0.5rem;
+    padding: 1.25rem;
+  }
+</style>
+

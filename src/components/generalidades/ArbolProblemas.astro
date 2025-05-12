@@ -1,0 +1,193 @@
+---
+---
+
+<div class="space-y-6">
+  <!-- Árbol de Problemas - Diagrama Visual -->
+  <div class="card">
+    <div class="problem-tree">
+      <!-- Efectos -->
+      <div class="problem-section problem-effects">
+        <div class="section-title">
+          <span class="badge bg-red-800 text-white">Efectos</span>
+        </div>
+        <div class="problem-nodes">
+          <div class="problem-node effect-node">
+            <div class="node-content">
+              <h4>
+                Infrautilización de Datos Acústicos Masivos y Oportunidades
+                Perdidas para la Gestión Adaptativa de la Biodiversidad
+              </h4>
+            </div>
+          </div>
+          <div class="problem-node effect-node">
+            <div class="node-content">
+              <h4>
+                Latencia en la Generación de Conocimiento Ecológico y Limitación
+                de la Capacidad de Respuesta Científica
+              </h4>
+            </div>
+          </div>
+          <div class="problem-node effect-node">
+            <div class="node-content">
+              <h4>
+                El análisis acústico se vuelve una actividad laboriosa, costosa
+                y sujeta a error humano
+              </h4>
+            </div>
+          </div>
+        </div>
+        <div class="connector-down"></div>
+      </div>
+
+      <!-- Problema Central -->
+      <div class="problem-section problem-central">
+        <div class="problem-node central-node">
+          <div class="node-content">
+            <h4 class="text-xl font-bold">
+              La ineficiencia inherente al análisis manual de los enormes
+              volúmenes de datos generados por el Monitoreo Acústico Pasivo
+              (PAM)
+            </h4>
+          </div>
+        </div>
+        <div class="connector-down"></div>
+      </div>
+
+      <!-- Causas -->
+      <div class="problem-section problem-causes">
+        <div class="section-title">
+          <span class="badge bg-yellow-700 text-white">Causas</span>
+        </div>
+        <div class="problem-nodes">
+          <div class="problem-node cause-node">
+            <div class="node-content">
+              <h4>
+                Ausencia de modelos de segmentación en tiempo-frecuencia y
+                clasificación de sílabas entrenados para especies de primates
+                neotropicales endémicas de la Amazonia
+              </h4>
+            </div>
+          </div>
+          <div class="problem-node cause-node">
+            <div class="node-content">
+              <h4>
+                Dependencia del Etiquetado Manual Experto y sus Limitaciones
+                Inherentes (Escalabilidad, Subjetividad, Costo)
+              </h4>
+            </div>
+          </div>
+          <div class="problem-node cause-node">
+            <div class="node-content">
+              <h4>
+                Ausencia de Estándares y Protocolos para la Anotación Semántica
+                de Eventos Bioacústicos
+              </h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .card {
+    background-color: rgba(17, 24, 39, 0.7);
+    border: 1px solid rgba(55, 65, 81, 0.5);
+    border-radius: 0.5rem;
+    padding: 1.25rem;
+  }
+
+  /* Estilos para el árbol de problemas */
+  .problem-tree {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .problem-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+  }
+
+  .section-title {
+    margin-bottom: 1rem;
+  }
+
+  .badge {
+    padding: 0.25rem 0.75rem;
+    border-radius: 0.25rem;
+    font-weight: 600;
+    font-size: 0.875rem;
+  }
+
+  .problem-nodes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .problem-node {
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    width: 100%;
+    max-width: 380px;
+    transition: all 0.3s ease;
+  }
+
+  .problem-node:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  }
+
+  .node-content {
+    text-align: center;
+  }
+
+  .node-content h4 {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+  }
+
+  .node-content p {
+    font-size: 0.75rem;
+    color: #9ca3af;
+  }
+
+  .central-node {
+    border: 2px solid #10b981;
+    background-color: rgba(16, 185, 129, 0.1);
+  }
+
+  .effect-node {
+    border: 2px solid #991b1b;
+    background-color: rgba(153, 27, 27, 0.1);
+  }
+
+  .cause-node {
+    border: 2px solid #b45309;
+    background-color: rgba(180, 83, 9, 0.1);
+  }
+
+  .connector-down {
+    height: 2rem;
+    width: 2px;
+    background-color: #6b7280;
+    margin: 0.5rem 0;
+  }
+
+  @media (max-width: 768px) {
+    .problem-nodes {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+</style> 
