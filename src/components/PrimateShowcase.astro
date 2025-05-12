@@ -19,6 +19,7 @@ interface Species {
   image: string | any;
   calls: Call[];
   acousticCharacteristics: string;
+  reference?: string;
 }
 
 const { species } = Astro.props as { species: Species };
@@ -28,6 +29,15 @@ const isImageImported = typeof species.image === 'object';
 
 // Generate unique spectrogram ID for this species
 const uniqueID = Math.random().toString(36).substring(2, 9);
+
+// Format reference URL as APA citation
+let formattedReference = '';
+if (species.reference) {
+  const referenceUrl = species.reference.trim();
+  const currentYear = new Date().getFullYear();
+  const domain = new URL(referenceUrl).hostname.replace('www.', '');
+  formattedReference = `${species.scientific} [Photograph]. (${currentYear}). Retrieved from ${domain}`;
+}
 ---
 
 <div class="species-showcase bg-gray-900/40 rounded-lg p-6 mb-8 relative overflow-hidden border border-gray-800/50" data-species-code={species.code} id={`showcase-${species.code}-${uniqueID}`}>
@@ -53,6 +63,21 @@ const uniqueID = Math.random().toString(36).substring(2, 9);
         </p>
         <div class="hidden species-data" data-code={species.code} data-uid={uniqueID}></div>
       </div>
+      
+      <!-- Image reference citation in APA format -->
+      {species.reference && (
+        <div class="image-reference mt-3">
+          <details class="text-xs">
+            <summary class="text-green-400/60 cursor-pointer hover:text-green-400/80">Image citation</summary>
+            <p class="text-green-200/60 mt-1 pl-2 border-l-2 border-green-900/40 font-mono leading-tight">
+              {formattedReference}
+              <a href={species.reference} target="_blank" rel="noopener noreferrer" class="block mt-1 text-blue-400/80 hover:text-blue-400 truncate">
+                {species.reference}
+              </a>
+            </p>
+          </details>
+        </div>
+      )}
     </div>
 
     <!-- Acoustic information and visualizations -->

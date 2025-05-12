@@ -40,6 +40,7 @@ const slideTitle = title || `${species.english} (${species.scientific})`;
 // Merge assets with species data if provided
 const mergedSpecies = assets ? { ...species, ...{ 
   image: assets.image, 
+  reference: assets.reference,
   calls: species.calls.map((call, index) => ({
     ...call,
     audio: index === 0 && assets.audio ? assets.audio : call.audio,
