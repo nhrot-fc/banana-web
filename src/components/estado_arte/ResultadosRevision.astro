@@ -1,129 +1,201 @@
 ---
-
+// Importar Font Awesome localmente
+import '@fortawesome/fontawesome-free/css/all.min.css';
 ---
 
 <div class="space-y-6">
   <div class="card bg-gray-900/30">
-    <p class="text-lg mb-6">
-      Principales hallazgos de la revisión sistemática sobre métodos
-      automatizados para detección y clasificación de vocalizaciones de
-      primates.
-    </p>
+    <!-- P1: Estrategias de Aprendizaje Profundo para detección -->
+    <div class="mb-8">
+      <div class="flex items-center mb-4 bg-green-900/30 p-2 rounded-lg">
+        <i class="fas fa-brain text-2xl text-green-400 mr-3"></i>
+        <h3 class="text-lg font-medium text-green-300">
+          P1: Estrategias de Detección Tiempo-Frecuencia
+        </h3>
+      </div>
 
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <!-- Arquitecturas -->
+        <div class="bg-gray-900/40 p-4 rounded-lg">
+          <h4 class="flex items-center text-md font-medium mb-3">
+            <i class="fas fa-network-wired text-blue-400 mr-2"></i>
+            <span>Arquitecturas Efectivas</span>
+          </h4>
+          <ul class="space-y-3">
+            <li class="flex items-start">
+              <i class="fas fa-cube text-blue-300 mr-2 mt-1"></i>
+              <div>
+                <span class="font-medium">CNN</span>
+                <p class="text-xs text-gray-300">
+                  Base para procesamiento de espectrogramas
+                </p>
+              </div>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-retweet text-blue-300 mr-2 mt-1"></i>
+              <div>
+                <span class="font-medium">CRNN</span>
+                <p class="text-xs text-gray-300">
+                  Combina CNN + RNN para dependencias temporales
+                </p>
+              </div>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-project-diagram text-blue-300 mr-2 mt-1"></i>
+              <div>
+                <span class="font-medium">ResNet</span>
+                <p class="text-xs text-gray-300">
+                  Bloques residuales para redes profundas
+                </p>
+              </div>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-code-branch text-blue-300 mr-2 mt-1"></i>
+              <div>
+                <span class="font-medium">Transformers</span>
+                <p class="text-xs text-gray-300">
+                  Superior en secuencias largas y relaciones complejas
+                </p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Representaciones -->
+        <div class="bg-gray-900/40 p-4 rounded-lg">
+          <h4 class="flex items-center text-md font-medium mb-3">
+            <i class="fas fa-wave-square text-purple-400 mr-2"></i>
+            <span>Representaciones Robustas</span>
+          </h4>
+          <div class="p-3 bg-gray-800/50 rounded-lg mb-2">
+            <div class="flex items-center">
+              <i class="fas fa-filter text-purple-300 text-lg mr-2"></i>
+              <span class="font-medium">PCEN</span>
+            </div>
+            <p class="text-xs mt-1 text-gray-300">
+              Normalización de Energía por Canal que suprime ruido estacionario
+              y realza eventos transitorios mediante control adaptativo de
+              ganancia y compresión.
+            </p>
+          </div>
+          <div class="flex justify-center my-2">
+            <div class="flex items-center justify-around w-full">
+              <div class="flex flex-col items-center">
+                <i class="fas fa-chart-line text-red-400 text-lg"></i>
+                <span class="text-xs mt-1">Sin PCEN</span>
+              </div>
+              <i class="fas fa-arrow-right text-gray-400"></i>
+              <div class="flex flex-col items-center">
+                <i class="fas fa-chart-bar text-green-400 text-lg"></i>
+                <span class="text-xs mt-1">Con PCEN</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- P2 y P3: Clasificación y Procesamiento -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-      <div class="bg-gray-900/40 p-4 rounded-lg">
-        <h3 class="text-xl font-medium mb-3 text-green-300">
-          Arquitecturas más Efectivas
-        </h3>
-        <ul class="list-disc pl-5 space-y-2 text-sm">
-          <li>
-            Redes CNN con bloques ResNet para extracción de características
-          </li>
-          <li>Modelos híbridos CNN-RNN para capturar patrones temporales</li>
-          <li>Arquitecturas de atención para segmentación temporal precisa</li>
-          <li>Transformers para vocalizaciones de larga duración</li>
-        </ul>
+      <!-- P2: Clasificación jerárquica -->
+      <div>
+        <div class="flex items-center mb-4 bg-blue-900/30 p-2 rounded-lg">
+          <i class="fas fa-sitemap text-2xl text-blue-400 mr-3"></i>
+          <h3 class="text-lg font-medium text-blue-300">
+            P2: Clasificación Jerárquica
+          </h3>
+        </div>
+
+        <div class="bg-gray-900/40 p-4 rounded-lg h-full">
+          <div class="flex justify-center mb-4">
+            <div class="text-center">
+              <i class="fas fa-exclamation-triangle text-amber-400 text-2xl"
+              ></i>
+              <p class="text-sm mt-2">Brecha de investigación identificada</p>
+            </div>
+          </div>
+
+          <p class="text-sm mb-4 text-center">
+            No hay evaluación comparativa específica para clasificación
+            jerárquica (especie + tipo de vocalización)
+          </p>
+
+          <div class="grid grid-cols-2 gap-3">
+            <div class="bg-gray-800/50 p-2 rounded-lg text-center">
+              <i class="fas fa-tags text-blue-300 mb-2"></i>
+              <p class="text-xs">Multi-clase / Multi-etiqueta</p>
+            </div>
+            <div class="bg-gray-800/50 p-2 rounded-lg text-center">
+              <i class="fas fa-layer-group text-blue-300 mb-2"></i>
+              <p class="text-xs">Embeddings para clasificación</p>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div class="bg-gray-900/40 p-4 rounded-lg">
-        <h3 class="text-xl font-medium mb-3 text-green-300">
-          Técnicas de Preprocesamiento
-        </h3>
-        <ul class="list-disc pl-5 space-y-2 text-sm">
-          <li>Filtrado adaptativo para reducción de ruido ambiental</li>
-          <li>
-            Normalización por frecuencia para compensar variaciones de grabación
-          </li>
-          <li>Extracción de características espectrales y temporales</li>
-          <li>Aumento de datos mediante transformaciones acústicas</li>
-        </ul>
-      </div>
-    </div>
+      <!-- P3: Procesamiento de ruido -->
+      <div>
+        <div class="flex items-center mb-4 bg-purple-900/30 p-2 rounded-lg">
+          <i class="fas fa-filter text-2xl text-purple-400 mr-3"></i>
+          <h3 class="text-lg font-medium text-purple-300">
+            P3: Mitigación de Ruido
+          </h3>
+        </div>
 
-    <div class="mt-8 p-5 bg-gray-900/50 rounded-lg">
-      <h3 class="text-xl font-medium mb-4 text-green-300 text-center">
-        Rendimiento por Tipo de Modelo
-      </h3>
-      <div class="overflow-x-auto">
-        <table class="min-w-full bg-gray-900/60 rounded-lg">
-          <thead>
-            <tr>
-              <th
-                class="px-4 py-2 text-left text-green-400 font-medium border-b border-gray-700"
-                >Tipo de Modelo</th
-              >
-              <th
-                class="px-4 py-2 text-left text-green-400 font-medium border-b border-gray-700"
-                >Precisión</th
-              >
-              <th
-                class="px-4 py-2 text-left text-green-400 font-medium border-b border-gray-700"
-                >Recall</th
-              >
-              <th
-                class="px-4 py-2 text-left text-green-400 font-medium border-b border-gray-700"
-                >F1-Score</th
-              >
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="px-4 py-2 border-b border-gray-800">CNN</td>
-              <td class="px-4 py-2 border-b border-gray-800">0.82</td>
-              <td class="px-4 py-2 border-b border-gray-800">0.78</td>
-              <td class="px-4 py-2 border-b border-gray-800">0.80</td>
-            </tr>
-            <tr>
-              <td class="px-4 py-2 border-b border-gray-800">CNN-RNN</td>
-              <td class="px-4 py-2 border-b border-gray-800">0.85</td>
-              <td class="px-4 py-2 border-b border-gray-800">0.83</td>
-              <td class="px-4 py-2 border-b border-gray-800">0.84</td>
-            </tr>
-            <tr>
-              <td class="px-4 py-2 border-b border-gray-800">ResNet</td>
-              <td class="px-4 py-2 border-b border-gray-800">0.87</td>
-              <td class="px-4 py-2 border-b border-gray-800">0.84</td>
-              <td class="px-4 py-2 border-b border-gray-800">0.85</td>
-            </tr>
-            <tr>
-              <td class="px-4 py-2">Transformer</td>
-              <td class="px-4 py-2">0.89</td>
-              <td class="px-4 py-2">0.86</td>
-              <td class="px-4 py-2">0.87</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
+        <div class="bg-gray-900/40 p-4 rounded-lg">
+          <div class="mb-4">
+            <div class="flex items-center mb-2">
+              <i class="fas fa-filter text-purple-300 mr-2"></i>
+              <h4 class="text-md font-medium">PCEN</h4>
+            </div>
+            <ul class="space-y-2">
+              <li class="flex items-start">
+                <i class="fas fa-check-circle text-green-400 mr-2 mt-1 text-xs"
+                ></i>
+                <span class="text-xs"
+                  >Suprime ruido estacionario (insectos)</span
+                >
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check-circle text-green-400 mr-2 mt-1 text-xs"
+                ></i>
+                <span class="text-xs">Realza vocalizaciones transitorias</span>
+              </li>
+            </ul>
+          </div>
 
-    <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
-      <div class="bg-gray-900/40 p-4 rounded-lg">
-        <h3 class="text-xl font-medium mb-3 text-green-300">
-          Desafíos Identificados
-        </h3>
-        <ul class="list-disc pl-5 space-y-2 text-sm">
-          <li>Escasez de datos etiquetados para especies raras</li>
-          <li>Variabilidad acústica entre individuos de la misma especie</li>
-          <li>Ruido ambiental elevado en grabaciones de campo</li>
-          <li>Solapamiento con otras fuentes sonoras biológicas</li>
-        </ul>
-      </div>
-
-      <div class="bg-gray-900/40 p-4 rounded-lg">
-        <h3 class="text-xl font-medium mb-3 text-green-300">
-          3.7. Conclusiones
-        </h3>
-        <p class="text-sm mb-3">
-          Los modelos basados en arquitecturas híbridas CNN-RNN y Transformers
-          muestran el mejor rendimiento para la detección y clasificación de
-          vocalizaciones de primates, especialmente cuando se combinan con
-          técnicas avanzadas de preprocesamiento y aumento de datos.
-        </p>
-        <p class="text-sm">
-          Se identifican brechas importantes en la disponibilidad de conjuntos
-          de datos etiquetados para primates neotropicales y en el desarrollo de
-          métodos específicos para entornos acústicos amazónicos.
-        </p>
+          <div>
+            <div class="flex items-center mb-2">
+              <i class="fas fa-sync-alt text-purple-300 mr-2"></i>
+              <h4 class="text-md font-medium">CA-NN</h4>
+            </div>
+            <p class="text-xs mb-2">
+              Redes Adaptativas al Contexto que utilizan estadísticas a largo
+              plazo para adaptarse a condiciones específicas de cada sensor
+            </p>
+            <div class="flex justify-center">
+              <div class="flex items-center">
+                <div class="text-center mx-2">
+                  <i class="fas fa-microphone text-red-300"></i>
+                  <div class="text-xs">Sensor 1</div>
+                </div>
+                <div class="text-center mx-2">
+                  <i class="fas fa-microphone text-blue-300"></i>
+                  <div class="text-xs">Sensor 2</div>
+                </div>
+                <div class="text-center mx-2">
+                  <i class="fas fa-microphone text-green-300"></i>
+                  <div class="text-xs">Sensor 3</div>
+                </div>
+                <i class="fas fa-arrow-right mx-2 text-gray-400"></i>
+                <div class="text-center">
+                  <i class="fas fa-cogs text-purple-300"></i>
+                  <div class="text-xs">Adaptación</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -134,7 +206,6 @@
     background-color: rgba(17, 24, 39, 0.7);
     border: 1px solid rgba(55, 65, 81, 0.5);
     border-radius: 0.5rem;
-    padding: 1.25rem;
+    padding: 1.5rem;
   }
 </style>
-

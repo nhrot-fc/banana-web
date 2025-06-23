@@ -1,5 +1,7 @@
 ---
 import eventos from "../../assets/marco/definicion/eventos.png";
+// Importar Font Awesome localmente
+import '@fortawesome/fontawesome-free/css/all.min.css';
 ---
 
 <section id="definicion-problema">
@@ -168,15 +170,3 @@ import eventos from "../../assets/marco/definicion/eventos.png";
     font-style: italic;
   }
 </style>
-
-<script>
-  // Cargar Font Awesome para los iconos
-  if (!document.getElementById("font-awesome-css")) {
-    const link = document.createElement("link");
-    link.id = "font-awesome-css";
-    link.rel = "stylesheet";
-    link.href =
-      "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css";
-    document.head.appendChild(link);
-  }
-</script>
