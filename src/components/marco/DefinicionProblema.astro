@@ -3,86 +3,140 @@ import eventos from "../../assets/marco/definicion/eventos.png";
 ---
 
 <section id="definicion-problema">
-  <div class="container mx-auto px-4">
-    <div class="space-y-6">
+  <div class="container mx-auto px-4 py-6">
+    <div class="space-y-8">
       <div class="card">
-        <div class="grid grid-cols-1 gap-6">
-          <div>
-            <h4 class="text-xl font-medium mb-3">
-              Formulación del Problema de Detección
-            </h4>
-            <p class="text-gray-300 mb-4">
-              El sistema procesa grabaciones de audio digital G=&lbrace;g<sub
-                >1</sub
-              >,g<sub>2</sub>,...,g<sub>M</sub>&rbrace; en formato WAV (F<sub
-                >s</sub
-              >=44.1 kHz). Para el procesamiento con Deep Learning, el audio se
-              transforma en una representación tiempo-frecuencia (espectrograma)
-              X∈R<sup>FxT</sup>, donde F son las bandas de frecuencia y T las
-              tramas temporales.
-            </p>
-            <div class="flex justify-center my-6">
+        <div class="grid md:grid-cols-2 gap-6 items-start">
+          <!-- Columna izquierda: Descripción matemática -->
+          <div class="space-y-6 order-2 md:order-1">
+            <!-- Descripción concisa del problema -->
+            <div class="bg-gray-800 bg-opacity-50 p-4 rounded-lg">
+              <div class="flex items-start">
+                <div class="mr-3 mt-1 text-blue-400">
+                  <i class="fas fa-info-circle text-xl"></i>
+                </div>
+                <p class="text-gray-300">
+                  El sistema detecta y clasifica vocalizaciones de primates y
+                  sonidos antropogénicos en grabaciones acústicas de bosques
+                  amazónicos. Procesa archivos WAV y genera una lista de eventos
+                  acústicos con información temporal, frecuencial, taxonómica y
+                  de confianza.
+                </p>
+              </div>
+            </div>
+
+            <!-- Fórmula principal mejorada -->
+            <div>
+              <div class="mt-3 p-4 bg-gray-900 rounded-lg shadow-inner">
+                <div class="equation">
+                  <p class="mb-2">Entrada: Grabaciones de audio digital</p>
+                  <div class="tex-math my-2">
+                    G = &#123;g<sub>1</sub>, g<sub>2</sub>, ..., g<sub>M</sub
+                    >&#125; (formato WAV, F<sub>s</sub> = 44.1 kHz)
+                  </div>
+
+                  <p class="mb-2 mt-4">
+                    Transformación: Representación tiempo-frecuencia
+                  </p>
+                  <div class="tex-math my-2">
+                    X &isin; R<sup>F&times;T</sup> (F: bandas de frecuencia, T: tramas
+                    temporales)
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Salida deseada con mejor formato -->
+            <div>
+              <p class="text-gray-300 my-3">
+                Para cada grabación <span class="inline-math"
+                  >g<sub>k</sub></span
+                >, generar eventos acústicos
+                <span class="inline-math"
+                  >E<sub>k</sub> = &#123;e<sub>1</sub>, e<sub>2</sub>, ..., e<sub
+                    >Nk</sub
+                  >&#125;</span
+                >
+              </p>
+
+              <div class="equation-box p-3 bg-gray-900 rounded-lg shadow-inner">
+                <div class="tex-math">
+                  e<sub>i</sub> = (t<sub>inicio(i)</sub>, t<sub>fin(i)</sub>, f<sub
+                    >min(i)</sub
+                  >, f<sub>max(i)</sub>, c<sub>(i)</sub>, v<sub>(i)</sub>, p<sub
+                    >(i)</sub
+                  >)
+                </div>
+              </div>
+
+              <!-- Componentes de la tupla compactos -->
+              <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-2">
+                <div
+                  class="flex items-center p-2 bg-gray-800 bg-opacity-40 rounded"
+                >
+                  <span class="inline-flex items-center text-blue-400 mr-2">
+                    <i class="fas fa-clock text-sm"></i>
+                  </span>
+                  <span class="inline-math text-sm"
+                    >(t<sub>inicio(i)</sub>, t<sub>fin(i)</sub>)</span
+                  >
+                </div>
+
+                <div
+                  class="flex items-center p-2 bg-gray-800 bg-opacity-40 rounded"
+                >
+                  <span class="inline-flex items-center text-green-400 mr-2">
+                    <i class="fas fa-wave-square text-sm"></i>
+                  </span>
+                  <span class="inline-math text-sm"
+                    >(f<sub>min(i)</sub>, f<sub>max(i)</sub>)</span
+                  >
+                </div>
+
+                <div
+                  class="flex items-center p-2 bg-gray-800 bg-opacity-40 rounded"
+                >
+                  <span class="inline-flex items-center text-amber-400 mr-2">
+                    <i class="fas fa-tag text-sm"></i>
+                  </span>
+                  <span class="inline-math text-sm">c<sub>(i)</sub></span>
+                </div>
+
+                <div
+                  class="flex items-center p-2 bg-gray-800 bg-opacity-40 rounded"
+                >
+                  <span class="inline-flex items-center text-pink-400 mr-2">
+                    <i class="fas fa-volume-up text-sm"></i>
+                  </span>
+                  <span class="inline-math text-sm">v<sub>(i)</sub></span>
+                </div>
+
+                <div
+                  class="flex items-center p-2 bg-gray-800 bg-opacity-40 rounded sm:col-span-2"
+                >
+                  <span class="inline-flex items-center text-cyan-400 mr-2">
+                    <i class="fas fa-percentage text-sm"></i>
+                  </span>
+                  <span class="inline-math text-sm"
+                    >p<sub>(i)</sub>: Puntuación de confianza</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Columna derecha: Imagen -->
+          <div class="order-1 md:order-2 flex justify-center md:justify-end">
+            <figure class="flex flex-col items-center">
               <img
                 src={eventos.src}
-                alt="Eventos"
-                class="w-1/3 h-auto rounded shadow-md"
+                alt="Eventos acústicos en espectrograma"
+                class="w-full h-auto rounded-lg shadow-lg border border-gray-700"
               />
-            </div>
-            <h5 class="text-lg font-medium mb-2">Salida Deseada:</h5>
-            <p class="text-gray-300 mb-4">
-              Para cada grabación de entrada g<sub>k</sub>, el sistema debe
-              generar una lista de eventos acústicos detectados E<sub>k</sub
-              >=&lbrace;e<sub>1</sub>,e<sub>2</sub>,...,e<sub>Nk</sub>&rbrace;.
-              Cada evento detectado e<sub>i</sub> se define mediante una tupla con
-              la siguiente estructura:
-            </p>
-            <p class="text-gray-300 mb-4 font-mono text-center">
-              e<sub>i</sub>=(t<sub>inicio(i)</sub>,t<sub>fin(i)</sub>,f<sub
-                >min(i)</sub
-              >,f<sub>max(i)</sub>,c<sub>(i)</sub>,v<sub>(i)</sub>,p<sub
-                >(i)</sub
-              >)
-            </p>
-
-            <p class="text-gray-300 mb-2">
-              Donde los componentes de la tupla representan:
-            </p>
-            <ul class="list-disc pl-5 space-y-2 text-gray-300">
-              <li>
-                <span class="font-mono"
-                  >(t<sub>inicio(i)</sub>,t<sub>fin(i)</sub>)</span
-                >: El intervalo temporal de inicio y fin del evento i, expresado
-                en segundos relativos al comienzo de la grabación g<sub>k</sub>.
-              </li>
-              <li>
-                <span class="font-mono"
-                  >(f<sub>min(i)</sub>,f<sub>max(i)</sub>)</span
-                >: La banda de frecuencia mínima y máxima ocupada por el evento
-                i, expresada en Hertz (Hz).
-              </li>
-              <li>
-                <span class="font-mono">c<sub>(i)</sub></span>: La etiqueta de
-                clase que identifica la fuente taxonómica (especie de primate) o
-                el tipo de sonido antropogénico. El conjunto de clases objetivo
-                C incluye las especies de primates mencionadas ('LW', 'PT',
-                'CC', 'AC', 'AA', 'SM', 'AS', 'SB') y categorías de sonidos
-                humanos relevantes (e.g., 'Motosierra', 'Disparo', 'Voz
-                Humana'). C=&lbrace;c<sub>1</sub>,...,c<sub>L</sub>&rbrace;.
-              </li>
-              <li>
-                <span class="font-mono">v<sub>(i)</sub></span>: El tipo de
-                vocalización o subcategoría del evento. Para primates, esto
-                puede distinguir entre unidades acústicas básicas ('Sílaba') o
-                secuencias más complejas ('Canto'). Para sonidos no biológicos,
-                podría ser 'N/A'. Se debe definir el conjunto de tipos
-                V=&lbrace;v<sub>1</sub>,...,v<sub>K</sub>&rbrace;.
-              </li>
-              <li>
-                <span class="font-mono">p<sub>(i)</sub></span>: Una puntuación
-                de confianza o probabilidad, asignada por el modelo, que indica
-                la fiabilidad de la detección y clasificación del evento i.
-              </li>
-            </ul>
+              <figcaption class="text-sm text-gray-400 mt-2">
+                Representación de eventos acústicos en espectrograma
+              </figcaption>
+            </figure>
           </div>
         </div>
       </div>
@@ -95,6 +149,34 @@ import eventos from "../../assets/marco/definicion/eventos.png";
     background-color: rgba(17, 24, 39, 0.7);
     border: 1px solid rgba(55, 65, 81, 0.5);
     border-radius: 0.5rem;
-    padding: 1.25rem;
+    padding: 1.5rem;
+  }
+
+  .equation-box {
+    overflow-x: auto;
+    text-align: center;
+  }
+
+  .tex-math {
+    font-family: "Times New Roman", serif;
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+  }
+
+  .inline-math {
+    font-family: "Times New Roman", serif;
+    font-style: italic;
   }
 </style>
+
+<script>
+  // Cargar Font Awesome para los iconos
+  if (!document.getElementById("font-awesome-css")) {
+    const link = document.createElement("link");
+    link.id = "font-awesome-css";
+    link.rel = "stylesheet";
+    link.href =
+      "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css";
+    document.head.appendChild(link);
+  }
+</script>
