@@ -1,7 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Slide from "../components/Slide.astro";
-import Hero from "../components/Hero.astro";
+import Title from "../components/Title.astro";
 import Referencias from "../components/Referencias.astro";
 
 // Secciones (grupos de slides)
@@ -15,8 +15,8 @@ import PlanProyecto from "../components/plan_proyecto/PlanProyecto.astro";
 <Layout title="Análisis Acústico Automatizado de Vocalizaciones de Primates">
   <main class="snap-y snap-mandatory h-screen w-full overflow-y-scroll">
     <!-- Portada -->
-    <Slide id="portada">
-      <Hero />
+    <Slide id="portada" aspectRatio="aspect-video">
+      <Title />
     </Slide>
 
     <!-- Secciones organizadas en componentes -->
@@ -24,7 +24,7 @@ import PlanProyecto from "../components/plan_proyecto/PlanProyecto.astro";
     <MarcoReferencial />
     <EstadoArte />
     <PrimateSlides />
-    <Referencias />
     <PlanProyecto />
+    <Referencias />
   </main>
 </Layout>

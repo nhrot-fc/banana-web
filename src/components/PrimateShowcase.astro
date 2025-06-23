@@ -115,9 +115,6 @@ function prepareCallData(call: Call, index: number) {
 
     <!-- Acoustic information and visualizations -->
     <div class="lg:w-2/3">
-      <h4 class="text-xl font-medium text-green-300 mb-2">Acoustic Profile</h4>
-      <p class="text-green-100/90 mb-4">{species.acousticCharacteristics}</p>
-
       <div class="calls-container space-y-4">
         {species.calls.map((call, index) => {
           const callData = prepareCallData(call, index);
