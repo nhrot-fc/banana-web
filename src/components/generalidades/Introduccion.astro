@@ -3,92 +3,154 @@ import amazonRainforest from "../../assets/generalidades/Introduction/amazon-rai
 import audiomoth from "../../assets/generalidades/Introduction/audiomoth.webp";
 ---
 
-<div class="space-y-8">
-  <!-- Título e Introducción General con imagen ampliada -->
-  <div class="card">
-    <h3 class="text-2xl font-semibold mb-4 text-green-400">
-      Monitoreo Acústico de Primates
-    </h3>
-
-    <div class="mb-6">
-      <div
-        class="rounded-lg overflow-hidden border border-green-800 shadow-lg shadow-green-900/30 hover:shadow-green-800/40 transition-all duration-300"
-      >
-        <img
-          src={amazonRainforest.src}
-          alt="Amazonía Peruana"
-          class="w-full h-48 md:h-64 object-cover opacity-90 hover:opacity-100 hover:scale-105 transition-all duration-500"
-        />
-        <div class="p-2 bg-black/70 text-xs text-gray-400">
-          <p>
-            Mongabay. (2024). Amazonía Peruana [Fotografía]. Recuperado de
-            https://imgs.mongabay.com
-          </p>
-        </div>
-      </div>
+<div class="space-y-6">
+  <!-- Header Section with Hero Image -->
+  <div class="card relative overflow-hidden">
+    <!-- Background Image with Overlay -->
+    <div class="absolute inset-0 z-0">
+      <img
+        src={amazonRainforest.src}
+        alt="Amazonía Peruana"
+        class="w-full h-full object-cover opacity-25"
+      />
+      <div class="absolute inset-0 bg-gradient-to-b from-gray-900/70 to-gray-900/95"></div>
     </div>
+    
+    <!-- Content -->
+    <div class="relative z-10">
+      <!-- Title with Icon -->
+      <div class="flex items-center justify-center mb-8">
+        <div class="bg-green-900/50 rounded-full p-3 mr-3">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+        </div>
+        <h2 class="text-2xl font-bold text-green-400">Monitoreo Acústico de Primates</h2>
+      </div>
 
-    <div class="md:px-4">
-      <p class="mb-4 text-gray-300">
-        La Amazonía Peruana, rica en biodiversidad y primates, enfrenta amenazas
-        crecientes. El monitoreo efectivo es vital para la conservación.
-      </p>
-
-      <div class="p-3 bg-black/30 rounded-lg border border-gray-700">
-        <p class="text-gray-300 italic text-sm">
-          "La conservación efectiva de la biodiversidad amazónica depende de
-          nuestra capacidad para monitorear y entender sus ecosistemas de forma
-          precisa y a gran escala."
+      <!-- Quick Intro -->
+      <div class="text-center max-w-2xl mx-auto mb-8">
+        <p class="text-sm text-gray-300">
+          La Amazonía Peruana, epicentro de biodiversidad, enfrenta presiones que amenazan sus ecosistemas y especies, incluyendo primates neotropicales. El monitoreo efectivo es crucial para la conservación.
         </p>
+      </div>
+
+      <!-- Key Points with Icons -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-2">
+        <div class="bg-gray-900/70 p-3 rounded-lg flex items-start">
+          <div class="bg-green-900/50 rounded-full p-2 mr-3 flex-shrink-0">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+            </svg>
+          </div>
+          <div>
+            <h4 class="text-sm font-medium text-green-300">Biodiversidad</h4>
+            <p class="text-xs text-gray-400">Protección de ecosistemas únicos y especies de primates neotropicales</p>
+          </div>
+        </div>
+        
+        <div class="bg-gray-900/70 p-3 rounded-lg flex items-start">
+          <div class="bg-green-900/50 rounded-full p-2 mr-3 flex-shrink-0">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+            </svg>
+          </div>
+          <div>
+            <h4 class="text-sm font-medium text-green-300">Monitoreo</h4>
+            <p class="text-xs text-gray-400">Evaluación del impacto humano y guía de estrategias de conservación</p>
+          </div>
+        </div>
+        
+        <div class="bg-gray-900/70 p-3 rounded-lg flex items-start">
+          <div class="bg-green-900/50 rounded-full p-2 mr-3 flex-shrink-0">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 110 4v3a2 2 0 002 2h14a2 2 0 002-2v-3a2 2 0 110-4V7a2 2 0 00-2-2H5z" />
+            </svg>
+          </div>
+          <div>
+            <h4 class="text-sm font-medium text-green-300">Desafíos</h4>
+            <p class="text-xs text-gray-400">Análisis de grandes volúmenes de datos acústicos</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 
-  <!-- El Potencial del Monitoreo Acústico Pasivo con imagen ampliada -->
+  <!-- PAM Section with device image -->
   <div class="card">
-    <h3 class="text-2xl font-semibold mb-4 text-green-400">
-      El Potencial del Monitoreo Acústico Pasivo (PAM)
-    </h3>
+    <div class="flex items-center mb-4">
+      <div class="bg-green-900/50 rounded-full p-2 mr-3">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
+        </svg>
+      </div>
+      <h3 class="text-xl font-semibold text-green-400">Monitoreo Acústico Pasivo (PAM)</h3>
+    </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-      <div>
-        <div
-          class="rounded-lg overflow-hidden border border-green-800 shadow-lg shadow-green-900/30 hover:shadow-green-800/40 transition-all duration-300 h-full"
-        >
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <!-- AudioMoth Device -->
+      <div class="md:col-span-1 flex flex-col items-center">
+        <div class="bg-gray-800/50 p-3 rounded-lg border border-gray-700 shadow-md">
           <img
             src={audiomoth.src}
             alt="Dispositivo AudioMoth"
-            class="m-auto w-3/5 h-40 object-cover opacity-90 hover:opacity-100 hover:scale-105 transition-all duration-500"
+            class="w-full h-auto max-h-40 object-contain mx-auto"
           />
-          <div class="p-2 bg-black/70 text-xs text-gray-400">
-            <p>
-              Labmaker. (2023). Dispositivo AudioMoth [Fotografía]. Recuperado
-              de https://www.labmaker.org
-            </p>
-          </div>
+          <p class="text-xs text-center text-gray-400 mt-2">Dispositivo AudioMoth</p>
         </div>
       </div>
 
-      <div class="flex flex-col justify-center">
-        <p class="text-gray-300 mb-4 text-sm">
-          La Amazonía Peruana representa un epicentro de biodiversidad con
-          especies de primates que requieren estrategias efectivas de monitoreo
-          para su conservación.
-        </p>
+      <!-- PAM Benefits -->
+      <div class="md:col-span-2 flex flex-col">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4">
+          <div class="bg-gray-800/50 p-3 rounded-lg flex items-start">
+            <div class="bg-green-900/50 rounded-full p-1 mr-2 flex-shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+            </div>
+            <div>
+              <h5 class="text-xs font-medium text-green-300">No invasivo</h5>
+              <p class="text-xs text-gray-400">Ideal para especies elusivas</p>
+            </div>
+          </div>
+          <div class="bg-gray-800/50 p-3 rounded-lg flex items-start">
+            <div class="bg-green-900/50 rounded-full p-1 mr-2 flex-shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <div>
+              <h5 class="text-xs font-medium text-green-300">Monitoreo continuo</h5>
+              <p class="text-xs text-gray-400">24/7 con mínima presencia humana</p>
+            </div>
+          </div>
+        </div>
 
-        <h4 class="text-lg font-medium mb-2 text-green-300">
-          Ventajas del PAM
-        </h4>
-        <ul class="list-disc pl-5 space-y-2 text-gray-300 text-sm">
-          <li>
-            Monitoreo no invasivo, ideal para especies elusivas y grandes áreas
-          </li>
-          <li>
-            Sensores de bajo costo (AudioMoths) recolectan grandes volúmenes de
-            datos
-          </li>
-          <li>Captura de datos continua con mínima presencia humana</li>
-        </ul>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div class="bg-gray-800/50 p-3 rounded-lg flex items-start">
+            <div class="bg-green-900/50 rounded-full p-1 mr-2 flex-shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" />
+              </svg>
+            </div>
+            <div>
+              <h5 class="text-xs font-medium text-green-300">Bajo costo</h5>
+              <p class="text-xs text-gray-400">Sensores económicos (AudioMoths)</p>
+            </div>
+          </div>
+          <div class="bg-gray-800/50 p-3 rounded-lg flex items-start">
+            <div class="bg-green-900/50 rounded-full p-1 mr-2 flex-shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+              </svg>
+            </div>
+            <div>
+              <h5 class="text-xs font-medium text-green-300">Grandes datos</h5>
+              <p class="text-xs text-gray-400">Recolección de volúmenes masivos</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>

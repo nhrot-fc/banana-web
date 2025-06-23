@@ -1,0 +1,43 @@
+---
+import PrimateShowcase from "../PrimateShowcase.astro";
+import { primateSpecies } from "../../data/primateSpecies";
+
+interface Props {
+  speciesCode: string;
+  subtitle: string;
+  assets: {
+    image: any;
+    audio?: any;
+    annotations?: string;
+    reference?: string;
+  };
+}
+
+const { speciesCode, subtitle, assets } = Astro.props;
+
+// Find the species data from primateSpecies array
+const speciesData = primateSpecies.find(
+  (species) => species.code === speciesCode,
+);
+
+if (!speciesData) {
+  throw new Error(
+    `Species with code ${speciesCode} not found in primateSpecies data`,
+  );
+}
+
+// Create a combined species object with imported assets
+const speciesWithAssets = {
+  ...speciesData,
+  image: assets.image,
+  calls: speciesData.calls.map((call, index) => ({
+    ...call,
+    audio: assets.audio,
+    annotations: assets.annotations,
+  })),
+  reference: assets.reference,
+};
+---
+
+<PrimateShowcase species={speciesWithAssets} />
+

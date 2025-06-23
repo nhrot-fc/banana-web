@@ -1,0 +1,140 @@
+---
+
+---
+
+<div class="space-y-6">
+  <div class="card bg-gray-900/30">
+    <p class="text-lg mb-6">
+      Principales hallazgos de la revisión sistemática sobre métodos
+      automatizados para detección y clasificación de vocalizaciones de
+      primates.
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="bg-gray-900/40 p-4 rounded-lg">
+        <h3 class="text-xl font-medium mb-3 text-green-300">
+          Arquitecturas más Efectivas
+        </h3>
+        <ul class="list-disc pl-5 space-y-2 text-sm">
+          <li>
+            Redes CNN con bloques ResNet para extracción de características
+          </li>
+          <li>Modelos híbridos CNN-RNN para capturar patrones temporales</li>
+          <li>Arquitecturas de atención para segmentación temporal precisa</li>
+          <li>Transformers para vocalizaciones de larga duración</li>
+        </ul>
+      </div>
+
+      <div class="bg-gray-900/40 p-4 rounded-lg">
+        <h3 class="text-xl font-medium mb-3 text-green-300">
+          Técnicas de Preprocesamiento
+        </h3>
+        <ul class="list-disc pl-5 space-y-2 text-sm">
+          <li>Filtrado adaptativo para reducción de ruido ambiental</li>
+          <li>
+            Normalización por frecuencia para compensar variaciones de grabación
+          </li>
+          <li>Extracción de características espectrales y temporales</li>
+          <li>Aumento de datos mediante transformaciones acústicas</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-8 p-5 bg-gray-900/50 rounded-lg">
+      <h3 class="text-xl font-medium mb-4 text-green-300 text-center">
+        Rendimiento por Tipo de Modelo
+      </h3>
+      <div class="overflow-x-auto">
+        <table class="min-w-full bg-gray-900/60 rounded-lg">
+          <thead>
+            <tr>
+              <th
+                class="px-4 py-2 text-left text-green-400 font-medium border-b border-gray-700"
+                >Tipo de Modelo</th
+              >
+              <th
+                class="px-4 py-2 text-left text-green-400 font-medium border-b border-gray-700"
+                >Precisión</th
+              >
+              <th
+                class="px-4 py-2 text-left text-green-400 font-medium border-b border-gray-700"
+                >Recall</th
+              >
+              <th
+                class="px-4 py-2 text-left text-green-400 font-medium border-b border-gray-700"
+                >F1-Score</th
+              >
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="px-4 py-2 border-b border-gray-800">CNN</td>
+              <td class="px-4 py-2 border-b border-gray-800">0.82</td>
+              <td class="px-4 py-2 border-b border-gray-800">0.78</td>
+              <td class="px-4 py-2 border-b border-gray-800">0.80</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-2 border-b border-gray-800">CNN-RNN</td>
+              <td class="px-4 py-2 border-b border-gray-800">0.85</td>
+              <td class="px-4 py-2 border-b border-gray-800">0.83</td>
+              <td class="px-4 py-2 border-b border-gray-800">0.84</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-2 border-b border-gray-800">ResNet</td>
+              <td class="px-4 py-2 border-b border-gray-800">0.87</td>
+              <td class="px-4 py-2 border-b border-gray-800">0.84</td>
+              <td class="px-4 py-2 border-b border-gray-800">0.85</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-2">Transformer</td>
+              <td class="px-4 py-2">0.89</td>
+              <td class="px-4 py-2">0.86</td>
+              <td class="px-4 py-2">0.87</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="bg-gray-900/40 p-4 rounded-lg">
+        <h3 class="text-xl font-medium mb-3 text-green-300">
+          Desafíos Identificados
+        </h3>
+        <ul class="list-disc pl-5 space-y-2 text-sm">
+          <li>Escasez de datos etiquetados para especies raras</li>
+          <li>Variabilidad acústica entre individuos de la misma especie</li>
+          <li>Ruido ambiental elevado en grabaciones de campo</li>
+          <li>Solapamiento con otras fuentes sonoras biológicas</li>
+        </ul>
+      </div>
+
+      <div class="bg-gray-900/40 p-4 rounded-lg">
+        <h3 class="text-xl font-medium mb-3 text-green-300">
+          3.7. Conclusiones
+        </h3>
+        <p class="text-sm mb-3">
+          Los modelos basados en arquitecturas híbridas CNN-RNN y Transformers
+          muestran el mejor rendimiento para la detección y clasificación de
+          vocalizaciones de primates, especialmente cuando se combinan con
+          técnicas avanzadas de preprocesamiento y aumento de datos.
+        </p>
+        <p class="text-sm">
+          Se identifican brechas importantes en la disponibilidad de conjuntos
+          de datos etiquetados para primates neotropicales y en el desarrollo de
+          métodos específicos para entornos acústicos amazónicos.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .card {
+    background-color: rgba(17, 24, 39, 0.7);
+    border: 1px solid rgba(55, 65, 81, 0.5);
+    border-radius: 0.5rem;
+    padding: 1.25rem;
+  }
+</style>
+

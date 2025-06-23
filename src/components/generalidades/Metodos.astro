@@ -1,75 +1,223 @@
 ---
+
 ---
 
 <div class="space-y-6">
-  <div class="card">
-    <h4 class="text-lg font-medium mb-4 text-green-400">Metodología CRISP-DM para Bioacústica</h4>
-    
+  <div class="card bg-gray-900/30">
+    <p class="text-lg mb-6">
+      El proyecto sigue una metodología estructurada para el desarrollo del
+      sistema de detección y clasificación de vocalizaciones de primates.
+    </p>
+
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      <!-- Fase 1-2: Comprensión del Negocio y de los Datos -->
-      <div class="space-y-4">
-        <div class="bg-black/20 rounded-lg overflow-hidden border border-gray-700 p-3">
-          <h5 class="font-medium text-green-300 mb-2">1. Comprensión del Negocio</h5>
-          <ul class="list-disc pl-4 space-y-1 text-gray-300 text-sm">
-            <li>Definición de objetivos de conservación</li>
-            <li>Identificación de especies prioritarias</li>
-            <li>Establecimiento de métricas de éxito</li>
-          </ul>
+      <div class="bg-gray-900/40 p-4 rounded-lg">
+        <div class="flex items-center mb-3">
+          <div class="text-blue-400 mr-3">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-8 w-8"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-medium">Recolección de Datos</h3>
         </div>
-        
-        <div class="bg-black/20 rounded-lg overflow-hidden border border-gray-700 p-3">
-          <h5 class="font-medium text-green-300 mb-2">2. Comprensión de los Datos</h5>
-          <ul class="list-disc pl-4 space-y-1 text-gray-300 text-sm">
-            <li>Recolección de grabaciones acústicas</li>
-            <li>Exploración de características vocales</li>
-            <li>Verificación de calidad del audio</li>
-          </ul>
-        </div>
+        <ul class="list-disc pl-5 space-y-2 text-sm">
+          <li>Grabaciones acústicas de campo</li>
+          <li>Etiquetado manual por expertos</li>
+          <li>Aumento de datos sintéticos</li>
+          <li>Validación cruzada</li>
+        </ul>
       </div>
-      
-      <!-- Fase 3-4: Preparación de Datos y Modelado -->
-      <div class="space-y-4">
-        <div class="bg-black/20 rounded-lg overflow-hidden border border-gray-700 p-3">
-          <h5 class="font-medium text-green-300 mb-2">3. Preparación de Datos</h5>
-          <ul class="list-disc pl-4 space-y-1 text-gray-300 text-sm">
-            <li>Filtrado de ruido ambiental</li>
-            <li>Segmentación de vocalizaciones</li>
-            <li>Transformación a espectrogramas</li>
-            <li>Aumento de datos (data augmentation)</li>
-          </ul>
+
+      <div class="bg-gray-900/40 p-4 rounded-lg">
+        <div class="flex items-center mb-3">
+          <div class="text-purple-400 mr-3">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-8 w-8"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-medium">Desarrollo de Modelos</h3>
         </div>
-        
-        <div class="bg-black/20 rounded-lg overflow-hidden border border-gray-700 p-3">
-          <h5 class="font-medium text-green-300 mb-2">4. Modelado</h5>
-          <ul class="list-disc pl-4 space-y-1 text-gray-300 text-sm">
-            <li>Arquitecturas CNN/RNN/ResNet</li>
-            <li>Transfer learning desde BirdNet</li>
-            <li>Entrenamiento con validación cruzada</li>
-            <li>Ajuste de hiperparámetros</li>
-          </ul>
-        </div>
+        <ul class="list-disc pl-5 space-y-2 text-sm">
+          <li>Arquitectura CNN para detección</li>
+          <li>Modelo jerárquico para clasificación</li>
+          <li>Optimización de hiperparámetros</li>
+          <li>Entrenamiento con GPU</li>
+        </ul>
       </div>
-      
-      <!-- Fase 5-6: Evaluación y Despliegue -->
-      <div class="space-y-4">
-        <div class="bg-black/20 rounded-lg overflow-hidden border border-gray-700 p-3">
-          <h5 class="font-medium text-green-300 mb-2">5. Evaluación</h5>
-          <ul class="list-disc pl-4 space-y-1 text-gray-300 text-sm">
-            <li>Métricas: precisión, recall, F1-score</li>
-            <li>Matriz de confusión entre especies</li>
-            <li>Validación con datos independientes</li>
-            <li>Comparación con métodos manuales</li>
-          </ul>
+
+      <div class="bg-gray-900/40 p-4 rounded-lg">
+        <div class="flex items-center mb-3">
+          <div class="text-green-400 mr-3">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-8 w-8"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-medium">Evaluación</h3>
         </div>
-        
-        <div class="bg-black/20 rounded-lg overflow-hidden border border-gray-700 p-3">
-          <h5 class="font-medium text-green-300 mb-2">6. Despliegue</h5>
-          <ul class="list-disc pl-4 space-y-1 text-gray-300 text-sm">
-            <li>Implementación en dispositivos de campo</li>
-            <li>Integración con plataformas (Arbimon)</li>
-            <li>Monitoreo continuo y refinamiento</li>
-            <li>Documentación y transferencia</li>
-          </ul>
+        <ul class="list-disc pl-5 space-y-2 text-sm">
+          <li>Métricas de precisión y recall</li>
+          <li>Validación con datos de campo</li>
+          <li>Comparación con métodos manuales</li>
+          <li>Análisis de errores</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-8 p-5 bg-gray-900/50 rounded-lg">
+      <h3 class="text-xl font-medium mb-4 text-green-300 text-center">
+        Enfoque CRISP-DM
+      </h3>
+      <div class="flex flex-wrap justify-center gap-4">
+        <div class="p-3 bg-gray-900/40 rounded-lg text-center w-36">
+          <div class="text-blue-400 mb-2">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-8 w-8 mx-auto"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+              ></path>
+            </svg>
+          </div>
+          <p class="font-medium">1. Comprensión del Negocio</p>
+        </div>
+
+        <div class="p-3 bg-gray-900/40 rounded-lg text-center w-36">
+          <div class="text-green-400 mb-2">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-8 w-8 mx-auto"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"
+              ></path>
+            </svg>
+          </div>
+          <p class="font-medium">2. Comprensión de Datos</p>
+        </div>
+
+        <div class="p-3 bg-gray-900/40 rounded-lg text-center w-36">
+          <div class="text-purple-400 mb-2">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-8 w-8 mx-auto"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
+              ></path>
+            </svg>
+          </div>
+          <p class="font-medium">3. Preparación de Datos</p>
+        </div>
+
+        <div class="p-3 bg-gray-900/40 rounded-lg text-center w-36">
+          <div class="text-yellow-400 mb-2">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-8 w-8 mx-auto"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
+              ></path>
+            </svg>
+          </div>
+          <p class="font-medium">4. Modelado</p>
+        </div>
+
+        <div class="p-3 bg-gray-900/40 rounded-lg text-center w-36">
+          <div class="text-red-400 mb-2">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-8 w-8 mx-auto"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+              ></path>
+            </svg>
+          </div>
+          <p class="font-medium">5. Evaluación</p>
+        </div>
+
+        <div class="p-3 bg-gray-900/40 rounded-lg text-center w-36">
+          <div class="text-orange-400 mb-2">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-8 w-8 mx-auto"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+              ></path>
+            </svg>
+          </div>
+          <p class="font-medium">6. Despliegue</p>
         </div>
       </div>
     </div>
@@ -83,4 +231,5 @@
     border-radius: 0.5rem;
     padding: 1.25rem;
   }
-</style> 
+</style>
+

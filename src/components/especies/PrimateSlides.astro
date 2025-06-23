@@ -1,0 +1,102 @@
+---
+import Slide from "../Slide.astro";
+import AA from "./AA.astro";
+import AC from "./AC.astro";
+import AS from "./AS.astro";
+import CC from "./CC.astro";
+import LW from "./LW.astro";
+import PT from "./PT.astro";
+import SB from "./SB.astro";
+import SM from "./SM.astro";
+import { primateSpecies } from "../../data/primateSpecies";
+---
+
+<>
+  <Slide id="especies-primates" title="4. Especies de Primates">
+    <!-- Selector de especies -->
+    <div class="primate-selector bg-gray-900/60 rounded-lg p-4 mb-6">
+      <div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-8 gap-2">
+        {
+          primateSpecies.map((species, index) => (
+            <button
+              class={`species-btn flex flex-col items-center p-2 rounded-lg bg-gray-800/60 hover:bg-gray-700/60 transition-colors border border-gray-700/50 ${index === 0 ? "ring-2 ring-green-500" : ""}`}
+              data-species-code={species.code}
+            >
+              <span class="text-xs font-bold text-green-400">
+                {species.code}
+              </span>
+            </button>
+          ))
+        }
+      </div>
+    </div>
+
+    <!-- Contenedor de showcases con componentes individuales -->
+    <div class="species-showcases">
+      <div id="showcase-AA" class="">
+        <AA />
+      </div>
+      <div id="showcase-AC" class="hidden">
+        <AC />
+      </div>
+      <div id="showcase-AS" class="hidden">
+        <AS />
+      </div>
+      <div id="showcase-CC" class="hidden">
+        <CC />
+      </div>
+      <div id="showcase-LW" class="hidden">
+        <LW />
+      </div>
+      <div id="showcase-PT" class="hidden">
+        <PT />
+      </div>
+      <div id="showcase-SB" class="hidden">
+        <SB />
+      </div>
+      <div id="showcase-SM" class="hidden">
+        <SM />
+      </div>
+    </div>
+  </Slide>
+</>
+
+<script>
+  // Inicializar botones de selección
+  document.addEventListener("DOMContentLoaded", () => {
+    const speciesButtons = document.querySelectorAll(".species-btn");
+    const showcases = document.querySelectorAll(".species-showcases > div");
+
+    // Función para mostrar solo la especie seleccionada
+    const showSpecies = (code: string) => {
+      // Mostrar solo el showcase seleccionado
+      showcases.forEach((showcase) => {
+        if (showcase.id === `showcase-${code}`) {
+          showcase.classList.remove("hidden");
+        } else {
+          showcase.classList.add("hidden");
+        }
+      });
+
+      // Actualizar botones activos
+      speciesButtons.forEach((btn) => {
+        const btnCode = btn.getAttribute("data-species-code");
+        if (btnCode === code) {
+          btn.classList.add("ring-2", "ring-green-500");
+        } else {
+          btn.classList.remove("ring-2", "ring-green-500");
+        }
+      });
+    };
+
+    // Configurar listeners para los botones
+    speciesButtons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const code = btn.getAttribute("data-species-code");
+        if (code) {
+          showSpecies(code);
+        }
+      });
+    });
+  });
+</script>

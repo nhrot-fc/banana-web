@@ -1,55 +1,67 @@
 ---
+
 ---
 
-<div>
-  <h3 class="text-2xl font-semibold text-green-300 mb-4">Objetivos de Revisión</h3>
-  
-  <p class="mb-4 text-gray-300">
-    Identificar y evaluar técnicas de Aprendizaje Profundo para desarrollar una solución automatizada 
-    que genere anotaciones detalladas (localización, especie, tipo de vocalización) para las ocho 
-    especies de primates en el entorno acústico amazónico.
-  </p>
-  
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-    <div class="card">
-      <h4 class="text-xl font-semibold text-green-400 mb-2">1. Técnicas de Detección</h4>
-      <p class="text-gray-300">Evaluar métodos DL para identificar patrones acústicos en tiempo-frecuencia, analizando su rendimiento y resistencia al ruido.</p>
+<div class="space-y-6">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div class="bg-gray-900/40 p-4 rounded-lg">
+      <h3 class="text-xl font-medium mb-3 text-green-300">3.1. Introducción</h3>
+      <p class="text-sm">
+        El campo de la bioacústica ha experimentado un rápido desarrollo en los
+        últimos años, con avances significativos en técnicas automatizadas para
+        el análisis de vocalizaciones animales. Esta revisión examina el estado
+        actual de la investigación en detección y clasificación de
+        vocalizaciones de primates.
+      </p>
     </div>
-    
-    <div class="card">
-      <h4 class="text-xl font-semibold text-green-400 mb-2">2. Clasificación Multi-etiqueta</h4>
-      <p class="text-gray-300">Investigar enfoques para clasificación jerárquica que asignen simultáneamente especie y tipo de vocalización/sílaba.</p>
-    </div>
-    
-    <div class="card">
-      <h4 class="text-xl font-semibold text-green-400 mb-2">3. Desafíos Específicos</h4>
-      <p class="text-gray-300">Abordar desbalance de clases (especies raras), entornos ruidosos (selva amazónica) y escasez de datos mediante técnicas de pre/post-procesamiento y aumento de datos.</p>
-    </div>
-    
-    <div class="card">
-      <h4 class="text-xl font-semibold text-green-400 mb-2">4. Transferencia e Integración</h4>
-      <p class="text-gray-300">Evaluar la transferencia desde modelos pre-entrenados (BirdNET, Arbimon) e integración con herramientas de análisis acústico como Raven Pro.</p>
+
+    <div class="bg-gray-900/40 p-4 rounded-lg">
+      <h3 class="text-xl font-medium mb-3 text-green-300">
+        3.2. Objetivos de Revisión
+      </h3>
+      <ul class="list-disc pl-5 space-y-1 text-sm">
+        <li>
+          Identificar métodos actuales para detección acústica de primates
+        </li>
+        <li>Evaluar arquitecturas de aprendizaje profundo aplicadas</li>
+        <li>
+          Analizar técnicas de preprocesamiento y extracción de características
+        </li>
+        <li>Determinar brechas de investigación en el campo</li>
+      </ul>
     </div>
   </div>
-  
-  <!-- Espacio para imágenes -->
-  <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
-    <div class="card flex items-center justify-center">
-      <div class="text-center">
-        <p class="text-green-400 italic">Imagen metodología</p>
-        <p class="text-sm text-gray-400">[Visualización del enfoque metodológico para detección y clasificación]</p>
+
+  <div class="mt-8 p-5 bg-gray-900/50 rounded-lg">
+    <h3 class="text-xl font-medium mb-4 text-green-300 text-center">
+      3.3. Preguntas de Revisión
+    </h3>
+    <div class="grid grid-cols-1 gap-4">
+      <div class="p-3 bg-gray-900/40 rounded-lg">
+        <p class="font-medium text-blue-400 mb-2">
+          P1: ¿Qué arquitecturas de aprendizaje profundo han demostrado mayor
+          efectividad en la clasificación de vocalizaciones de primates?
+        </p>
       </div>
-    </div>
-    
-    <div class="card flex items-center justify-center">
-      <div class="text-center">
-        <p class="text-green-400 italic">Imagen desafíos</p>
-        <p class="text-sm text-gray-400">[Ilustración de los desafíos acústicos en entorno amazónico]</p>
+
+      <div class="p-3 bg-gray-900/40 rounded-lg">
+        <p class="font-medium text-blue-400 mb-2">
+          P2: ¿Qué técnicas de preprocesamiento y aumento de datos mejoran el
+          rendimiento de los modelos en entornos ruidosos como la selva
+          amazónica?
+        </p>
+      </div>
+
+      <div class="p-3 bg-gray-900/40 rounded-lg">
+        <p class="font-medium text-blue-400 mb-2">
+          P3: ¿Qué métricas de evaluación son más apropiadas para sistemas de
+          detección y clasificación de vocalizaciones en grabaciones de larga
+          duración?
+        </p>
       </div>
     </div>
   </div>
 </div>
-
 <style>
   .card {
     background-color: rgba(17, 24, 39, 0.7);
@@ -57,4 +69,4 @@
     border-radius: 0.5rem;
     padding: 1.25rem;
   }
-</style> 
+</style>

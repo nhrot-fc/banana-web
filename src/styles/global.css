@@ -14,11 +14,26 @@
   --color-secondary: #072c0d;
   --color-text: #ffffff;
   --color-text-muted: #a0a0a0;
+  --slide-width: min(90vw, 1400px);
+  --slide-height: min(85vh, 900px);
 }
 
 /* Base styles */
 html {
   scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 12px;
+  }
 }
 
 body {
@@ -26,25 +41,54 @@ body {
   color: white;
   font-family: 'Inter', sans-serif;
   overflow: hidden;
+  line-height: 1.5;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
 
 /* Slide transition */
 .slide {
-  transition: transform 0.3s ease-out;
+  transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+  opacity: 1;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Viewport adaptations for different screen sizes */
+@media (min-width: 1921px) {
+  .slide-container {
+    max-width: 1800px;
+  }
+}
+
+@media (max-width: 768px) {
+  .slide {
+    height: auto;
+    min-height: 100vh;
+  }
+}
+
+/* Accessibility improvements */
+:focus {
+  outline: 2px dashed var(--color-green);
+  outline-offset: 2px;
 }
 
 /* Buttons */
 .btn-primary {
-  @apply inline-block px-4 py-2 bg-green-700 hover:bg-green-800 text-white rounded-full font-medium transition-colors;
+  @apply inline-block px-4 py-2 bg-green-700 hover:bg-green-800 text-white rounded-full font-medium transition-colors shadow-md;
 }
 
 .btn-secondary {
-  @apply inline-block px-4 py-2 bg-green-900/70 hover:bg-green-900 text-white rounded-full font-medium border border-green-500 transition-colors;
+  @apply inline-block px-4 py-2 bg-green-900/70 hover:bg-green-900 text-white rounded-full font-medium border border-green-500 transition-colors shadow-md;
 }
 
 /* Card style */
 .card {
-  @apply bg-gray-900/40 rounded-xl p-4 backdrop-blur-sm border border-gray-800/50;
+  @apply bg-gray-900/40 rounded-xl p-4 backdrop-blur-sm border border-gray-800/50 shadow-lg;
 }
 
 /* Section title */
@@ -67,6 +111,15 @@ body {
   z-index: 100;
 }
 
+/* Typography enhancements */
+h1, h2, h3, h4, h5, h6 {
+  letter-spacing: -0.025em;
+}
+
+p, li {
+  max-width: 70ch;
+}
+
 /* Scroll snap for slides */
 .snap-y.snap-mandatory > .slide {
   scroll-snap-align: center;
@@ -76,6 +129,23 @@ body {
 @layer base {
   h1, h2, h3, h4, h5, h6 {
     @apply font-bold;
+  }
+  
+  /* Improve contrast and readability */
+  a:not([class]) {
+    @apply text-green-400 underline underline-offset-2 hover:text-green-300;
+  }
+  
+  code {
+    @apply bg-gray-900 px-1.5 py-0.5 rounded text-green-400 font-mono text-sm;
+  }
+  
+  ul:not([class]) {
+    @apply list-disc pl-5 space-y-2;
+  }
+  
+  ol:not([class]) {
+    @apply list-decimal pl-5 space-y-2;
   }
 }
 
@@ -98,5 +168,60 @@ body {
 
   .card {
     @apply bg-gray-900/40 backdrop-blur-sm p-4 rounded-lg border border-gray-800/50;
+  }
+  
+  /* Utilities for handling long content */
+  .content-wrapper {
+    @apply overflow-auto max-h-[70vh] pr-2;
+  }
+  
+  /* Aspect ratio containers */
+  .aspect-container {
+    @apply relative w-full overflow-hidden;
+  }
+  
+  /* Text size boosters */
+  .text-boost {
+    @apply text-lg;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(16, 185, 129, 0.6);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(16, 185, 129, 0.8);
+}
+
+/* Print styles for exports */
+@media print {
+  .slide {
+    break-inside: avoid;
+    page-break-inside: avoid;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+  }
+  
+  body {
+    background: white;
+    color: black;
+  }
+  
+  .slide-container {
+    border: 1px solid #ccc;
+    box-shadow: none;
   }
 }

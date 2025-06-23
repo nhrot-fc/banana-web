@@ -4,6 +4,7 @@ interface Props {
   title?: string;
   subtitle?: string;
   bgClass?: string;
+  aspectRatio?: string;
 }
 
 const {
@@ -11,57 +12,172 @@ const {
   title,
   subtitle,
   bgClass = "bg-gradient-to-b from-gray-950 to-black",
+  aspectRatio = "aspect-4-3", // Cambiado a 4:3 por defecto
 } = Astro.props;
 ---
 
 <section
   id={id}
-  class={`slide h-screen w-full flex flex-col justify-center snap-start ${bgClass}`}
+  class={`slide min-h-screen w-full flex flex-col justify-center items-center snap-start ${bgClass}`}
 >
-  <div class="container mx-auto px-8 py-16">
-    {
-      title && (
-        <h2 class="text-3xl md:text-4xl font-bold mb-3 text-green-400">
-          {title}
-        </h2>
-      )
-    }
-    {
-      subtitle && (
-        <h3 class="text-lg md:text-xl mb-6 text-text opacity-80">{subtitle}</h3>
-      )
-    }
-    <div class="slide-content">
-      <slot />
+  <div class={`slide-container mx-auto ${aspectRatio}`}>
+    <div class="slide-inner h-full flex flex-col">
+      <div class="slide-header mb-4">
+        {
+          title && (
+            <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-2 text-green-400">
+              {title}
+            </h2>
+          )
+        }
+        {
+          subtitle && (
+            <h3 class="text-xl md:text-2xl lg:text-3xl mb-4 text-text opacity-80">{subtitle}</h3>
+          )
+        }
+      </div>
+      <div class="slide-content flex-grow overflow-auto">
+        <slot />
+      </div>
     </div>
   </div>
 </section>
 
 <style>
-  .slide-content {
-    font-size: 1rem;
+  .slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 4vh 4vw;
+    min-height: 100vh;
+  }
+  
+  .slide-container {
+    width: 90%;
+    max-width: 1400px;
+    height: auto;
+    max-height: 90vh;
+    position: relative;
+    margin: 0 auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 1rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
   }
 
-  /* Set text sizes to default */
+  /* Clase para manejar proporciones */
+  :global(.aspect-video) {
+    --slide-aspect: 16/9;
+    aspect-ratio: var(--slide-aspect);
+  }
+
+  :global(.aspect-square) {
+    --slide-aspect: 1/1;
+    aspect-ratio: var(--slide-aspect);
+  }
+
+  :global(.aspect-4-3) {
+    --slide-aspect: 4/3;
+    aspect-ratio: var(--slide-aspect);
+  }
+
+  /* Contenedor interno con padding */
+  .slide-inner {
+    padding: 2.5rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Ajustes para móviles */
+  @media (max-width: 768px) {
+    .slide-container {
+      width: 95%;
+      aspect-ratio: auto;
+      height: auto;
+      min-height: 80vh;
+    }
+    
+    .slide-inner {
+      padding: 1.5rem;
+    }
+  }
+
+  .slide-content {
+    font-size: 1.25rem;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(74, 222, 128, 0.5) rgba(0, 0, 0, 0.2);
+  }
+
+  .slide-content::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .slide-content::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+  }
+  
+  .slide-content::-webkit-scrollbar-thumb {
+    background-color: rgba(74, 222, 128, 0.5);
+    border-radius: 3px;
+  }
+
+  /* Aumentar tamaños de texto para mejor visibilidad */
   :global(.text-sm) {
-    font-size: 0.875rem !important;
+    font-size: 1rem !important;
   }
 
   :global(.text-xs) {
-    font-size: 0.75rem !important;
+    font-size: 0.875rem !important;
   }
 
   :global(p),
   :global(li) {
-    font-size: 0.875rem;
+    font-size: 1.125rem;
+    line-height: 1.6;
+    margin-bottom: 0.75rem;
   }
 
   :global(h4) {
-    font-size: 1.25rem !important;
+    font-size: 1.5rem !important;
+    margin-bottom: 1rem;
   }
 
   :global(.card) {
-    padding: 1rem !important;
+    padding: 1.25rem !important;
+    border-radius: 0.5rem;
+    background-color: rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1.5rem;
+  }
+
+  /* Mejoras de contraste para accesibilidad */
+  :global(a) {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    color: #4ade80;
+  }
+
+  /* Animación suave al mostrar el slide */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .slide {
+    animation: fadeIn 0.4s ease-out;
+  }
+
+  /* Asegurar que elementos especiales como gráficos se adaptan bien */
+  :global(img),
+  :global(svg),
+  :global(canvas) {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
   }
 </style>
 

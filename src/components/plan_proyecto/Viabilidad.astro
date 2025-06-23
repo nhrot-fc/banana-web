@@ -1,0 +1,162 @@
+<div class="space-y-6">
+  <!-- Viabilidad Técnica -->
+  <div class="card">
+    <h3 class="text-2xl text-green-400 font-semibold mb-6">6.1.3. Viabilidad Técnica</h3>
+    
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="bg-gray-900/30 p-5 rounded-lg">
+        <div class="flex items-center mb-3">
+          <div class="text-green-500 mr-3">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+            </svg>
+          </div>
+          <h4 class="font-medium text-lg">Técnicas de DL</h4>
+        </div>
+        <ul class="text-green-100/80 space-y-2 pl-5 list-disc">
+          <li>CNNs, CRNNs, Transformers</li>
+          <li>Modelos probados como ResNet</li>
+          <li>Transferencia de aprendizaje</li>
+        </ul>
+      </div>
+      
+      <div class="bg-gray-900/30 p-5 rounded-lg">
+        <div class="flex items-center mb-3">
+          <div class="text-green-500 mr-3">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            </svg>
+          </div>
+          <h4 class="font-medium text-lg">Herramientas</h4>
+        </div>
+        <ul class="text-green-100/80 space-y-2 pl-5 list-disc">
+          <li>Python, Pandas, NumPy</li>
+          <li>PyTorch, TensorFlow</li>
+          <li>Librosa, Kapre (audio)</li>
+        </ul>
+      </div>
+      
+      <div class="bg-gray-900/30 p-5 rounded-lg">
+        <div class="flex items-center mb-3">
+          <div class="text-green-500 mr-3">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" />
+            </svg>
+          </div>
+          <h4 class="font-medium text-lg">Recursos</h4>
+        </div>
+        <ul class="text-green-100/80 space-y-2 pl-5 list-disc">
+          <li>Google Colab para GPUs</li>
+          <li>20 GB de datos WAV</li>
+          <li>Anotaciones preliminares</li>
+          <li>Metodología CRISP-DM</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Viabilidad Temporal y Económica -->
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+    <!-- Viabilidad Temporal -->
+    <div class="card">
+      <h3 class="text-2xl text-green-400 font-semibold mb-6">6.1.4. Viabilidad Temporal</h3>
+      
+      <div class="flex flex-col space-y-5">
+        <div class="flex items-start">
+          <div class="text-yellow-500 mr-4 mt-1 flex-shrink-0">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+            </svg>
+          </div>
+          <div>
+            <h4 class="font-medium text-lg mb-1">Cuello de botella OE1</h4>
+            <p class="text-green-100/80">Curación y etiquetado manual de 10h de grabaciones</p>
+          </div>
+        </div>
+        
+        <div class="flex items-start">
+          <div class="text-yellow-500 mr-4 mt-1 flex-shrink-0">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+            </svg>
+          </div>
+          <div>
+            <h4 class="font-medium text-lg mb-1">Fase de modelado (OE2)</h4>
+            <p class="text-green-100/80">Tiempo extenso para experimentación y entrenamiento</p>
+          </div>
+        </div>
+        
+        <div class="flex items-start">
+          <div class="text-green-500 mr-4 mt-1 flex-shrink-0">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <div>
+            <h4 class="font-medium text-lg mb-1">Estructura clara</h4>
+            <p class="text-green-100/80">Organización del proyecto bien definida</p>
+          </div>
+        </div>
+        
+        <div class="flex items-start">
+          <div class="text-green-500 mr-4 mt-1 flex-shrink-0">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <div>
+            <h4 class="font-medium text-lg mb-1">Sin trabajo de campo</h4>
+            <p class="text-green-100/80">Datos ya recolectados, sin necesidad de trabajo en terreno</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Viabilidad Económica -->
+    <div class="card">
+      <h3 class="text-2xl text-green-400 font-semibold mb-6">6.1.5. Viabilidad Económica</h3>
+      
+      <div class="grid grid-cols-2 gap-5">
+        <div class="flex flex-col items-center p-5 bg-gray-900/30 rounded-lg">
+          <div class="text-green-500 mb-3">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+            </svg>
+          </div>
+          <h4 class="font-medium text-lg text-center mb-2">Software libre</h4>
+          <p class="text-green-100/80 text-center">Python, PyTorch, TensorFlow, Zotero</p>
+        </div>
+        
+        <div class="flex flex-col items-center p-5 bg-gray-900/30 rounded-lg">
+          <div class="text-green-500 mb-3">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+            </svg>
+          </div>
+          <h4 class="font-medium text-lg text-center mb-2">Infraestructura</h4>
+          <p class="text-green-100/80 text-center">Google Colab (nivel gratuito)</p>
+        </div>
+        
+        <div class="flex flex-col items-center p-5 bg-gray-900/30 rounded-lg">
+          <div class="text-green-500 mb-3">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+            </svg>
+          </div>
+          <h4 class="font-medium text-lg text-center mb-2">Sensores</h4>
+          <p class="text-green-100/80 text-center">AudioMoths de bajo costo</p>
+        </div>
+        
+        <div class="flex flex-col items-center p-5 bg-gray-900/30 rounded-lg">
+          <div class="text-green-500 mb-3">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+            </svg>
+          </div>
+          <h4 class="font-medium text-lg text-center mb-2">RRHH</h4>
+          <p class="text-green-100/80 text-center">Tesistas e investigadores</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> 

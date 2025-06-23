@@ -4,151 +4,77 @@ import scopusLogo from "../../assets/estado_arte/estrategia/scopus_logo.png";
 import webOfScienceLogo from "../../assets/estado_arte/estrategia/web_of_science_logo.png";
 ---
 
-<div>
-  <div class="space-y-6">
+<div class="space-y-6">
+  <h2 class="text-2xl md:text-3xl font-bold text-green-400 mb-6">3.4. Estrategia de Búsqueda</h2>
+  
+  <div class="card bg-gray-900/30">
+    <p class="text-lg mb-6">
+      Metodología sistemática para la identificación y selección de literatura relevante sobre detección y clasificación automatizada de vocalizaciones de primates.
+    </p>
+    
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-      <div class="card">
-        <h4 class="text-xl font-semibold text-green-400 mb-3">Scopus</h4>
-        <div class="flex flex-col h-full">
-          <div
-            class="bg-gray-950/80 p-4 rounded-lg mb-4 flex items-center justify-center"
-          >
-            <Image
-              src={scopusLogo}
-              alt="Logo de Scopus"
-              class="max-h-20 object-contain"
-              width={200}
-              height={100}
-            />
+      <div class="bg-gray-900/40 p-4 rounded-lg">
+        <h3 class="text-xl font-medium mb-3 text-green-300">Bases de Datos</h3>
+        <div class="grid grid-cols-2 gap-4">
+          <div class="flex items-center">
+            <img src="/icons/scopus_logo.png" alt="Scopus" class="h-8 mr-2" />
+            <span>Scopus</span>
           </div>
-          <p class="text-gray-300">
-            Base de datos bibliográfica de artículos de revistas científicas que
-            fue lanzada en 2004. Cubre títulos de publicaciones seriadas de más
-            de 5000 editores en 140 países, incluyendo revistas revisadas por
-            pares. Actualmente, incluye una herramienta de búsqueda basada en
-            inteligencia artificial que identifica artículos relacionados a un
-            consulta o "prompt" generando un informe como respuesta.
-          </p>
+          <div class="flex items-center">
+            <img src="/icons/web_of_science_logo.png" alt="Web of Science" class="h-8 mr-2" />
+            <span>Web of Science</span>
+          </div>
+          <div class="flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mr-2 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+            </svg>
+            <span>IEEE Xplore</span>
+          </div>
+          <div class="flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mr-2 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+            </svg>
+            <span>Google Scholar</span>
+          </div>
         </div>
       </div>
-
-      <div class="card">
-        <h4 class="text-xl font-semibold text-green-400 mb-3">
-          Web of Science
-        </h4>
-        <div class="flex flex-col h-full">
-          <div
-            class="bg-gray-950/80 p-4 rounded-lg mb-4 flex items-center justify-center"
-          >
-            <Image
-              src={webOfScienceLogo}
-              alt="Logo de Web of Science"
-              class="max-h-20 object-contain"
-              width={200}
-              height={100}
-            />
+      
+      <div class="bg-gray-900/40 p-4 rounded-lg">
+        <h3 class="text-xl font-medium mb-3 text-green-300">Período de Búsqueda</h3>
+        <div class="flex items-center justify-center">
+          <div class="text-center">
+            <div class="flex items-center justify-center space-x-4">
+              <div class="p-2 bg-gray-900/60 rounded-lg">
+                <span class="text-green-400 text-xl font-bold">2015</span>
+              </div>
+              <span class="text-green-400">a</span>
+              <div class="p-2 bg-gray-900/60 rounded-lg">
+                <span class="text-green-400 text-xl font-bold">2023</span>
+              </div>
+            </div>
+            <p class="text-sm mt-2">Enfocado en avances recientes en aprendizaje profundo para bioacústica</p>
           </div>
-          <p class="text-gray-300">
-            Una de las plataformas más confiables sobre bases de datos para
-            investigación científica. Proporciona diferentes herramientas de
-            visualización sobre la importancia y tendencias de revistas dentro
-            de sus categorías temáticas.
-          </p>
         </div>
       </div>
     </div>
-
-    <div class="card">
-      <h4 class="text-xl font-semibold text-green-400 mb-4">
-        Cadenas de Búsqueda y Resultados
-      </h4>
-
-      <div class="overflow-x-auto">
-        <table class="min-w-full bg-gray-950/80 rounded-lg">
-          <thead>
-            <tr>
-              <th
-                class="px-4 py-3 text-left text-green-400 font-semibold border-b border-gray-700"
-                >Motor de búsqueda</th
-              >
-              <th
-                class="px-4 py-3 text-left text-green-400 font-semibold border-b border-gray-700"
-                >Cadena de búsqueda</th
-              >
-              <th
-                class="px-4 py-3 text-left text-green-400 font-semibold border-b border-gray-700"
-                >Cantidad de documentos</th
-              >
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="px-4 py-3 text-gray-300 border-b border-gray-800/50"
-                >Scopus</td
-              >
-              <td
-                class="px-4 py-3 text-gray-300 border-b border-gray-800/50 text-sm"
-              >
-                <p>
-                  TITLE-ABS-KEY ( "deep learning" OR "neural network*" OR
-                  "Artificial Intelligence" OR "Transformer*" OR "Machine
-                  Learning" ) AND TITLE-ABS-KEY ( "sound event detection" OR
-                  "acoustic event detection" OR "audio event localization" OR
-                  "bioacoustic detection" ) AND TITLE-ABS-KEY ( biodiversity OR
-                  wildlife OR "animal vocalizations" OR primates OR
-                  "anthropogenic noise" OR "forest monitoring" OR "ecological
-                  monitoring" )
-                </p>
-              </td>
-              <td
-                class="px-4 py-3 text-gray-300 border-b border-gray-800/50 text-center"
-                >33</td
-              >
-            </tr>
-            <tr>
-              <td class="px-4 py-3 text-gray-300">Web of Science</td>
-              <td class="px-4 py-3 text-gray-300 text-sm">
-                <p>
-                  TS=("deep learning" OR "neural network*" OR "Artificial
-                  Intelligence" OR "Transformer*" OR "Machine Learning")
-                </p>
-                <p>AND</p>
-                <p>
-                  TS=("sound event detection" OR "acoustic event detection" OR
-                  "audio event localization" OR "bioacoustic detection")
-                </p>
-                <p>AND</p>
-                <p>
-                  TS=(biodiversity OR wildlife OR "animal vocalizations" OR
-                  primates OR "anthropogenic noise" OR "forest monitoring" OR
-                  "ecological monitoring")
-                </p>
-              </td>
-              <td class="px-4 py-3 text-gray-300 text-center">6</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="mt-4">
-        <h5 class="text-lg font-semibold text-green-400 mb-2">
-          Categorías de términos clave:
-        </h5>
-        <ul class="list-disc pl-6 space-y-2 text-gray-300">
-          <li>
-            <em class="text-green-300">Técnicas:</em> "Deep Learning", "Neural Network*",
-            "Transformer*", "Machine Learning", "Artificial Intelligence"
-          </li>
-          <li>
-            <em class="text-green-300">Tarea:</em> "Sound Event Detection", "Acoustic
-            Event Detection", "Audio Event Localization", "Bioacoustic Detection"
-          </li>
-          <li>
-            <em class="text-green-300">Dominio:</em> "Biodiversity", "Wildlife",
-            "Animal Vocalizations", "Primates", "Forest Monitoring", "Ecological
-            Monitoring"
-          </li>
-        </ul>
+    
+    <div class="mt-8 p-5 bg-gray-900/50 rounded-lg">
+      <h3 class="text-xl font-medium mb-4 text-green-300 text-center">Términos de Búsqueda</h3>
+      <div class="grid grid-cols-1 gap-4">
+        <div class="p-3 bg-gray-900/40 rounded-lg">
+          <h4 class="font-medium text-blue-400 mb-2">Grupo 1: Sujeto</h4>
+          <p class="text-sm">primate* OR monkey* OR "non-human primate*" OR "rainforest mammal*"</p>
+        </div>
+        
+        <div class="p-3 bg-gray-900/40 rounded-lg">
+          <h4 class="font-medium text-blue-400 mb-2">Grupo 2: Dominio</h4>
+          <p class="text-sm">bioacoustic* OR acoustic* OR vocalization* OR call* OR sound*</p>
+        </div>
+        
+        <div class="p-3 bg-gray-900/40 rounded-lg">
+          <h4 class="font-medium text-blue-400 mb-2">Grupo 3: Técnicas</h4>
+          <p class="text-sm">"deep learning" OR "machine learning" OR "neural network*" OR CNN OR "convolutional neural network*" OR "automatic detection" OR "automatic classification"</p>
+        </div>
       </div>
     </div>
   </div>

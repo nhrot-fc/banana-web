@@ -1,169 +1,30 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Slide from "../components/Slide.astro";
+import Hero from "../components/Hero.astro";
+import Referencias from "../components/Referencias.astro";
 
-// Import species-specific slide components
-import AA from "../components/AA.astro";
-import AC from "../components/AC.astro";
-import AS from "../components/AS.astro";
-import CC from "../components/CC.astro";
-import LW from "../components/LW.astro";
-import PT from "../components/PT.astro";
-import SB from "../components/SB.astro";
-import SM from "../components/SM.astro";
-import Introduccion from "../components/generalidades/Introduccion.astro";
-import Problematica from "../components/generalidades/Problematica.astro";
-import ArbolProblemas from "../components/generalidades/ArbolProblemas.astro";
-import Objetivos from "../components/generalidades/Objetivos.astro";
-import ResultadosEsperados1 from "../components/generalidades/ResultadosEsperados1.astro";
-import ResultadosEsperados2 from "../components/generalidades/ResultadosEsperados2.astro";
-import ResultadosEsperados3 from "../components/generalidades/ResultadosEsperados3.astro";
-import Metodos from "../components/generalidades/Metodos.astro";
-import Herramientas from "../components/generalidades/Herramientas.astro";
-import DefinicionProblema from "../components/marco/DefinicionProblema.astro";
-import MarcoTeorico from "../components/marco/MarcoTeorico.astro";
-import MarcoConceptual from "../components/marco/MarcoConceptual.astro";
-import AlcanceRevision from "../components/estado_arte/AlcanceRevision.astro";
-import PreguntasCentrales1 from "../components/estado_arte/PreguntasCentrales1.astro";
-import PreguntasCentrales2 from "../components/estado_arte/PreguntasCentrales2.astro";
-import EstrategiaBusqueda from "../components/estado_arte/EstrategiaBusqueda.astro";
-import CriteriosInclusion from "../components/estado_arte/CriteriosInclusion.astro";
-import CriteriosExclusion from "../components/estado_arte/CriteriosExclusion.astro";
+// Secciones (grupos de slides)
+import Generalidades from "../components/generalidades/Generalidades.astro";
+import MarcoReferencial from "../components/marco/MarcoReferencial.astro";
+import EstadoArte from "../components/estado_arte/EstadoArte.astro";
+import PrimateSlides from "../components/especies/PrimateSlides.astro";
+import PlanProyecto from "../components/plan_proyecto/PlanProyecto.astro";
 ---
 
-<Layout
-  title="Automatización del análisis acústico de vocalizaciones de Primates | Amazonía Peruana"
->
-  <!-- Slide 1: Title/Hero -->
-  <Slide id="slide-1">
-    <div class="text-center">
-      <h1 class="text-4xl md:text-5xl font-bold mb-4 text-green-400">
-        Automatización del Análisis Acústico de Vocalizaciones de Primates
-      </h1>
-      <p class="text-lg md:text-xl mb-6 text-text">
-        Utilizando Técnicas de Aprendizaje Profundo en la Amazonía Peruana
-      </p>
-    </div>
-  </Slide>
+<Layout title="Análisis Acústico Automatizado de Vocalizaciones de Primates">
+  <main class="snap-y snap-mandatory h-screen w-full overflow-y-scroll">
+    <!-- Portada -->
+    <Slide id="portada">
+      <Hero />
+    </Slide>
 
-  <!-- Sección de Generalidades -->
-  <Slide id="slide-intro" title="Introducción">
-    <Introduccion />
-  </Slide>
-
-  <Slide id="slide-problematica" title="Problematica">
-    <Problematica />
-  </Slide>
-
-  <Slide id="slide-arbol-problemas" title="Árbol de Problemas">
-    <ArbolProblemas />
-  </Slide>
-
-  <Slide id="slide-objetivos" title="Objetivos">
-    <Objetivos />
-  </Slide>
-
-  <Slide id="slide-resultados-esperados-1" title="Resultados Esperados (OE1)">
-    <ResultadosEsperados1 />
-  </Slide>
-
-  <Slide id="slide-resultados-esperados-2" title="Resultados Esperados (OE2)">
-    <ResultadosEsperados2 />
-  </Slide>
-
-  <Slide id="slide-resultados-esperados-3" title="Resultados Esperados (OE3)">
-    <ResultadosEsperados3 />
-  </Slide>
-
-  <Slide
-    id="slide-metodos"
-    title="Metodología"
-    subtitle="CRISP-DM para Análisis Bio-acústico"
-  >
-    <Metodos />
-  </Slide>
-
-  <Slide
-    id="slide-herramientas"
-    title="Herramientas"
-    subtitle="Tecnologías utilizadas en el proyecto"
-  >
-    <Herramientas />
-  </Slide>
-
-  <!-- Marco Referencial Section - Now Divided into 3 Slides -->
-  <Slide id="slide-definicion-problema" title="Definición Formal del Problema">
-    <DefinicionProblema />
-  </Slide>
-
-  <Slide id="slide-marco-teorico" title="Marco Teórico">
-    <MarcoTeorico />
-  </Slide>
-
-  <Slide id="slide-marco-conceptual" title="Marco Conceptual">
-    <MarcoConceptual />
-  </Slide>
-
-  <!-- Slide 6: Marco Conceptual - Especies -->
-  <AA />
-  <AC />
-  <AS />
-  <CC />
-  <LW />
-  <PT />
-  <SB />
-  <SM />
-
-  <!-- Slide 7: Estado del Arte -->
-  <Slide id="slide-estado-arte-alcance" title="Estado del Arte">
-    <AlcanceRevision />
-  </Slide>
-
-  <Slide id="slide-estado-arte-preguntas1" title="Estado del Arte">
-    <PreguntasCentrales1 />
-  </Slide>
-
-  <Slide id="slide-estado-arte-preguntas2" title="Estado del Arte">
-    <PreguntasCentrales2 />
-  </Slide>
-
-  <Slide id="slide-estado-arte-busqueda" title="Estado del Arte">
-    <EstrategiaBusqueda />
-  </Slide>
-
-  <Slide id="slide-estado-arte-inclusion" title="Estado del Arte">
-    <CriteriosInclusion />
-  </Slide>
-
-  <Slide id="slide-estado-arte-exclusion" title="Estado del Arte">
-    <CriteriosExclusion />
-  </Slide>
-
-  <!-- Slide 10: Referencias -->
-  <Slide id="slide-10" title="4. Referencias">
-    <ul class="list-decimal space-y-3 text-text-muted text-base">
-      <li>
-        Palacios, V., et al. (2021). "Bioacoustic classification of Neotropical
-        primates using convolutional neural networks". Ecological Informatics,
-        64, 101339.
-      </li>
-      <li>
-        Bermant, P. C., et al. (2019). "Deep learning for bio-acoustic
-        monitoring of forest wildlife". Conservation Biology, 33(6), 1321-1329.
-      </li>
-      <li>
-        Kalan, A. K., et al. (2020). "Passive acoustic monitoring reveals group
-        ranging and territory use in wild primates". Proceedings of the Royal
-        Society B, 287(1924), 20201244.
-      </li>
-      <li>
-        Stowell, D., et al. (2022). "Automatic acoustic detection of birds
-        through deep learning". The Journal of the Acoustical Society of
-        America, 151(4), 2513-2527.
-      </li>
-      <li>
-        LeCun, Y., et al. (2015). "Deep learning". Nature, 521(7553), 436-444.
-      </li>
-    </ul>
-  </Slide>
+    <!-- Secciones organizadas en componentes -->
+    <Generalidades />
+    <MarcoReferencial />
+    <EstadoArte />
+    <PrimateSlides />
+    <Referencias />
+    <PlanProyecto />
+  </main>
 </Layout>

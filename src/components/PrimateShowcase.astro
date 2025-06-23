@@ -29,29 +29,63 @@ const isImageImported = typeof species.image === 'object';
 // Generate unique spectrogram ID for this species
 const uniqueID = Math.random().toString(36).substring(2, 9);
 
-// Format reference URL as APA citation
-let formattedReference = '';
-if (species.reference) {
-  const referenceUrl = species.reference.trim();
+// Format reference citation
+function formatReference(referenceUrl: string) {
+  if (!referenceUrl) return '';
+
   const currentYear = new Date().getFullYear();
-  const domain = new URL(referenceUrl).hostname.replace('www.', '');
-  formattedReference = `${species.scientific} [Photograph]. (${currentYear}). Retrieved from ${domain}`;
+  let source = 'reference file';
+  
+  // Handle both file paths and URLs properly
+  if (referenceUrl.startsWith('http://') || referenceUrl.startsWith('https://')) {
+    // It's a URL, extract domain
+    try {
+      const url = new URL(referenceUrl);
+      source = url.hostname.replace('www.', '');
+    } catch (e) {
+      source = 'source website';
+    }
+  } else {
+    // It's likely a file path, extract filename
+    const parts = referenceUrl.split('/');
+    source = parts[parts.length - 1] || 'reference file';
+  }
+  
+  return `${species.scientific} [Photograph]. (${currentYear}). Retrieved from ${source}`;
+}
+
+// Format reference string
+const formattedReference = species.reference ? formatReference(species.reference.trim()) : '';
+
+// Helper function to generate call data
+function prepareCallData(call: Call, index: number) {
+  const callUniqueId = `${species.code}-${index}-${uniqueID}`;
+  
+  return {
+    id: callUniqueId,
+    name: call.name,
+    description: call.description,
+    audio: call.audio || `/assets/${species.code.toLowerCase()}/${species.code.toLowerCase()}_call${index + 1}.wav`,
+    annotations: call.annotations
+  };
 }
 ---
 
-<div class="species-showcase bg-gray-900/40 rounded-lg p-6 mb-8 relative overflow-hidden border border-gray-800/50" data-species-code={species.code} id={`showcase-${species.code}-${uniqueID}`}>
-  <div class="flex flex-col md:flex-row gap-8">
+<div class="species-showcase bg-gray-900/40 rounded-lg p-4 sm:p-6 mb-8 relative overflow-hidden border border-gray-800/50" data-species-code={species.code} id={`showcase-${species.code}-${uniqueID}`}>
+  <div class="flex flex-col lg:flex-row gap-4 lg:gap-8">
     <!-- Species image and basic info -->
-    <div class="md:w-1/3">
-      {isImageImported ? (
-        <Image src={species.image} alt={species.english} class="w-full rounded-lg shadow-lg object-cover max-h-80 border border-gray-700/40" />
-      ) : (
-        <img src={species.image} alt={species.english} class="w-full rounded-lg shadow-lg object-cover max-h-80 border border-gray-700/40" />
-      )}
-      <div class="species-info mt-4">
+    <div class="lg:w-1/3">
+      <div class="relative aspect-[4/3] overflow-hidden rounded-lg shadow-lg border border-gray-700/40 mb-4">
+        {isImageImported ? (
+          <Image src={species.image} alt={species.english} class="w-full h-full object-cover" />
+        ) : (
+          <img src={species.image} alt={species.english} class="w-full h-full object-cover" />
+        )}
+      </div>
+      <div class="species-info">
         <div class="flex items-center gap-2 mb-1">
           <div class="w-3 h-3 bg-green-500 rounded-full"></div>
-          <h3 class="text-2xl font-bold text-green-400">{species.english}</h3>
+          <h3 class="text-xl sm:text-2xl font-bold text-green-400">{species.english}</h3>
         </div>
         <p class="text-green-200/70 italic mb-2">{species.scientific}</p>
         <p class="text-sm text-green-100/80 mb-1">
@@ -80,94 +114,120 @@ if (species.reference) {
     </div>
 
     <!-- Acoustic information and visualizations -->
-    <div class="md:w-2/3">
+    <div class="lg:w-2/3">
       <h4 class="text-xl font-medium text-green-300 mb-2">Acoustic Profile</h4>
       <p class="text-green-100/90 mb-4">{species.acousticCharacteristics}</p>
 
-      {species.calls.map((call, index) => {
-        const callUniqueId = `${species.code}-${index}-${uniqueID}`;
-        return (
-          <div class="call-block bg-gray-900/60 p-4 rounded-lg mb-4 border border-navy-800/30" data-call-id={callUniqueId}>
-            <div class="flex justify-between items-center mb-3">
-              <h5 class="text-lg font-medium text-green-300">{call.name}</h5>
-              <div class="flex">
-                <button 
-                  id={`play-btn-${callUniqueId}`} 
+      <div class="calls-container space-y-4">
+        {species.calls.map((call, index) => {
+          const callData = prepareCallData(call, index);
+          return (
+            <div class="call-block bg-gray-900/60 p-3 sm:p-4 rounded-lg border border-navy-800/30" data-call-id={callData.id}>
+              <div class="flex justify-between items-center mb-3">
+                <h5 class="text-lg font-medium text-green-300">{callData.name}</h5>
+                <div class="flex">
+                  <button 
+                    id={`play-btn-${callData.id}`} 
+                    data-species={species.code}
+                    data-index={index}
+                    data-uid={uniqueID}
+                    class="play-btn bg-green-700 hover:bg-green-800 text-white px-3 py-1 rounded-full text-sm flex items-center gap-1"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    Play
+                  </button>
+                  
+                  <!-- Add a hidden audio element for each call -->
+                  <audio 
+                    id={`audio-${callData.id}`} 
+                    class="hidden" 
+                    preload="metadata"
+                  >
+                    <source src={callData.audio} type="audio/wav" />
+                    Your browser does not support the audio element.
+                  </audio>
+                </div>
+              </div>
+              
+              <p class="text-green-200/70 text-sm mb-3">{callData.description}</p>
+              
+              <!-- Waveform visualization -->
+              <div class="mb-4">
+                <div class="flex items-center justify-between mb-1">
+                  <span class="text-xs text-green-500">Waveform</span>
+                </div>
+                <div 
+                  id={`waveform-${callData.id}`} 
                   data-species={species.code}
                   data-index={index}
                   data-uid={uniqueID}
-                  class="play-btn bg-green-700 hover:bg-green-800 text-white px-3 py-1 rounded-full text-sm flex items-center gap-1"
-                >
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                  Play
-                </button>
-                
-                <!-- Add a hidden audio element for each call -->
-                <audio 
-                  id={`audio-${callUniqueId}`} 
-                  class="hidden" 
-                  preload="metadata"
-                >
-                  <source src={call.audio || `/assets/${species.code.toLowerCase()}/${species.code.toLowerCase()}_call${index + 1}.wav`} type="audio/wav" />
-                  Your browser does not support the audio element.
-                </audio>
+                  class="waveform-container w-full h-16 sm:h-20 bg-gray-950/80 rounded"
+                ></div>
               </div>
-            </div>
-            
-            <p class="text-green-200/70 text-sm mb-3">{call.description}</p>
-            
-            <!-- Waveform visualization -->
-            <div class="mb-4">
-              <div class="flex items-center justify-between mb-1">
-                <span class="text-xs text-green-500">Waveform</span>
+              
+              <!-- Spectrogram visualization -->
+              <div class="mb-3">
+                <div class="flex items-center justify-between mb-1">
+                  <span class="text-xs text-green-500">Spectrogram</span>
+                </div>
+                <div 
+                  id={`spectrogram-${callData.id}`} 
+                  data-species={species.code}
+                  data-index={index}
+                  data-uid={uniqueID}
+                  class="w-full h-24 sm:h-32 bg-gray-950/80 rounded spectrogram-container"
+                ></div>
               </div>
-              <div 
-                id={`waveform-${callUniqueId}`} 
-                data-species={species.code}
-                data-index={index}
-                data-uid={uniqueID}
-                class="waveform-container w-full h-16 bg-gray-950/80 rounded"
-              ></div>
-            </div>
-            
-            <!-- Spectrogram visualization -->
-            <div class="mb-3">
-              <div class="flex items-center justify-between mb-1">
-                <span class="text-xs text-green-500">Spectrogram</span>
-              </div>
-              <div 
-                id={`spectrogram-${callUniqueId}`} 
-                data-species={species.code}
-                data-index={index}
-                data-uid={uniqueID}
-                class="spectrogram-container w-full h-24 bg-gray-950/80 rounded"
-              ></div>
-            </div>
 
-            <!-- Annotations section -->
-            <div class="annotations mt-3">
-              <div class="text-xs text-green-400/80 mb-1">Annotations</div>
-              <div class="text-sm text-green-100/80 bg-gray-950/80 p-2 rounded max-h-20 overflow-y-auto">
-                <p class="text-xs font-mono">Detection time: 07:42:13</p>
-                <p class="text-xs font-mono">Frequency range: 1.2kHz - 3.5kHz</p>
-                <p class="text-xs font-mono">Duration: 1.7 seconds</p>
-                <p class="text-xs font-mono">Confidence score: 98.2%</p>
+              <!-- Annotations section -->
+              <div class="annotations mt-3">
+                <div class="text-xs text-green-400/80 mb-1">Annotations</div>
+                <div class="text-sm text-green-100/80 bg-gray-950/80 p-2 rounded max-h-24 sm:max-h-32 overflow-y-auto">
+                  {callData.annotations ? (
+                    <div class="annotations-content font-mono text-xs sm:text-sm">
+                      {(() => {
+                        // Parse the TSV annotations file
+                        const rows = callData.annotations.trim().split('\n');
+                        if (rows.length < 2) return <p>No annotations available</p>;
+                        
+                        // Get the header and data rows
+                        const headerRow = rows[0];
+                        const dataRows = rows.slice(1);
+                        
+                        return dataRows.map((row, i) => {
+                          const cells = row.split('\t');
+                          if (cells.length < 11) return null;
+
+                          // Extract the relevant data from columns
+                          const beginTime = parseFloat(cells[3]);
+                          const endTime = parseFloat(cells[4]);
+                          const duration = (endTime - beginTime).toFixed(2);
+                          const lowFreq = parseFloat(cells[5]);
+                          const highFreq = parseFloat(cells[6]);
+                          const power = cells[7];
+                          const callType = cells.length > 11 ? cells[11] : 'Unknown';
+                          
+                          return (
+                            <div class="annotation-item py-1">
+                              <p>Call {i+1} ({callType}): {beginTime.toFixed(2)}s - {endTime.toFixed(2)}s (duration: {duration}s)</p>
+                              <p>Frequency range: {lowFreq.toFixed(1)}Hz - {highFreq.toFixed(1)}Hz</p>
+                              <p>Power: {power} dB FS</p>
+                            </div>
+                          );
+                        });
+                      })()}
+                    </div>
+                  ) : (
+                    <p class="text-xs sm:text-sm font-mono">No annotations available</p>
+                  )}
+                </div>
               </div>
             </div>
-          </div>
-        );
-      })}
-
-      <!-- Detection stats like in Arbimon -->
-      <div class="detection-stats bg-blue-950/30 p-3 rounded-lg flex items-center justify-between border border-blue-900/20">
-        <span class="text-green-400 font-medium">Detected {Math.floor(Math.random() * 150) + 50} times in {Math.floor(Math.random() * 5) + 1} sites</span>
-        <div class="flex gap-2">
-          <span class="bg-gray-900/70 px-2 py-1 rounded text-xs text-green-200/70">Automatic</span>
-          <span class="bg-blue-900/40 px-2 py-1 rounded text-xs text-green-400">Verified</span>
-        </div>
+          );
+        })}
       </div>
     </div>
   </div>
@@ -177,7 +237,6 @@ if (species.reference) {
 <script type="module">
   // Import WaveSurfer once, globally
   import WaveSurfer from 'https://unpkg.com/wavesurfer.js@7/dist/wavesurfer.esm.js';
-  //import WaveSurfer from '../../node_modules/wavesurfer.js/dist/wavesurfer.esm.js';
   
   // Store WaveSurfer instances to prevent duplicates
   window.wavesurferInstances = window.wavesurferInstances || new Map();
@@ -263,6 +322,8 @@ if (species.reference) {
         barGap: 2,
         responsive: true,
         normalize: true,
+        partialRender: true,
+        pixelRatio: 1,
       });
       
       // Store instance
@@ -390,7 +451,7 @@ if (species.reference) {
     `;
   }
   
-  // Generate a spectrogram
+  // Funciones de visualización del espectrograma
   function generateSpectrogram(container) {
     // Clear container first
     container.innerHTML = '';
@@ -410,7 +471,30 @@ if (species.reference) {
     // Draw grid
     drawGrid(ctx, canvas.width, canvas.height);
     
-    // Draw call patterns
+    // Try to get annotations data for this spectrogram
+    try {
+      const speciesCode = container.getAttribute('data-species');
+      const index = container.getAttribute('data-index');
+      const uid = container.getAttribute('data-uid');
+      
+      if (speciesCode && index && uid) {
+        const callUniqueId = `${speciesCode}-${index}-${uid}`;
+        const callBlock = document.querySelector(`[data-call-id="${callUniqueId}"]`);
+        
+        if (callBlock) {
+          const annotationsContent = callBlock.querySelector('.annotations-content');
+          if (annotationsContent) {
+            // We found annotations, try to use them
+            drawAnnotationBasedPatterns(ctx, canvas, annotationsContent);
+            return;
+          }
+        }
+      }
+    } catch (err) {
+      console.error('Error drawing with annotations:', err);
+    }
+    
+    // Fallback to random patterns if annotations not found or error occurred
     drawCallPatterns(ctx, canvas);
   }
   
@@ -514,10 +598,191 @@ if (species.reference) {
       }
     }
   }
+
+  // Draw based on actual annotation data
+  function drawAnnotationBasedPatterns(ctx, canvas, annotationsContent) {
+    const width = canvas.width;
+    const height = canvas.height;
+    
+    // Extract data from annotations
+    const annotationItems = annotationsContent.querySelectorAll('.annotation-item');
+    if (annotationItems.length === 0) {
+      drawCallPatterns(ctx, canvas); // Fallback to random if no items
+      return;
+    }
+    
+    // Colors for different intensities
+    const colors = [
+      'rgba(52, 211, 153, 1)',    // bright green
+      'rgba(16, 185, 129, 0.9)',  // medium green
+      'rgba(6, 148, 162, 0.8)',   // teal
+      'rgba(2, 132, 199, 0.7)',   // blue
+      'rgba(55, 48, 163, 0.5)',   // indigo
+      'rgba(139, 92, 246, 0.3)'   // purple
+    ];
+    
+    // Find min/max times for scaling
+    let minTime = Infinity;
+    let maxTime = -Infinity;
+    let minFreq = Infinity;
+    let maxFreq = -Infinity;
+    
+    // Parse data from annotation items text content
+    const callData = Array.from(annotationItems).map(item => {
+      const text = item.textContent || '';
+      
+      // Extract time info with regex
+      const timeMatch = text.match(/(\d+\.\d+)s - (\d+\.\d+)s/);
+      const freqMatch = text.match(/Frequency range: (\d+\.\d+)Hz - (\d+\.\d+)Hz/);
+      const callTypeMatch = text.match(/Call \d+ \((\w+)\)/);
+      
+      if (timeMatch && freqMatch) {
+        const startTime = parseFloat(timeMatch[1]);
+        const endTime = parseFloat(timeMatch[2]);
+        const lowFreq = parseFloat(freqMatch[1]);
+        const highFreq = parseFloat(freqMatch[2]);
+        const callType = callTypeMatch ? callTypeMatch[1] : 'Unknown';
+        
+        // Update min/max
+        minTime = Math.min(minTime, startTime);
+        maxTime = Math.max(maxTime, endTime);
+        minFreq = Math.min(minFreq, lowFreq);
+        maxFreq = Math.max(maxFreq, highFreq);
+        
+        return { startTime, endTime, lowFreq, highFreq, callType };
+      }
+      return null;
+    }).filter(item => item !== null);
+    
+    if (callData.length === 0) {
+      drawCallPatterns(ctx, canvas); // Fallback to random
+      return;
+    }
+    
+    // Time span with some padding
+    const timeSpan = (maxTime - minTime) * 1.1;
+    
+    // Draw time labels
+    ctx.fillStyle = 'rgba(255, 255, 255, 0.5)';
+    ctx.font = '8px sans-serif';
+    ctx.fillText(`${minTime.toFixed(1)}s`, 5, height - 3);
+    ctx.fillText(`${maxTime.toFixed(1)}s`, width - 40, height - 3);
+    
+    // Draw frequency labels
+    ctx.fillText(`${(maxFreq/1000).toFixed(1)}kHz`, width - 40, 10);
+    ctx.fillText(`${(minFreq/1000).toFixed(1)}kHz`, width - 40, height - 15);
+    
+    // Draw each call
+    callData.forEach((call, index) => {
+      // Scale time to canvas width
+      const startX = ((call.startTime - minTime) / timeSpan) * width;
+      const callWidth = ((call.endTime - call.startTime) / timeSpan) * width;
+      
+      // Scale frequency to canvas height (inverted, as lower freq is at bottom)
+      const freqRange = maxFreq - minFreq;
+      const lowY = height - ((call.lowFreq - minFreq) / freqRange) * height;
+      const highY = height - ((call.highFreq - minFreq) / freqRange) * height;
+      const midY = (lowY + highY) / 2;
+      const callHeight = lowY - highY;
+      
+      // Draw call box
+      const colorIndex = index % colors.length;
+      
+      // Draw primary intensity
+      ctx.fillStyle = colors[colorIndex];
+      ctx.globalAlpha = 0.7;
+      ctx.fillRect(startX, highY, callWidth, callHeight);
+      
+      // Draw border
+      ctx.strokeStyle = colors[0];
+      ctx.lineWidth = 1;
+      ctx.globalAlpha = 1;
+      ctx.strokeRect(startX, highY, callWidth, callHeight);
+      
+      // Draw harmonics based on call type
+      if (call.callType === 'CC') {
+        // Draw a series of horizontal lines for CC calls
+        const lineCount = 3;
+        const lineSpacing = callHeight / (lineCount + 1);
+        
+        for (let i = 1; i <= lineCount; i++) {
+          const lineY = highY + (i * lineSpacing);
+          ctx.beginPath();
+          ctx.moveTo(startX, lineY);
+          ctx.lineTo(startX + callWidth, lineY);
+          ctx.strokeStyle = colors[1];
+          ctx.lineWidth = 2;
+          ctx.stroke();
+        }
+      } else if (call.callType === 'ACC') {
+        // Draw a wave pattern for ACC calls
+        const waviness = 8;
+        const amplitude = callHeight * 0.2;
+        
+        ctx.beginPath();
+        ctx.moveTo(startX, midY);
+        
+        for (let x = 0; x <= callWidth; x += 1) {
+          const yPos = midY + Math.sin(x / waviness) * amplitude;
+          ctx.lineTo(startX + x, yPos);
+        }
+        
+        ctx.strokeStyle = colors[0];
+        ctx.lineWidth = 2;
+        ctx.stroke();
+        
+        // Add a glow effect
+        ctx.beginPath();
+        ctx.moveTo(startX, midY);
+        
+        for (let x = 0; x <= callWidth; x += 1) {
+          const yPos = midY + Math.sin(x / waviness) * amplitude;
+          ctx.lineTo(startX + x, yPos);
+        }
+        
+        ctx.strokeStyle = 'rgba(52, 211, 153, 0.5)';
+        ctx.lineWidth = 4;
+        ctx.stroke();
+      }
+    });
+  }
 </script>
 
 <style>
   .species-showcase {
     min-height: 400px;
+  }
+  
+  /* Mejoras responsivas para diferentes tamaños de pantalla */
+  @media (max-width: 768px) {
+    .species-showcase {
+      min-height: auto;
+    }
+  }
+  
+  @media (max-height: 700px) {
+    .call-block {
+      margin-bottom: 0.5rem;
+    }
+    
+    .waveform-container {
+      height: 12px;
+    }
+    
+    .spectrogram-container {
+      height: 20px;
+    }
+    
+    .annotations div {
+      max-height: 80px;
+    }
+  }
+  
+  /* Asegurar que todos los elementos se puedan ver en pantallas pequeñas */
+  .calls-container {
+    max-height: calc(100vh - 300px);
+    overflow-y: auto;
+    padding-right: 0.25rem;
+    margin-right: -0.25rem;
   }
 </style> 

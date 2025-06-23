@@ -1,0 +1,74 @@
+---
+import Slide from "../Slide.astro";
+import Justificacion from "./Justificacion.astro";
+import Viabilidad from "./Viabilidad.astro";
+import DefinicionAlcance from "./DefinicionAlcance.astro";
+import EDT from "./EDT.astro";
+import EDT2 from "./EDT2.astro";
+import EDT3 from "./EDT3.astro";
+import Cronograma from "./Cronograma.astro";
+import Recursos from "./Recursos.astro";
+import Riesgos1 from "./Riesgos1.astro";
+import Riesgos2 from "./Riesgos2.astro";
+import Riesgos3 from "./Riesgos3.astro";
+---
+
+<>
+  <Slide id="plan-proyecto" title="6. Plan del Proyecto">
+    <h2 class="text-2xl md:text-3xl font-bold text-green-400 mb-6">
+      Plan del Proyecto
+    </h2>
+    <p class="text-lg text-gray-200">
+      Este plan detalla la estrategia, recursos y cronograma para el desarrollo
+      del sistema de análisis acústico automatizado de vocalizaciones de
+      primates.
+    </p>
+  </Slide>
+
+  <Slide id="justificacion" title="6.1.1. Justificación">
+    <Justificacion />
+  </Slide>
+
+  <Slide id="viabilidad" title="6.1.2. Viabilidad">
+    <Viabilidad />
+  </Slide>
+
+  <Slide id="definicion-alcance" title="6.2. Definición y Alcance">
+    <DefinicionAlcance />
+  </Slide>
+
+  <Slide id="edt-gestion" title="6.3.2. EDT - Gestión del Proyecto">
+    <EDT />
+  </Slide>
+
+  <Slide
+    id="edt-comprension"
+    title="6.3.3. EDT - Comprensión del Negocio/Investigación"
+  >
+    <EDT2 />
+  </Slide>
+
+  <Slide id="edt-evaluacion" title="6.3.4. EDT - Evaluación y Despliegue">
+    <EDT3 />
+  </Slide>
+
+  <Slide id="cronograma" title="6.3.5. Cronograma del Proyecto">
+    <Cronograma />
+  </Slide>
+
+  <Slide id="recursos" title="6.3.6. Recursos del Proyecto">
+    <Recursos />
+  </Slide>
+
+  <Slide id="riesgos1" title="6.3.7. Gestión de Riesgos R1-R2">
+    <Riesgos1 />
+  </Slide>
+
+  <Slide id="riesgos2" title="6.3.8. Gestión de Riesgos R3-R5">
+    <Riesgos2 />
+  </Slide>
+
+  <Slide id="riesgos3" title="6.3.9. Gestión de Riesgos R6-R7">
+    <Riesgos3 />
+  </Slide>
+</>

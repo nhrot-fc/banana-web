@@ -2,76 +2,20 @@
 
 ---
 
-<section id="marco-teorico" class="section">
+<section id="marco-teorico">
   <div class="container mx-auto px-4">
     <div class="card">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div>
-          <h4 class="text-xl font-medium mb-3">Bioacústica</h4>
-          <p class="text-gray-300 mb-4">
-            La bioacústica es el estudio de la producción, dispersión y
-            recepción de señales acústicas en animales, incluidos los primates.
-            Las vocalizaciones de primates contienen información importante
-            sobre:
-          </p>
-          <ul class="list-disc pl-5 space-y-1 text-gray-300">
-            <li>Comportamientos sociales e interacciones grupales</li>
-            <li>Respuestas ante amenazas y predadores</li>
-            <li>Rituales de apareamiento y comunicación</li>
-            <li>Delimitación territorial</li>
-          </ul>
-          <div class="mt-4">
-            <p class="text-gray-300">
-              Las vocalizaciones de primates varían considerablemente entre
-              especies, con características acústicas distintivas que pueden ser
-              analizadas mediante representaciones tiempo-frecuencia como los
-              espectrogramas.
-            </p>
-          </div>
-        </div>
-
-        <div>
-          <h4 class="text-xl font-medium mb-3">Aprendizaje Profundo</h4>
-          <p class="text-gray-300 mb-4">
-            El aprendizaje profundo (Deep Learning) es una rama del aprendizaje
-            automático basada en redes neuronales artificiales con múltiples
-            capas. En el análisis de audio, las arquitecturas más utilizadas
-            son:
-          </p>
-          <ul class="list-disc pl-5 space-y-1 text-gray-300">
-            <li>
-              Redes Neuronales Convolucionales (CNN) para análisis espectral
-            </li>
-            <li>Redes Recurrentes (RNN, LSTM) para patrones temporales</li>
-            <li>Modelos de atención para características destacadas</li>
-            <li>
-              Arquitecturas híbridas CNN-RNN para captación simultánea de
-              patrones espectrales y temporales
-            </li>
-          </ul>
-          <div class="mt-4">
-            <p class="text-gray-300">
-              Estos modelos pueden aprender automáticamente características
-              discriminativas de las señales acústicas, superando a los métodos
-              tradicionales basados en características predefinidas.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Visual representation of audio processing pipeline -->
-      <div class="mt-8 p-4 rounded-lg bg-black/40 border border-gray-700">
-        <h4 class="text-lg font-medium mb-3 text-center">
-          Pipeline de Procesamiento de Audio
-        </h4>
-        <div class="flex flex-wrap justify-around items-center">
-          <div class="text-center p-3">
+      <!-- Main concept areas -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+        <!-- Bioacoustics section -->
+        <div class="bg-black/30 p-5 rounded-lg border border-green-900/50">
+          <div class="flex items-center mb-4">
             <div
-              class="w-16 h-16 rounded-full bg-green-800/50 mx-auto flex items-center justify-center mb-2"
+              class="w-12 h-12 rounded-full bg-green-800/50 flex items-center justify-center mr-3"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                class="h-8 w-8 text-green-400"
+                class="h-6 w-6 text-green-400"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -84,101 +28,45 @@
                 ></path>
               </svg>
             </div>
-            <span class="text-sm text-gray-300">Grabación</span>
+            <h4 class="text-xl font-medium">Bioacústica</h4>
           </div>
 
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-4 w-4 text-green-500"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M9 5l7 7-7 7"></path>
-          </svg>
+          <p class="text-gray-300 text-sm mb-3">
+            Estudio del sonido en seres vivos, aplicado mediante Monitoreo
+            Acústico Pasivo (PAM) en ecosistemas como la Amazonía.
+          </p>
 
-          <div class="text-center p-3">
-            <div
-              class="w-16 h-16 rounded-full bg-green-800/50 mx-auto flex items-center justify-center mb-2"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-8 w-8 text-green-400"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
+          <div class="grid grid-cols-2 gap-2 mt-4">
+            <div class="bg-black/20 p-3 rounded border border-green-900/30">
+              <span class="text-green-400 text-xs font-medium"
+                >Señal de interés</span
               >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="1.5"
-                  d="M3 4h13M3 8h9m-9 4h6m4 0l4-4m0 0l4 4m-4-4v12"></path>
-              </svg>
+              <p class="text-gray-300 text-xs mt-1">
+                Vocalizaciones de primates que codifican comportamiento y
+                ecología
+              </p>
             </div>
-            <span class="text-sm text-gray-300">Filtrado</span>
-          </div>
-
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-4 w-4 text-green-500"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M9 5l7 7-7 7"></path>
-          </svg>
-
-          <div class="text-center p-3">
-            <div
-              class="w-16 h-16 rounded-full bg-green-800/50 mx-auto flex items-center justify-center mb-2"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-8 w-8 text-green-400"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
+            <div class="bg-black/20 p-3 rounded border border-green-900/30">
+              <span class="text-green-400 text-xs font-medium"
+                >Ruido Ambiental</span
               >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="1.5"
-                  d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
-                ></path>
-              </svg>
+              <p class="text-gray-300 text-xs mt-1">
+                Biofonía, geofonía y ruido antropogénico que interfieren con las
+                señales
+              </p>
             </div>
-            <span class="text-sm text-gray-300">Extracción</span>
           </div>
+        </div>
 
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-4 w-4 text-green-500"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M9 5l7 7-7 7"></path>
-          </svg>
-
-          <div class="text-center p-3">
+        <!-- Deep Learning section -->
+        <div class="bg-black/30 p-5 rounded-lg border border-blue-900/50">
+          <div class="flex items-center mb-4">
             <div
-              class="w-16 h-16 rounded-full bg-green-800/50 mx-auto flex items-center justify-center mb-2"
+              class="w-12 h-12 rounded-full bg-blue-800/50 flex items-center justify-center mr-3"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                class="h-8 w-8 text-green-400"
+                class="h-6 w-6 text-blue-400"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -191,8 +79,289 @@
                 ></path>
               </svg>
             </div>
-            <span class="text-sm text-gray-300">Clasificación</span>
+            <h4 class="text-xl font-medium">Aprendizaje Profundo</h4>
           </div>
+
+          <p class="text-gray-300 text-sm mb-3">
+            Conjunto de herramientas y métodos para detectar y clasificar
+            vocalizaciones de primates en grabaciones acústicas.
+          </p>
+
+          <div class="grid grid-cols-2 gap-2 mt-4">
+            <div class="bg-black/20 p-3 rounded border border-blue-900/30">
+              <span class="text-blue-400 text-xs font-medium"
+                >Sound Event Detection</span
+              >
+              <p class="text-gray-300 text-xs mt-1">
+                Identificación y localización de eventos sonoros en
+                espectrogramas
+              </p>
+            </div>
+            <div class="bg-black/20 p-3 rounded border border-blue-900/30">
+              <span class="text-blue-400 text-xs font-medium"
+                >Clasificación Jerárquica</span
+              >
+              <p class="text-gray-300 text-xs mt-1">
+                Asignación de etiquetas por especie y tipo de llamada
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sound production in primates -->
+      <div class="mb-8 bg-black/30 p-5 rounded-lg border border-purple-900/50">
+        <div class="flex items-center mb-4">
+          <div
+            class="w-10 h-10 rounded-full bg-purple-800/50 flex items-center justify-center mr-3"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5 text-purple-400"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15.536a5 5 0 017.072 0m-9.9-2.828a9 9 0 0112.728 0"
+              ></path>
+            </svg>
+          </div>
+          <h4 class="text-lg font-medium">
+            Producción y Percepción del Sonido en Primates
+          </h4>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div class="bg-black/20 p-3 rounded">
+            <div class="flex items-center mb-2">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-4 w-4 text-purple-400 mr-1"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
+                ></path>
+              </svg>
+              <span class="text-xs font-medium">Producción</span>
+            </div>
+            <p class="text-gray-300 text-xs">
+              Vibración de cuerdas vocales en la laringe, modificada por el
+              tracto vocal
+            </p>
+          </div>
+
+          <div class="bg-black/20 p-3 rounded">
+            <div class="flex items-center mb-2">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-4 w-4 text-purple-400 mr-1"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 5l7 7-7 7"></path>
+              </svg>
+              <span class="text-xs font-medium">Características</span>
+            </div>
+            <p class="text-gray-300 text-xs">
+              Frecuencia fundamental, armónicos, amplitud, duración y timbre
+            </p>
+          </div>
+
+          <div class="bg-black/20 p-3 rounded">
+            <div class="flex items-center mb-2">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-4 w-4 text-purple-400 mr-1"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M20 12H4"></path>
+              </svg>
+              <span class="text-xs font-medium">Función</span>
+            </div>
+            <p class="text-gray-300 text-xs">
+              Cohesión social, defensa territorial, alarmas y comunicación
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Representaciones del sonido -->
+      <div class="mb-8 bg-black/30 p-5 rounded-lg border border-yellow-900/50">
+        <div class="flex items-center mb-4">
+          <div
+            class="w-10 h-10 rounded-full bg-yellow-800/50 flex items-center justify-center mr-3"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5 text-yellow-400"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+              ></path>
+            </svg>
+          </div>
+          <h4 class="text-lg font-medium">Representaciones del Sonido</h4>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div class="bg-black/20 p-3 rounded">
+            <div class="flex items-center mb-2">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-4 w-4 text-yellow-400 mr-1"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5v-4m0 4h-4m4 0l-5-5"
+                ></path>
+              </svg>
+              <span class="text-xs font-medium">Espectrograma</span>
+            </div>
+            <p class="text-gray-300 text-xs">
+              Representación visual de la energía de frecuencias a lo largo del
+              tiempo
+            </p>
+          </div>
+
+          <div class="bg-black/20 p-3 rounded">
+            <div class="flex items-center mb-2">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-4 w-4 text-yellow-400 mr-1"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"
+                ></path>
+              </svg>
+              <span class="text-xs font-medium">Mel Espectrograma</span>
+            </div>
+            <p class="text-gray-300 text-xs">
+              Mapeo de frecuencias a escala Mel, similar a percepción humana
+            </p>
+          </div>
+
+          <div class="bg-black/20 p-3 rounded">
+            <div class="flex items-center mb-2">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-4 w-4 text-yellow-400 mr-1"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M3 4h13M3 8h9m-9 4h9m5-4v12m0 0l-4-4m4 4l4-4"></path>
+              </svg>
+              <span class="text-xs font-medium">PCEN</span>
+            </div>
+            <p class="text-gray-300 text-xs">
+              Normalización de energía que suprime ruido y realza vocalizaciones
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Arquitecturas de Aprendizaje Profundo -->
+      <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
+        <div class="bg-black/20 p-3 rounded text-center">
+          <div
+            class="w-12 h-12 rounded-full bg-blue-800/40 mx-auto flex items-center justify-center mb-2"
+          >
+            <span class="text-blue-400 text-xs font-bold">ANN</span>
+          </div>
+          <h5 class="text-xs font-medium mb-1">Red Neuronal</h5>
+          <p class="text-gray-300 text-xs">
+            Procesamiento de información en nodos interconectados
+          </p>
+        </div>
+
+        <div class="bg-black/20 p-3 rounded text-center">
+          <div
+            class="w-12 h-12 rounded-full bg-blue-800/40 mx-auto flex items-center justify-center mb-2"
+          >
+            <span class="text-blue-400 text-xs font-bold">CNN</span>
+          </div>
+          <h5 class="text-xs font-medium mb-1">Red Convolucional</h5>
+          <p class="text-gray-300 text-xs">
+            Extracción de características locales en espectrogramas
+          </p>
+        </div>
+
+        <div class="bg-black/20 p-3 rounded text-center">
+          <div
+            class="w-12 h-12 rounded-full bg-blue-800/40 mx-auto flex items-center justify-center mb-2"
+          >
+            <span class="text-blue-400 text-xs font-bold">CRNN</span>
+          </div>
+          <h5 class="text-xs font-medium mb-1">Red Conv+Recurrente</h5>
+          <p class="text-gray-300 text-xs">
+            Combina extracción espacial y modelado temporal
+          </p>
+        </div>
+
+        <div class="bg-black/20 p-3 rounded text-center">
+          <div
+            class="w-12 h-12 rounded-full bg-blue-800/40 mx-auto flex items-center justify-center mb-2"
+          >
+            <span class="text-blue-400 text-xs font-bold">ResNet</span>
+          </div>
+          <h5 class="text-xs font-medium mb-1">Red Residual</h5>
+          <p class="text-gray-300 text-xs">
+            Conexiones residuales para redes muy profundas
+          </p>
+        </div>
+
+        <div class="bg-black/20 p-3 rounded text-center">
+          <div
+            class="w-12 h-12 rounded-full bg-blue-800/40 mx-auto flex items-center justify-center mb-2"
+          >
+            <span class="text-blue-400 text-xs font-bold">TF</span>
+          </div>
+          <h5 class="text-xs font-medium mb-1">Transformer</h5>
+          <p class="text-gray-300 text-xs">
+            Mecanismos de auto-atención para capturar dependencias
+          </p>
         </div>
       </div>
     </div>
@@ -207,4 +376,3 @@
     padding: 1.25rem;
   }
 </style>
-
