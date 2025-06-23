@@ -7,7 +7,7 @@
   --color-green: #10b981;
   --color-green-dark: #065f46;
   --color-green-light: #34d399;
-  --color-dark: #051c0a;
+  --color-dark: #0a192f;
   --color-black: #040705;
   --color-primary: #2d9d40;
   --color-primary-dark: #1e7a2b;
@@ -44,6 +44,23 @@ body {
   line-height: 1.5;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
+  position: relative;
+}
+
+/* Add the central bloom effect */
+body::before {
+  content: '';
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 70%;
+  background: rgba(41, 82, 119, 0.15);
+  border-radius: 10px;
+  filter: blur(40px);
+  z-index: -1;
+  pointer-events: none;
 }
 
 /* Slide transition */
@@ -88,7 +105,7 @@ body {
 
 /* Card style */
 .card {
-  @apply bg-gray-900/40 rounded-xl p-4 backdrop-blur-sm border border-gray-800/50 shadow-lg;
+  @apply bg-gray-900/60 rounded-xl p-4 backdrop-blur-sm border border-gray-800/50 shadow-lg;
 }
 
 /* Section title */
@@ -167,12 +184,12 @@ p, li {
   }
 
   .card {
-    @apply bg-gray-900/40 backdrop-blur-sm p-4 rounded-lg border border-gray-800/50;
+    @apply bg-gray-900/60 backdrop-blur-sm p-4 rounded-lg border border-gray-700/50 shadow-md;
   }
   
   /* Utilities for handling long content */
   .content-wrapper {
-    @apply overflow-auto max-h-[70vh] pr-2;
+    @apply overflow-auto max-h-[80vh] pr-2;
   }
   
   /* Aspect ratio containers */
